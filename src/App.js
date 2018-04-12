@@ -3,7 +3,7 @@ import {AppBar, CssBaseline, List, MenuItem, Toolbar, Typography, withStyles} fr
 import {times} from 'ramda'
 
 const NumberList = withStyles({root: {overflow: 'scroll'}})(
-  (classes) =>
+  ({classes}) =>
     div({className: classes.root}, [
       h(List, times(id => h(MenuItem, {key: id}, id), 10),
       )],
@@ -11,7 +11,13 @@ const NumberList = withStyles({root: {overflow: 'scroll'}})(
 )
 
 const Layout = withStyles({
-  root: {height: '100vh', width: '100vw', overflow: 'hidden'},
+  root: {
+    height: '100vh',
+    width: '100vw',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+  },
 })(
   ({children, classes}) =>
     div({className: classes.root}, [children]),
