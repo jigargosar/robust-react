@@ -1,7 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<div>
-  foo
+<div
+  class="Component-root-1"
+>
+  <header
+    class="MuiPaper-root-10 MuiPaper-elevation4-16 MuiAppBar-root-2 MuiAppBar-positionStatic-6 MuiAppBar-colorPrimary-8"
+  >
+    <div
+      class="MuiToolbar-root-37 MuiToolbar-gutters-38"
+    >
+      <h2
+        class="MuiTypography-root-39 MuiTypography-title-45 MuiTypography-colorInherit-58"
+      >
+        Robust React App
+      </h2>
+    </div>
+  </header>
+  <ul
+    class="MuiList-root-63 MuiList-padding-64"
+  >
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      0
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      1
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      2
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      3
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      4
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      5
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      6
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      7
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      8
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+    <li
+      class="MuiButtonBase-root-79 MuiListItem-root-69 MuiListItem-default-72 MuiListItem-gutters-76 MuiListItem-button-77 MuiMenuItem-root-67"
+      role="menuitem"
+      tabindex="-1"
+    >
+      9
+      <span
+        class="MuiTouchRipple-root-82"
+      />
+    </li>
+  </ul>
 </div>
 `;
