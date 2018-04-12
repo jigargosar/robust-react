@@ -1,13 +1,14 @@
 import {div, h} from './hyper-script'
 import {AppBar, CssBaseline, List, MenuItem, Paper, Toolbar, Typography, withStyles} from 'material-ui'
-import {compose, map, range, reverse} from 'ramda'
+import {S} from './sanctuary'
 
 const NumberList = () =>
   h(List,
-    compose(
-      map(id => h(MenuItem, {key: id}, id)),
-      reverse,
-      range(0),
+    S.pipe(
+      [S.range(0),
+        S.reverse,
+        S.map(id => h(MenuItem, {key: id}, id)),
+      ],
     )(10),
   )
 
@@ -59,7 +60,7 @@ const App = () =>
     h(Layout, [
       h(Header),
       h(NumberListLayout),
-      h(Footer)
+      h(Footer),
     ]),
   ])
 
