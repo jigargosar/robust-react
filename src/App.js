@@ -1,3 +1,4 @@
-import {div} from './hyper-script'
+import {div, h} from './hyper-script'
+import {CssBaseline} from 'material-ui'
 
-export default () => div('foo')
+export default () => h(CssBaseline, [div('foo')])

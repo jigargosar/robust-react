@@ -1,7 +1,7 @@
-import h from 'react-hyperscript'
+import reactHyperscript from 'react-hyperscript'
 import hh from 'hyperscript-helpers'
 
-export const {div} = hh(h)
+export const {div} = hh(reactHyperscript)
 
 
-export {h}
+export const h = reactHyperscript
