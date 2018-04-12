@@ -1,19 +1,28 @@
 import {div, h} from './hyper-script'
 import {AppBar, CssBaseline, List, MenuItem, Paper, Toolbar, Typography, withStyles} from 'material-ui'
-import {times} from 'ramda'
+import {compose, map, range, reverse} from 'ramda'
 
-const NumberList = withStyles(theme => ({
+const NumberList = () =>
+  h(List,
+    compose(
+      map(id => h(MenuItem, {key: id}, id)),
+      reverse,
+      range(0),
+    )(10),
+  )
+const NumberListLayout = withStyles(theme => ({
   root: {
     overflow: 'scroll',
     flex: 1,
+    display: 'flex',
+    flexDirection: 'column-reverse',
   },
   paper: {margin: theme.spacing.unit * 2},
-  list: {},
 }))(
   ({classes}) =>
     div({className: classes.root}, [
       h(Paper, {className: classes.paper}, [
-        h(List, {className: classes.list}, times(id => h(MenuItem, {key: id}, id), 10)),
+        h(NumberList),
       ]),
     ]))
 
@@ -41,7 +50,7 @@ const App = () =>
   h(CssBaseline, [
     h(Layout, [
       h(Header),
-      h(NumberList),
+      h(NumberListLayout),
     ]),
   ])
 
