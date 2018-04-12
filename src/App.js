@@ -34,6 +34,13 @@ const Header = () =>
     ]),
   ])
 
+const Footer = () =>
+  h(AppBar, {position: 'static'}, [
+    h(Toolbar, [
+      h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
+    ]),
+  ])
+
 const Layout = withStyles({
   root: {
     height: '100vh',
@@ -52,6 +59,7 @@ const App = () =>
     h(Layout, [
       h(Header),
       h(NumberListLayout),
+      h(Footer)
     ]),
   ])
 
