@@ -2,12 +2,13 @@ import {div, h} from './hyper-script'
 import {AppBar, CssBaseline, List, MenuItem, Toolbar, Typography, withStyles} from 'material-ui'
 import {times} from 'ramda'
 
-const NumberList = withStyles(
-  {root: {overflow: 'scroll'}},
-)(() => h(List, times(
-  id => h(MenuItem, {key: id}, id),
-  10,
-)))
+const NumberList = withStyles({root: {overflow: 'scroll'}})(
+  (classes) =>
+    div({className: classes.root}, [
+      h(List, times(id => h(MenuItem, {key: id}, id), 10),
+      )],
+    ),
+)
 
 const Layout = withStyles({
   root: {height: '100vh', width: '100vw', overflow: 'hidden'},
