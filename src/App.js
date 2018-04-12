@@ -4,11 +4,18 @@ import {times} from 'ramda'
 
 const NumberList = withStyles({root: {overflow: 'scroll'}})(
   ({classes}) =>
-    div({className: classes.root}, [
-      h(List, times(id => h(MenuItem, {key: id}, id), 10),
-      )],
-    ),
-)
+    h(
+      List,
+      {className: classes.root},
+      times(id => h(MenuItem, {key: id}, id), 10),
+    ))
+
+const Header = () =>
+  h(AppBar, {position: 'static'}, [
+    h(Toolbar, [
+      h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
+    ]),
+  ])
 
 const Layout = withStyles({
   root: {
@@ -23,16 +30,12 @@ const Layout = withStyles({
     div({className: classes.root}, [children]),
 )
 
-const App = () => h(CssBaseline, [
-  h(Layout, [
-    h(AppBar, {position: 'static'}, [
-        h(Toolbar, [
-          h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
-        ]),
-      ],
-    ),
-    h(NumberList),
-  ]),
-])
+const App = () =>
+  h(CssBaseline, [
+    h(Layout, [
+      h(Header),
+      h(NumberList),
+    ]),
+  ])
 
 export default App
