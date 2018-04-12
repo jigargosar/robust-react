@@ -1,1 +1,3 @@
-export default () => 'HW'
+import {div} from './hyper-script'
+
+export default () => div('foo')

@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "hyperscript": "2.0.2",
+    "hyperscript-helpers": "3.0.3",
+    "material-ui": "1.0.0-beta.41",
     "ramda": "0.25.0",
     "react": "16.3.1",
     "react-dom": "16.3.1",
+    "react-hyperscript": "3.2.0",
     "sanctuary": "0.14.1"
   },
   "devDependencies": {
