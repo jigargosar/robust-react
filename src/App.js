@@ -1,14 +1,21 @@
 import {div, h} from './hyper-script'
-import {AppBar, CssBaseline, List, MenuItem, Toolbar, Typography, withStyles} from 'material-ui'
+import {AppBar, CssBaseline, List, MenuItem, Paper, Toolbar, Typography, withStyles} from 'material-ui'
 import {times} from 'ramda'
 
-const NumberList = withStyles({root: {overflow: 'scroll'}})(
+const NumberList = withStyles(theme => ({
+  root: {
+    overflow: 'scroll',
+    flex: 1,
+  },
+  paper: {margin: theme.spacing.unit * 2},
+  list: {},
+}))(
   ({classes}) =>
-    h(
-      List,
-      {className: classes.root},
-      times(id => h(MenuItem, {key: id}, id), 10),
-    ))
+    div({className: classes.root}, [
+      h(Paper, {className: classes.paper}, [
+        h(List, {className: classes.list}, times(id => h(MenuItem, {key: id}, id), 10)),
+      ]),
+    ]))
 
 const Header = () =>
   h(AppBar, {position: 'static'}, [
