@@ -28,18 +28,24 @@ const NumberListLayout = withStyles(theme => ({
       ]),
     ]))
 
-const Header = () =>
+const Header = withStyles({
+  foo: {}
+})(() =>
   h(AppBar, {position: 'static'}, [
     h(Toolbar, [
       h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
     ]),
   ])
+)
+const Footer = withStyles({foo:{
 
-const Footer = () =>
+  }})(() =>
+  h(AppBar, {position: 'static', component:"footer"}, [
     h(Toolbar, [
       h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
-    ])
-
+    ]),
+  ])
+)
 const Layout = withStyles({
   root: {
     height: '100vh',

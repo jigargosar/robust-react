@@ -129,14 +129,18 @@ exports[`renders without crashing 1`] = `
       </ul>
     </div>
   </div>
-  <div
-    class="MuiToolbar-root MuiToolbar-gutters"
+  <footer
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
   >
-    <h2
-      class="MuiTypography-root MuiTypography-title MuiTypography-colorInherit"
+    <div
+      class="MuiToolbar-root MuiToolbar-gutters"
     >
-      Robust React App
-    </h2>
-  </div>
+      <h2
+        class="MuiTypography-root MuiTypography-title MuiTypography-colorInherit"
+      >
+        Robust React App
+      </h2>
+    </div>
+  </footer>
 </div>
 `;
