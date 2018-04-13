@@ -2,141 +2,141 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  class="Component-root-1"
+  class="Component-root"
 >
   <header
-    class="MuiPaper-root-10 MuiPaper-elevation4-16 MuiAppBar-root-2 MuiAppBar-positionStatic-6 MuiAppBar-colorPrimary-8"
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
   >
     <div
-      class="MuiToolbar-root-37 MuiToolbar-gutters-38"
+      class="MuiToolbar-root MuiToolbar-gutters"
     >
       <h2
-        class="MuiTypography-root-39 MuiTypography-title-45 MuiTypography-colorInherit-58"
+        class="MuiTypography-root MuiTypography-title MuiTypography-colorInherit"
       >
         Robust React App
       </h2>
     </div>
   </header>
   <div
-    class="Component-root-63"
+    class="Component-root"
   >
     <div
-      class="MuiPaper-root-10 MuiPaper-elevation2-14 MuiPaper-rounded-11 Component-paper-64"
+      class="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Component-paper"
     >
       <ul
-        class="MuiList-root-65 MuiList-padding-66"
+        class="MuiList-root MuiList-padding"
       >
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           9
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           8
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           7
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           6
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           5
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           4
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           3
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           2
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           1
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
         <li
-          class="MuiButtonBase-root-81 MuiListItem-root-71 MuiListItem-default-74 MuiListItem-gutters-78 MuiListItem-button-79 MuiMenuItem-root-69"
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
           role="menuitem"
           tabindex="-1"
         >
           0
           <span
-            class="MuiTouchRipple-root-84"
+            class="MuiTouchRipple-root"
           />
         </li>
       </ul>
     </div>
   </div>
   <header
-    class="MuiPaper-root-10 MuiPaper-elevation4-16 MuiAppBar-root-2 MuiAppBar-positionStatic-6 MuiAppBar-colorPrimary-8"
+    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
   >
     <div
-      class="MuiToolbar-root-37 MuiToolbar-gutters-38"
+      class="MuiToolbar-root MuiToolbar-gutters"
     >
       <h2
-        class="MuiTypography-root-39 MuiTypography-title-45 MuiTypography-colorInherit-58"
+        class="MuiTypography-root MuiTypography-title MuiTypography-colorInherit"
       >
         Robust React App
       </h2>
