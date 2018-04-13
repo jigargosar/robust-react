@@ -1,16 +1,8 @@
 import React from 'react'
-import {render} from 'react-testing-library'
 import App from '../App'
-import JssProvider from 'react-jss/lib/JssProvider'
-
-const generateClassName = (rule, styleSheet) =>
-  `${styleSheet.options.classNamePrefix}-${rule.key}`
+import {jssRender} from './jss-render'
 
 it('renders without crashing', () => {
-  const {getByText, getByTestId, container} = render(
-    <JssProvider generateClassName={generateClassName}>
-      <App/>
-    </JssProvider>
-  )
+  const {getByText, getByTestId, container} = jssRender(<App/>)
   expect(container.firstChild).toMatchSnapshot()
 })
