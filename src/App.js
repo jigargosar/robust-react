@@ -36,11 +36,9 @@ const Header = () =>
   ])
 
 const Footer = () =>
-  h(AppBar, {position: 'static'}, [
     h(Toolbar, [
       h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
-    ]),
-  ])
+    ])
 
 const Layout = withStyles({
   root: {
