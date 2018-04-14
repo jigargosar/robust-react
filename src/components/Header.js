@@ -14,8 +14,8 @@ const Header = withStyles(({spacing: {unit}}) => ({
   textFieldInput: {
     margin: `0 ${unit}px`,
   },
-}))(({searchText, onSearchInputChange, classes}) =>
-  h(AppBar, {position: 'static'}, [
+}))(function Header({searchText, onSearchInputChange, classes}) {
+  return h(AppBar, {position: 'static'}, [
     h(Toolbar, [
       h(
         Typography,
@@ -40,8 +40,8 @@ const Header = withStyles(({spacing: {unit}}) => ({
         },
       }),
     ]),
-  ]),
-)
+  ])
+})
 
 export default connect(
   {
