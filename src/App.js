@@ -14,7 +14,8 @@ import S from './sanctuary'
 const NumberList = () =>
   h(
     List,
-    S.pipe([S.range(0), S.reverse, S.map(id => h(MenuItem, {key: id}, id))])(
+    S.pipe(
+      [S.range(0), S.reverse, S.map(id => h(MenuItem, {key: id}, id))],
       10,
     ),
   )
