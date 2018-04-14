@@ -2,7 +2,7 @@ import {signal, state} from 'cerebral/tags'
 import {TextField, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
 import S from '../sanctuary'
-import connect3 from './connect3'
+import connect2 from './connect2'
 
 const styles = ({spacing: {unit}}) => ({
   root: {
@@ -14,10 +14,12 @@ const styles = ({spacing: {unit}}) => ({
   },
 })
 
-const Search = ({value, onChange, classes}) => {
+const onValueChange = update => e => update(e.target.value)
+
+const Search = ({value, updateValue, classes}) => {
   return h(TextField, {
     value,
-    onChange,
+    onChange: onValueChange(updateValue),
     type: 'search',
     placeholder: 'Search',
     InputProps: {
@@ -33,17 +35,10 @@ const Search = ({value, onChange, classes}) => {
 export default S.pipe(
   [
     withStyles(styles),
-    connect3(
-      {
-        setSearchText: signal`setSearchText`,
-        searchText: state`searchText`,
-      },
-      ({setSearchText, searchText}, props) => ({
-        onChange: event => setSearchText({searchText: event.target.value}),
-        value: searchText,
-        ...props,
-      }),
-    ),
+    connect2({
+      updateValue: signal`setSearchText`,
+      value: state`searchText`,
+    }),
   ],
   Search,
 )
