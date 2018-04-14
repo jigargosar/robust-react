@@ -10,7 +10,7 @@ const initialModels = S.pipe(
 export default Module({
   state: {
     count: 100,
-    setSearchText: '',
+    searchText: '',
     models: initialModels,
   },
   signals: {

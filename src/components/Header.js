@@ -1,4 +1,5 @@
 import {connect} from '@cerebral/react'
+import {signal, state} from 'cerebral/tags'
 import {AppBar, TextField, Toolbar, Typography, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
 
@@ -13,7 +14,7 @@ const Header = withStyles(({spacing: {unit}}) => ({
   textFieldInput: {
     margin: `0 ${unit}px`,
   },
-}))(({classes}) =>
+}))(({searchText, onSearchInputChange, classes}) =>
   h(AppBar, {position: 'static'}, [
     h(Toolbar, [
       h(
@@ -26,6 +27,8 @@ const Header = withStyles(({spacing: {unit}}) => ({
         'Robust React App',
       ),
       h(TextField, {
+        value: searchText,
+        onChange: onSearchInputChange,
         type: 'search',
         placeholder: 'Search',
         InputProps: {
@@ -40,4 +43,15 @@ const Header = withStyles(({spacing: {unit}}) => ({
   ]),
 )
 
-export default connect({}, Header)
+export default connect(
+  {
+    setSearchText: signal`setSearchText`,
+    searchText: state`searchText`,
+  },
+  ({setSearchText, searchText}) => ({
+    onSearchInputChange: event =>
+      setSearchText({searchText: event.target.value}),
+    searchText,
+  }),
+  Header,
+)
