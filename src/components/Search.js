@@ -1,6 +1,6 @@
 import {connect} from '@cerebral/react'
 import {signal, state} from 'cerebral/tags'
-import {AppBar, TextField, Toolbar, Typography, withStyles} from 'material-ui'
+import {TextField, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
 
 const Search = withStyles(({spacing: {unit}}) => ({
@@ -27,7 +27,7 @@ const Search = withStyles(({spacing: {unit}}) => ({
   })
 })
 
-const ConnectedSearch = connect(
+export default connect(
   {
     setSearchText: signal`setSearchText`,
     searchText: state`searchText`,
@@ -39,26 +39,3 @@ const ConnectedSearch = connect(
   }),
   Search,
 )
-
-const Header = withStyles({
-  flex: {
-    flex: 1,
-  },
-})(function Header({classes}) {
-  return h(AppBar, {position: 'static'}, [
-    h(Toolbar, [
-      h(
-        Typography,
-        {
-          className: classes.flex,
-          variant: 'title',
-          color: 'inherit',
-        },
-        'Robust React App',
-      ),
-      h(ConnectedSearch),
-    ]),
-  ])
-})
-
-export default connect({}, Header)
