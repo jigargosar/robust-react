@@ -22,7 +22,7 @@ const ModelListItem = ({model}) => h(MenuItem, model.text)
 const ModelList = () =>
   h(List, S.map(model => h(ModelListItem, {key: model.id, model}), models))
 
-const NumberListLayout = withStyles(theme => ({
+const ModelListLayout = withStyles(theme => ({
   root: {
     overflow: 'scroll',
     flex: 1,
@@ -56,6 +56,6 @@ const Layout = withStyles({
 })(({children, classes}) => div({className: classes.root}, [children]))
 
 const App = () =>
-  h(CssBaseline, [h(Layout, [h(Header), h(NumberListLayout), h(Footer)])])
+  h(CssBaseline, [h(Layout, [h(Header), h(ModelListLayout), h(Footer)])])
 
 export default App
