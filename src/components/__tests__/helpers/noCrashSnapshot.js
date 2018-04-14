@@ -1,4 +1,4 @@
-import {h} from '../../hyper-script'
+import {h} from '../../../hyper-script'
 import withJss from './withJss'
 import withModule from './withModule'
 

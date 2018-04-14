@@ -2,8 +2,8 @@ import {createGenerateClassName} from 'material-ui/styles'
 import JssProvider from 'react-jss/lib/JssProvider'
 /* eslint-disable babel/new-cap */
 import {render} from 'react-testing-library'
-import {h} from '../../hyper-script'
-import S from '../../sanctuary'
+import {h} from '../../../hyper-script'
+import S from '../../../sanctuary'
 
 const generateClassName1 = (rule, styleSheet) =>
   `${styleSheet.options.classNamePrefix}-${rule.key}`
