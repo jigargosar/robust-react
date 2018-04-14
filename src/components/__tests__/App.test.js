@@ -1,9 +1,6 @@
-import {h} from '../../hyper-script'
 import App from '../App'
-import withJss from '../helpers/withJss'
-import withModule from '../helpers/withModule'
+import noCrashSnapshot from '../helpers/noCrashSnapshot'
 
 it('renders without crashing', () => {
-  const {container} = withJss(withModule({}, h(App)))
-  expect(container.firstChild).toMatchSnapshot()
+  noCrashSnapshot(App)
 })
