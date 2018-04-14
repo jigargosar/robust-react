@@ -12,14 +12,15 @@ import {div, h} from './hyper-script'
 import S from './sanctuary'
 import Header from './components/Header'
 
-const NumberList = () =>
-  h(
-    List,
-    S.pipe(
-      [S.range(0), S.reverse, S.map(id => h(MenuItem, {key: id}, id + 1))],
-      20,
-    ),
-  )
+const models = S.pipe(
+  [S.range(0), S.reverse, S.map(i => ({id: i, text: i + 1}))],
+  20,
+)
+
+const ModelListItem = ({model}) => h(MenuItem, model.text)
+
+const ModelList = () =>
+  h(List, S.map(model => h(ModelListItem, {key: model.id, model}), models))
 
 const NumberListLayout = withStyles(theme => ({
   root: {
@@ -34,7 +35,7 @@ const NumberListLayout = withStyles(theme => ({
 }))(({classes}) =>
   div({className: classes.root}, [
     div({className: classes.container}, [
-      h(Paper, {className: classes.paper}, [h(NumberList)]),
+      h(Paper, {className: classes.paper}, [h(ModelList)]),
     ]),
   ]),
 )
