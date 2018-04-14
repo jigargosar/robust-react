@@ -1,3 +1,4 @@
+import {connect} from '@cerebral/react'
 import {AppBar, TextField, Toolbar, Typography, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
 
@@ -39,4 +40,4 @@ const Header = withStyles(({spacing: {unit}}) => ({
   ]),
 )
 
-export default Header
+export default connect({}, Header)
