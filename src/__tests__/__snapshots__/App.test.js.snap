@@ -34,6 +34,116 @@ exports[`renders without crashing 1`] = `
             role="menuitem"
             tabindex="-1"
           >
+            20
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            19
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            18
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            17
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            16
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            15
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            14
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            13
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            12
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            11
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
+            10
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+            role="menuitem"
+            tabindex="-1"
+          >
             9
             <span
               class="MuiTouchRipple-root"
@@ -115,16 +225,6 @@ exports[`renders without crashing 1`] = `
             tabindex="-1"
           >
             1
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            0
             <span
               class="MuiTouchRipple-root"
             />

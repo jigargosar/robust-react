@@ -15,8 +15,8 @@ const NumberList = () =>
   h(
     List,
     S.pipe(
-      [S.range(0), S.reverse, S.map(id => h(MenuItem, {key: id}, id))],
-      10,
+      [S.range(0), S.reverse, S.map(id => h(MenuItem, {key: id}, id + 1))],
+      20,
     ),
   )
 
@@ -38,18 +38,14 @@ const NumberListLayout = withStyles(theme => ({
   ]),
 )
 
-const Header = withStyles({
-  foo: {},
-})(() =>
+const Header = withStyles({})(() =>
   h(AppBar, {position: 'static'}, [
     h(Toolbar, [
       h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
     ]),
   ]),
 )
-const Footer = withStyles({
-  foo: {},
-})(() =>
+const Footer = withStyles({})(() =>
   h(AppBar, {position: 'static', component: 'footer'}, [
     h(Toolbar, [h(Typography, {variant: 'title', color: 'inherit'}, 'Footer')]),
   ]),
