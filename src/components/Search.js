@@ -1,9 +1,10 @@
-import {connect} from '@cerebral/react'
 import {signal, state} from 'cerebral/tags'
 import {TextField, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
+import S from '../sanctuary'
+import connect3 from './connect3'
 
-const Search = withStyles(({spacing: {unit}}) => ({
+const styles = ({spacing: {unit}}) => ({
   root: {
     backgroundColor: 'rgba(255,255,255,0.1)',
     color: 'inherit',
@@ -11,10 +12,12 @@ const Search = withStyles(({spacing: {unit}}) => ({
   input: {
     margin: `0 ${unit}px`,
   },
-}))(function Search({searchText, onSearchInputChange, classes}) {
+})
+
+const Search = ({value, onChange, classes}) => {
   return h(TextField, {
-    value: searchText,
-    onChange: onSearchInputChange,
+    value,
+    onChange,
     type: 'search',
     placeholder: 'Search',
     InputProps: {
@@ -25,17 +28,22 @@ const Search = withStyles(({spacing: {unit}}) => ({
       },
     },
   })
-})
+}
 
-export default connect(
-  {
-    setSearchText: signal`setSearchText`,
-    searchText: state`searchText`,
-  },
-  ({setSearchText, searchText}) => ({
-    onSearchInputChange: event =>
-      setSearchText({searchText: event.target.value}),
-    searchText,
-  }),
+export default S.pipe(
+  [
+    withStyles(styles),
+    connect3(
+      {
+        setSearchText: signal`setSearchText`,
+        searchText: state`searchText`,
+      },
+      ({setSearchText, searchText}, props) => ({
+        onChange: event => setSearchText({searchText: event.target.value}),
+        value: searchText,
+        ...props,
+      }),
+    ),
+  ],
   Search,
 )

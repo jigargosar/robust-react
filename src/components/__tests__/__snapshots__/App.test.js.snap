@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       class="MuiToolbar-root MuiToolbar-gutters"
     >
       <h2
-        class="MuiTypography-root MuiTypography-title MuiTypography-colorInherit Component-flex"
+        class="MuiTypography-root MuiTypography-title MuiTypography-colorInherit Header-flex"
       >
         Robust React App
       </h2>
@@ -19,12 +19,12 @@ exports[`renders without crashing 1`] = `
         class="MuiFormControl-root"
       >
         <div
-          class="MuiInput-root Component-root MuiInput-formControl"
+          class="MuiInput-root Search-root MuiInput-formControl"
         >
           <input
             aria-invalid="false"
             aria-required="false"
-            class="MuiInput-input Component-input MuiInput-inputType MuiInput-inputTypeSearch"
+            class="MuiInput-input Search-input MuiInput-inputType MuiInput-inputTypeSearch"
             placeholder="Search"
             type="search"
             value=""

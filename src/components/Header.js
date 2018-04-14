@@ -1,13 +1,16 @@
-import {connect} from '@cerebral/react'
 import {AppBar, Toolbar, Typography, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
+import S from '../sanctuary'
+import connect2 from './connect2'
 import Search from './Search'
 
-const Header = withStyles({
+const styles = {
   flex: {
     flex: 1,
   },
-})(function Header({classes}) {
+}
+
+const Header = ({classes}) => {
   return h(AppBar, {position: 'static'}, [
     h(Toolbar, [
       h(
@@ -22,6 +25,6 @@ const Header = withStyles({
       h(Search),
     ]),
   ])
-})
+}
 
-export default connect({}, Header)
+export default S.pipe([withStyles(styles), connect2({})], Header)
