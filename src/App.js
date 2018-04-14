@@ -4,13 +4,13 @@ import {
   List,
   MenuItem,
   Paper,
-  TextField,
   Toolbar,
   Typography,
   withStyles,
 } from 'material-ui'
 import {div, h} from './hyper-script'
 import S from './sanctuary'
+import Header from './components/Header'
 
 const NumberList = () =>
   h(
@@ -39,44 +39,6 @@ const NumberListLayout = withStyles(theme => ({
   ]),
 )
 
-const Header = withStyles(({spacing: {unit}}) => ({
-  flex: {
-    flex: 1,
-  },
-  textFieldRoot: {
-    // backgroundColor: 'rgba(0,0,0,0.1)',
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    color: 'inherit',
-  },
-  textFieldInput: {
-    margin: `0 ${unit}px`,
-  },
-}))(({classes}) =>
-  h(AppBar, {position: 'static'}, [
-    h(Toolbar, [
-      h(
-        Typography,
-        {
-          className: classes.flex,
-          variant: 'title',
-          color: 'inherit',
-        },
-        'Robust React App',
-      ),
-      h(TextField, {
-        type: 'search',
-        placeholder: 'Search',
-        InputProps: {
-          disableUnderline: true,
-          classes: {
-            root: classes.textFieldRoot,
-            input: classes.textFieldInput,
-          },
-        },
-      }),
-    ]),
-  ]),
-)
 const Footer = withStyles({})(() =>
   h(AppBar, {position: 'static', component: 'footer'}, [
     h(Toolbar, [h(Typography, {variant: 'title', color: 'inherit'}, 'Footer')]),
