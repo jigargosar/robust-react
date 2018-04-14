@@ -13,8 +13,6 @@ export default Module({
     models: initialModels,
   },
   signals: {
-    incremented: sequences.increment,
-    decremented: sequences.decrement,
     updateSearchText: sequences.updateSearchText,
   },
 })
