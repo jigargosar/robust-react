@@ -13,9 +13,9 @@ const generateClassName2 = createGenerateClassName({
 })
 
 const generateClassName = S.I(true) ? generateClassName1 : generateClassName2
-const jssRender = component =>
+const withJss = component =>
   render(
     h(JssProvider, {generateClassName}, component),
     // component,
   )
-export default jssRender
+export default withJss

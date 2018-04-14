@@ -1,11 +1,8 @@
-import {Container} from '@cerebral/react'
-import {Controller, Module} from 'cerebral'
+import {Module} from 'cerebral'
 import {h} from '../../hyper-script'
 import Header from '../Header'
-import jssRender from '../helpers/jss-render'
-
-const withTestModule = (testModule, component) =>
-  h(Container, {controller: Controller(testModule)}, [component])
+import withJss from '../helpers/withJss'
+import withModule from '../helpers/withModule'
 
 it('renders without crashing', () => {
   const testModule = Module({
@@ -13,6 +10,6 @@ it('renders without crashing', () => {
     signals: {},
   })
 
-  const {container} = jssRender(withTestModule(testModule, h(Header)))
+  const {container} = withJss(withModule(testModule, h(Header)))
   expect(container.firstChild).toMatchSnapshot()
 })
