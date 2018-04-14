@@ -24,13 +24,17 @@ const NumberListLayout = withStyles(theme => ({
   root: {
     overflow: 'scroll',
     flex: 1,
+  },
+  container: {
     display: 'flex',
     flexDirection: 'column-reverse',
   },
   paper: {margin: theme.spacing.unit * 2},
 }))(({classes}) =>
   div({className: classes.root}, [
-    h(Paper, {className: classes.paper}, [h(NumberList)]),
+    div({className: classes.container}, [
+      h(Paper, {className: classes.paper}, [h(NumberList)]),
+    ]),
   ]),
 )
 
