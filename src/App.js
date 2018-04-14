@@ -42,7 +42,7 @@ const Footer = withStyles({foo:{
   }})(() =>
   h(AppBar, {position: 'static', component:"footer"}, [
     h(Toolbar, [
-      h(Typography, {variant: 'title', color: 'inherit'}, 'Robust React App'),
+      h(Typography, {variant: 'title', color: 'inherit'}, 'Footer'),
     ]),
   ])
 )
