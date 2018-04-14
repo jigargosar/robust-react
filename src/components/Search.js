@@ -3,6 +3,7 @@ import {TextField, withStyles} from 'material-ui'
 import {h} from '../hyper-script'
 import S from '../sanctuary'
 import connect2 from './connect2'
+import onValueChange from './onValueChange'
 
 const styles = ({spacing: {unit}}) => ({
   root: {
@@ -13,8 +14,6 @@ const styles = ({spacing: {unit}}) => ({
     margin: `0 ${unit}px`,
   },
 })
-
-const onValueChange = update => e => update(e.target.value)
 
 const Search = ({value, updateValue, classes}) => {
   return h(TextField, {
