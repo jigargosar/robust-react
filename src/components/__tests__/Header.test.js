@@ -1,6 +1,6 @@
 import React from 'react'
-import jssRender from '../../__tests__/helpers/jss-render'
 import Header from '../Header'
+import jssRender from '../helpers/jss-render'
 
 it('renders without crashing', () => {
   const {container} = jssRender(<Header />)

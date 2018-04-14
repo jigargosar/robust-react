@@ -8,9 +8,9 @@ import {
   Typography,
   withStyles,
 } from 'material-ui'
-import {div, h} from './hyper-script'
-import S from './sanctuary'
-import Header from './components/Header'
+import {div, h} from '../hyper-script'
+import S from '../sanctuary'
+import Header from './Header'
 
 const models = S.pipe(
   [S.range(0), S.reverse, S.map(i => ({id: i, text: i + 1}))],

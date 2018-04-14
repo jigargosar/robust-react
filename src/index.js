@@ -1,9 +1,16 @@
+import {Container} from '@cerebral/react'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import registerServiceWorker from './registerServiceWorker'
-import App from './App'
+import {render} from 'react-dom'
 import 'roboto-fontface'
+import App from './components/App'
+import controller from './controller'
+import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+render(
+  <Container controller={controller}>
+    <App />
+  </Container>,
+  document.querySelector('#root'),
+)
 
 registerServiceWorker()
