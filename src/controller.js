@@ -4,4 +4,7 @@ import app from './app'
 
 export default Controller(app, {
   devtools: Devtools({host: 'localhost:8585'}),
+  stateChanges: {
+    count: 1,
+  },
 })

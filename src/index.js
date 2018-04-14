@@ -6,9 +6,13 @@ import App from './components/App'
 import controller from './controller'
 import registerServiceWorker from './registerServiceWorker'
 
+// eslint-disable-next-line no-console
+console.log(controller.getState())
+
 render(
   <Container controller={controller}>
-    <App />
+    {' '}
+    <App />{' '}
   </Container>,
   document.querySelector('#root'),
 )
