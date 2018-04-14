@@ -36,7 +36,7 @@ export default S.pipe(
   [
     withStyles(styles),
     connect2({
-      updateValue: signal`setSearchText`,
+      updateValue: signal`updateSearchText`,
       value: state`searchText`,
     }),
   ],

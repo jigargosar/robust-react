@@ -4,4 +4,4 @@ export const increment = actions.increment
 
 export const decrement = actions.decrement
 
-export const setSearchText = actions.setSearchText
+export const updateSearchText = actions.updateSearchText

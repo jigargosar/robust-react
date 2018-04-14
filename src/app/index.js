@@ -16,6 +16,6 @@ export default Module({
   signals: {
     incremented: sequences.increment,
     decremented: sequences.decrement,
-    setSearchText: sequences.setSearchText,
+    updateSearchText: sequences.updateSearchText,
   },
 })
