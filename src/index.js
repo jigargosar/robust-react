@@ -4,5 +4,6 @@ import registerServiceWorker from './registerServiceWorker'
 import App from './App'
 import 'roboto-fontface'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'))
+
+registerServiceWorker()

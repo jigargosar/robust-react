@@ -23,13 +23,24 @@
     "react-scripts": "1.1.4",
     "react-testing-library": "2.1.1"
   },
+  "eslintConfig": {
+    "extends": "./node_modules/kcd-scripts/eslint.js",
+    "rules": {
+      "react/prop-types": "on",
+      "import/no-unassigned-import": "on"
+    }
+  },
+  "eslintIgnored": ["node_modules", "coverage", "dist", "build"],
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "lint": "kcd-scripts lint",
+    "build": "kcd-scripts build",
+    "build:react": "react-scripts build",
     "test": "kcd-scripts test",
     "validate": "kcd-scripts validate",
     "setup": "npm install && npm run validate -s",
     "test:react-scripts": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "precommit": "kcd-scripts precommit"
   }
 }
