@@ -2,7 +2,7 @@ import {Container} from '@cerebral/react'
 import {Controller} from 'cerebral'
 import {h} from '../../hyper-script'
 
-const withTestModule = (testModule, component) =>
-  h(Container, {controller: Controller(testModule)}, [component])
+const withModule = (module, component) =>
+  h(Container, {controller: Controller(module)}, [component])
 
-export default withTestModule
+export default withModule
