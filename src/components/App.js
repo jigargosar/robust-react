@@ -10,7 +10,7 @@ import {div, h} from '../hyper-script'
 import Header from './Header'
 import ModelList from './model/List'
 
-const ModelListLayout = withStyles(theme => ({
+const ModelListContainer = withStyles(theme => ({
   root: {
     overflow: 'scroll',
     flex: 1,
@@ -40,6 +40,6 @@ const Layout = withStyles({
 })(({children, classes}) => div({className: classes.root}, [children]))
 
 const App = () =>
-  h(CssBaseline, [h(Layout, [h(Header), h(ModelListLayout), h(Footer)])])
+  h(CssBaseline, [h(Layout, [h(Header), h(ModelListContainer), h(Footer)])])
 
 export default App
