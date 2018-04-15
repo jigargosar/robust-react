@@ -1,4 +1,3 @@
-import {state} from 'cerebral/tags'
 import {
   AppBar,
   CssBaseline,
@@ -7,9 +6,9 @@ import {
   Typography,
   withStyles,
 } from 'material-ui'
+import * as MR from 'mobx-react'
+import * as R from 'ramda'
 import {div, h} from '../hyper-script'
-import S from '../sanctuary'
-import connect2 from './connect2'
 import Header from './Header'
 import ModelList from './model/List'
 
@@ -42,11 +41,18 @@ const Layout = withStyles({
   },
 })(({children, classes}) => div({className: classes.root}, [children]))
 
-const App = connect2({currentModel: state`currentModelId`}, ({currentModel}) =>
-  h(CssBaseline, [
-    S.maybe([], m => [div({key: 'popup'}, `${m}`)], S.toMaybe(currentModel)),
-    h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
-  ]),
+const injectObserve = R.compose(
+  MR.inject((stores, props) => ({
+    ...stores,
+    ...props,
+  })),
+  MR.observer,
 )
 
-export default App
+const App = () => {
+  return h(CssBaseline, [
+    h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
+  ])
+}
+
+export default injectObserve(App)
