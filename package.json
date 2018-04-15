@@ -5,6 +5,7 @@
   "dependencies": {
     "@cerebral/react": "3.2.1",
     "cerebral": "4.2.1",
+    "firebaseui": "2.7.0",
     "hyperscript": "2.0.2",
     "hyperscript-helpers": "3.0.3",
     "material-ui": "1.0.0-beta.41",
@@ -33,7 +34,12 @@
       "babel/new-cap": "off"
     }
   },
-  "eslintIgnored": ["node_modules", "coverage", "dist", "build"],
+  "eslintIgnored": [
+    "node_modules",
+    "coverage",
+    "dist",
+    "build"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "lint": "kcd-scripts lint",
