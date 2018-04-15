@@ -1,4 +1,7 @@
 import {Module} from 'cerebral'
+import {set} from 'cerebral/operators'
+import {props, state} from 'cerebral/tags'
+// noinspection ES6CheckImport
 import {Chance} from 'chance'
 import S from '../sanctuary'
 import * as sequences from './sequences'
@@ -21,5 +24,6 @@ export default Module({
   },
   signals: {
     updateSearchText: sequences.updateSearchText,
+    showModel: set(state`currentModel`, props`model`),
   },
 })
