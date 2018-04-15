@@ -1,7 +1,5 @@
-import {Module} from 'cerebral'
 import {Chance} from 'chance'
-import S from '../sanctuary'
-import * as sequences from './sequences'
+import S from '../../../sanctuary'
 
 const chance = Chance(123)
 
@@ -14,12 +12,9 @@ const initialCollections = S.pipe(
   20,
 )
 
-export default Module({
+const fakeAppModule = {
   state: {
-    searchText: '',
     collections: initialCollections,
   },
-  signals: {
-    updateSearchText: sequences.updateSearchText,
-  },
-})
+}
+export default fakeAppModule
