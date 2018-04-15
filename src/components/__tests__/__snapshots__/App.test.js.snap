@@ -37,216 +37,212 @@ exports[`renders without crashing 1`] = `
     class="Component-root"
   >
     <div
-      class="Component-container"
+      class="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Component-paper"
     >
-      <div
-        class="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded Component-paper"
+      <ul
+        class="MuiList-root MuiList-padding"
       >
-        <ul
-          class="MuiList-root MuiList-padding"
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
         >
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Philippines
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Puerto Rico
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Eritrea
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Ireland
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Côte d'Ivoire
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Paraguay
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Marshall Islands
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Qatar
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Réunion
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Lebanon
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Iraq
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Slovenia
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Wallis & Futuna
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Iceland
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Papua New Guinea
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Moldova
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Kyrgyzstan
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Burkina Faso
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Haiti
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Hong Kong SAR China
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </li>
-        </ul>
-      </div>
+          Philippines
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Puerto Rico
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Eritrea
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Ireland
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Côte d'Ivoire
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Paraguay
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Marshall Islands
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Qatar
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Réunion
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Lebanon
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Iraq
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Slovenia
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Wallis & Futuna
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Iceland
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Papua New Guinea
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Moldova
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Kyrgyzstan
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Burkina Faso
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Haiti
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+        <li
+          class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+          role="menuitem"
+          tabindex="-1"
+        >
+          Hong Kong SAR China
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </li>
+      </ul>
     </div>
   </div>
   <footer
