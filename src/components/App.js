@@ -1,24 +1,15 @@
-import {state} from 'cerebral/tags'
 import {
   AppBar,
   CssBaseline,
-  List,
-  MenuItem,
   Paper,
   Toolbar,
   Typography,
   withStyles,
 } from 'material-ui'
 import {div, h} from '../hyper-script'
-import S from '../sanctuary'
-import connect2 from './connect2'
 import Header from './Header'
+import ModelList from './model/List'
 
-const ModelListItem = ({model}) => h(MenuItem, model.text)
-
-const ModelList = connect2({models: state`collections`}, ({models}) =>
-  h(List, S.map(model => h(ModelListItem, {key: model.id, model}), models)),
-)
 const ModelListLayout = withStyles(theme => ({
   root: {
     overflow: 'scroll',
