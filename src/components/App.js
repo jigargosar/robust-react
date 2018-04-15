@@ -1,3 +1,4 @@
+import {state} from 'cerebral/tags'
 import {
   AppBar,
   CssBaseline,
@@ -10,18 +11,14 @@ import {
 } from 'material-ui'
 import {div, h} from '../hyper-script'
 import S from '../sanctuary'
+import connect2 from './connect2'
 import Header from './Header'
-
-const models = S.pipe(
-  [S.range(0), S.reverse, S.map(i => ({id: i, text: i + 1}))],
-  20,
-)
 
 const ModelListItem = ({model}) => h(MenuItem, model.text)
 
-const ModelList = () =>
-  h(List, S.map(model => h(ModelListItem, {key: model.id, model}), models))
-
+const ModelList = connect2({models: state`collections`}, ({models}) =>
+  h(List, S.map(model => h(ModelListItem, {key: model.id, model}), models)),
+)
 const ModelListLayout = withStyles(theme => ({
   root: {
     overflow: 'scroll',
