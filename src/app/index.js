@@ -25,6 +25,6 @@ export default Module({
   },
   signals: {
     updateSearchText: sequences.updateSearchText,
-    showModel: set(state`currentModelId`, props`modelId`),
+    showModel: set(state`currentModelId`, props`id`),
   },
 })

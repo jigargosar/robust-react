@@ -6,15 +6,19 @@ import {h} from '../../hyper-script'
 import S from '../../sanctuary'
 import connect2 from '../connect2'
 
+const collectionsLookup = Compute(state`collections`, c =>
+  R.fromPairs(R.map(m => [m.id, m], c)),
+)
+
 const ModelListItem = connect2(
   {
     showModel: signal`showModel`,
-    model: Compute(state`collections`, props`id`, (c, id) => {
-      return R.find(R.propEq('id', id), c)
+    model: Compute(props`id`, (id, get) => {
+      return get(collectionsLookup)[id]
     }),
   },
-  ({model, showModel}) =>
-    h(MenuItem, {onClick: () => showModel({modelId: model.id})}, model.text),
+  ({model: {id, text}, showModel}) =>
+    h(MenuItem, {onClick: () => showModel({id})}, text),
 )
 
 const ModelList = connect2({models: state`collections`}, ({models}) =>
