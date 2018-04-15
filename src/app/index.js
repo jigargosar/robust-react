@@ -21,9 +21,10 @@ export default Module({
   state: {
     searchText: '',
     collections: initialCollections,
+    currentModelId: null,
   },
   signals: {
     updateSearchText: sequences.updateSearchText,
-    showModel: set(state`currentModel`, props`model`),
+    showModel: set(state`currentModelId`, props`modelId`),
   },
 })

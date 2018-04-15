@@ -1,3 +1,4 @@
+import {state} from 'cerebral/tags'
 import {
   AppBar,
   CssBaseline,
@@ -7,6 +8,8 @@ import {
   withStyles,
 } from 'material-ui'
 import {div, h} from '../hyper-script'
+import S from '../sanctuary'
+import connect2 from './connect2'
 import Header from './Header'
 import ModelList from './model/List'
 
@@ -39,7 +42,11 @@ const Layout = withStyles({
   },
 })(({children, classes}) => div({className: classes.root}, [children]))
 
-const App = () =>
-  h(CssBaseline, [h(Layout, [h(Header), h(ModelListContainer), h(Footer)])])
+const App = connect2({currentModel: state`currentModelId`}, ({currentModel}) =>
+  h(CssBaseline, [
+    S.maybe([], m => [div({key: 'popup'}, `${m}`)], S.toMaybe(currentModel)),
+    h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
+  ]),
+)
 
 export default App
