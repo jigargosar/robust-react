@@ -1,7 +1,9 @@
 import {
   AppBar,
+  Button,
   CssBaseline,
   Dialog,
+  DialogActions,
   DialogContent,
   DialogTitle,
   Paper,
@@ -75,6 +77,7 @@ const TableDialog = ({tableScreenStore: {onDialogClose, current}}) =>
         h(Dialog, {open: true, onClose: onDialogClose}, [
           h(DialogTitle, `Table: ${current.text}`),
           h(DialogContent, [h(TableInfo, {table: current})]),
+          h(DialogActions, [h(Button, 'add column')]),
         ])
     : R.always(false))()
 
