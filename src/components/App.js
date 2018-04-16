@@ -71,13 +71,15 @@ const TableInfo = ({table}) =>
     ]),
   ])
 
-const TableDialog = ({tableScreenStore: {onDialogClose, current}}) =>
+const TableDialog = ({
+  tableScreenStore: {onAddColumn, onDialogClose, current},
+}) =>
   (current
     ? () =>
         h(Dialog, {open: true, onClose: onDialogClose}, [
           h(DialogTitle, `Table: ${current.text}`),
           h(DialogContent, [h(TableInfo, {table: current})]),
-          h(DialogActions, [h(Button, 'add column')]),
+          h(DialogActions, [h(Button, {onClick: onAddColumn}, 'add column')]),
         ])
     : R.always(false))()
 
