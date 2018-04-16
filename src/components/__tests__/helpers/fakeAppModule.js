@@ -3,7 +3,7 @@ import S from '../../../sanctuary'
 
 const chance = Chance(123)
 
-const initialDTables = S.pipe(
+const initialTables = S.pipe(
   [
     S.range(0),
     S.reverse,
@@ -14,7 +14,7 @@ const initialDTables = S.pipe(
 
 const fakeAppModule = {
   state: {
-    dTables: initialDTables,
+    tables: initialTables,
   },
 }
 export default fakeAppModule

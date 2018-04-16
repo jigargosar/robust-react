@@ -3,12 +3,12 @@ import {map} from 'ramda'
 import {h} from '../../hyper-script'
 import injectObserve from '../injectObserve'
 
-const ModelListItem = ({model, dTableScreenStore: {onListItemClick}}) =>
+const ModelListItem = ({model, tableScreenStore: {onListItemClick}}) =>
   h(MenuItem, {onClick: onListItemClick(model)}, model.text)
 
 const EModelListItem = injectObserve(ModelListItem)
 
-const ModelList = ({dTableScreenStore: {dTables}}) =>
-  h(List, map(model => h(EModelListItem, {key: model.id, model}), dTables))
+const ModelList = ({tableScreenStore: {tables}}) =>
+  h(List, map(model => h(EModelListItem, {key: model.id, model}), tables))
 
 export default injectObserve(ModelList)

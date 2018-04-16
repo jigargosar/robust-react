@@ -13,7 +13,7 @@ const nanoId = () => {
   return count
 }
 
-const getInitialDTables = () => {
+const getInitialTables = () => {
   const chance = Chance(123)
   return S.pipe(
     [
@@ -65,7 +65,7 @@ class ColumnStore extends DefaultStore {
   items = this.collection({model: Column})
 }
 
-class DTable extends DefaultModel {
+class Table extends DefaultModel {
   constructor(attributes, options) {
     super(attributes, options)
     this.columnStore = new ColumnStore({rootStore: options.rootStore})
@@ -76,45 +76,45 @@ class DTable extends DefaultModel {
   }
 }
 
-decorate(DTable, {
+decorate(Table, {
   columnStore: observable,
 })
 
-class DTableStore extends DefaultStore {
+class TableStore extends DefaultStore {
   constructor(opts) {
     super(opts)
     this.items = this.collection({
-      model: DTable,
+      model: Table,
     })
-    this.set(getInitialDTables())
+    this.set(getInitialTables())
   }
 
-  get dTables() {
+  get tables() {
     return this.items
   }
 }
 
-decorate(DTableStore, {})
+decorate(TableStore, {})
 
-class DTableScreenStore extends Store {
+class TableScreenStore extends Store {
   current = null
-  get dTables() {
-    const {dTables} = this.rootStore.dTableStore
-    return dTables.slice()
+  get tables() {
+    const {tables} = this.rootStore.tableStore
+    return tables.slice()
   }
 
-  onListItemClick = dTable => () => (this.current = dTable)
+  onListItemClick = table => () => (this.current = table)
   onDialogClose = () => (this.current = null)
 }
 
-decorate(DTableScreenStore, {
-  dTables: computed,
+decorate(TableScreenStore, {
+  tables: computed,
   current: observable,
 })
 
 const rootStore = createRootStore({
-  dTableStore: DTableStore,
-  dTableScreenStore: DTableScreenStore,
+  tableStore: TableStore,
+  tableScreenStore: TableScreenStore,
 })
 
 export default rootStore

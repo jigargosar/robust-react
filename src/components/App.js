@@ -56,34 +56,34 @@ const injectObserve = R.compose(
   MR.observer,
 )
 
-const DTableInfo = ({dTable}) =>
+const TableInfo = ({table}) =>
   h(Table, [
     h(TableBody, [
-      h(TableRow, [h(TableCell, 'ID'), h(TableCell, dTable.id)]),
-      h(TableRow, [h(TableCell, 'Text'), h(TableCell, dTable.text)]),
-      h(TableRow, [h(TableCell, 'Created At'), h(TableCell, dTable.createdAt)]),
+      h(TableRow, [h(TableCell, 'ID'), h(TableCell, table.id)]),
+      h(TableRow, [h(TableCell, 'Text'), h(TableCell, table.text)]),
+      h(TableRow, [h(TableCell, 'Created At'), h(TableCell, table.createdAt)]),
       h(TableRow, [
         h(TableCell, 'Modified At'),
-        h(TableCell, dTable.modifiedAt),
+        h(TableCell, table.modifiedAt),
       ]),
     ]),
   ])
 
-const DTableDialog = ({dTableScreenStore: {onDialogClose, current}}) =>
+const TableDialog = ({tableScreenStore: {onDialogClose, current}}) =>
   (current
     ? () =>
         h(Dialog, {open: true, onClose: onDialogClose}, [
-          h(DialogTitle, `DTable: ${current.text}`),
-          h(DialogContent, [h(DTableInfo, {dTable: current})]),
+          h(DialogTitle, `Table: ${current.text}`),
+          h(DialogContent, [h(TableInfo, {table: current})]),
         ])
     : R.always(false))()
 
-const XDTableDialog = injectObserve(DTableDialog)
+const XTableDialog = injectObserve(TableDialog)
 
 const App = () =>
   h(CssBaseline, [
     h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
-    h(XDTableDialog),
+    h(XTableDialog),
   ])
 
 export default injectObserve(App)
