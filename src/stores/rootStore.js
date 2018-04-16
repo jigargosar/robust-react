@@ -3,6 +3,7 @@ import {Chance} from 'chance'
 import {createRootStore, Model, Store} from 'libx'
 import {computed, decorate, observable} from 'mobx'
 import nanoIdOriginal from 'nanoid'
+import {merge} from 'ramda'
 import S from '../sanctuary'
 
 let count = 0
@@ -50,17 +51,11 @@ decorate(ItemStore, {
 })
 
 class Column extends DefaultModel {
-  name = 'Column X'
   type = 'string'
-  unique = false
-  required = false
-  value = ''
 }
 
 decorate(Column, {
-  name: observable,
   type: observable,
-  value: observable,
 })
 
 class ColumnStore extends ItemStore {
@@ -100,18 +95,43 @@ decorate(TableStore, {})
 
 class TableScreenStore extends Store {
   current = null
+  columnData = null
   get tables() {
     const {tables} = this.rootStore.tableStore
     return tables
   }
 
   onListItemClick = table => () => (this.current = table)
+
   onDialogClose = () => (this.current = null)
+
+  onAddColumn = () => (this.columnData = {text: 'Column X', type: 'string'})
+
+  onColumnTextChange = e =>
+    (this.columnData = merge(this.columnData, {text: e.target.value}))
+
+  onColumnTypeChange = e =>
+    (this.columnData = merge(this.columnData, {type: e.target.value}))
+
+  onSaveColumn = () => {
+    this.current.columns.set(
+      merge(
+        {
+          id: nanoId(),
+          createdAt: Date.now(),
+          modifiedAt: Date.now(),
+        },
+        this.columnData,
+      ),
+    )
+    this.columnData = null
+  }
 }
 
 decorate(TableScreenStore, {
   tables: computed,
   current: observable,
+  columnData: observable,
 })
 
 const rootStore = createRootStore({

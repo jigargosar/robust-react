@@ -11,6 +11,7 @@ import {
   TableBody,
   TableCell,
   TableRow,
+  TextField,
   Toolbar,
   Typography,
   withStyles,
@@ -83,12 +84,49 @@ const TableDialog = ({
         ])
     : R.always(false))()
 
+const ColumnDialog = ({
+  tableScreenStore: {
+    onSaveColumn,
+    onColumnDialogClose,
+    columnData,
+    onColumnTextChange,
+    onColumnTypeChange,
+  },
+}) =>
+  (columnData
+    ? () =>
+        h(Dialog, {open: true, onClose: onColumnDialogClose}, [
+          h(DialogTitle, `Add Column`),
+          h(DialogContent, [
+            div([
+              h(TextField, {
+                value: columnData.text,
+                placeholder: 'Name',
+                label: 'Name',
+                onChange: onColumnTextChange,
+                required: true,
+              }),
+              h(TextField, {
+                value: columnData.type,
+                placeholder: 'Type',
+                label: 'Type',
+                onChange: onColumnTypeChange,
+                required: true,
+              }),
+            ]),
+          ]),
+          h(DialogActions, [h(Button, {onClick: onSaveColumn}, 'ok')]),
+        ])
+    : R.always(false))()
+
 const XTableDialog = injectObserve(TableDialog)
+const XColumnDialog = injectObserve(ColumnDialog)
 
 const App = () =>
   h(CssBaseline, [
     h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
     h(XTableDialog),
+    h(XColumnDialog),
   ])
 
 export default injectObserve(App)
