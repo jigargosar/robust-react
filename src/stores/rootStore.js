@@ -22,18 +22,15 @@ const getInitialDTables = () => {
       S.map(() => ({
         id: nanoId(),
         text: chance.country({full: true}),
+        createdAt: Date.now(),
+        modifiedAt: Date.now(),
       })),
     ],
     20,
   )
 }
 
-class DefaultModel extends Model {
-  id
-  text
-  createdAt = Date.now()
-  modifiedAt = Date.now()
-}
+class DefaultModel extends Model {}
 
 decorate(DefaultModel, {
   id: observable,
@@ -72,6 +69,10 @@ class DTable extends DefaultModel {
   constructor(attributes, options) {
     super(attributes, options)
     this.columnStore = new ColumnStore({rootStore: options.rootStore})
+  }
+
+  get columns() {
+    return this.columnStore.items
   }
 }
 
