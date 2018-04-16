@@ -8,7 +8,7 @@ import * as sequences from './sequences'
 
 const chance = Chance(123)
 
-const initialCollections = S.pipe(
+const initialDTables = S.pipe(
   [
     S.range(0),
     S.reverse,
@@ -20,7 +20,7 @@ const initialCollections = S.pipe(
 export default Module({
   state: {
     searchText: '',
-    collections: initialCollections,
+    dTables: initialDTables,
     currentModelId: null,
   },
   signals: {

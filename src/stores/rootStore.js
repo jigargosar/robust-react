@@ -4,7 +4,7 @@ import {createRootStore, Model, Store} from 'libx'
 import {computed, decorate, observable} from 'mobx'
 import S from '../sanctuary'
 
-const getInitialCollections = () => {
+const getInitialDTables = () => {
   const chance = Chance(123)
   return S.pipe(
     [
@@ -19,61 +19,61 @@ const getInitialCollections = () => {
   )
 }
 
-class Collection extends Model {
+class DTable extends Model {
   id
   text
   createdAt = Date.now()
   modifiedAt = Date.now()
 }
 
-decorate(Collection, {
+decorate(DTable, {
   id: observable,
   text: observable,
   createdAt: observable,
   modifiedAt: observable,
 })
 
-class CollectionStore extends Store {
+class DTableStore extends Store {
   constructor(opts) {
     super(opts)
-    this.collections = this.collection({
-      model: Collection,
+    this.dTables = this.collection({
+      model: DTable,
     })
-    this.set(getInitialCollections())
+    this.set(getInitialDTables())
   }
 
   get set() {
-    return this.collections.set
+    return this.dTables.set
   }
 }
 
-decorate(CollectionStore, {set: computed})
+decorate(DTableStore, {set: computed})
 
-class CollectionScreenStore extends Store {
+class DTableScreenStore extends Store {
   current = null
-  get collections() {
-    const {collections} = this.rootStore.collectionStore
-    return collections.slice()
+  get dTables() {
+    const {dTables} = this.rootStore.dTableStore
+    return dTables.slice()
   }
 
-  onListItemClick = collection => () => (this.current = collection)
+  onListItemClick = dTable => () => (this.current = dTable)
   onDialogClose = () => (this.current = null)
 }
 
-decorate(CollectionScreenStore, {
-  collections: computed,
+decorate(DTableScreenStore, {
+  dTables: computed,
   current: observable,
 })
 
 // class RootStore {
 //   constructor() {
-//     this.collectionStore = new CollectionStore({rootStore:this},
-// getInitialCollections()) this.collectionScreenStore =
-// CollectionScreenStore({rootStore: this}) } }
+//     this.dTableStore = new DTableStore({rootStore:this},
+// getInitialDTables()) this.dTableScreenStore =
+// DTableScreenStore({rootStore: this}) } }
 
 const rootStore = createRootStore({
-  collectionStore: CollectionStore,
-  collectionScreenStore: CollectionScreenStore,
+  dTableStore: DTableStore,
+  dTableScreenStore: DTableScreenStore,
 })
 
 export default rootStore

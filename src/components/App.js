@@ -56,37 +56,34 @@ const injectObserve = R.compose(
   MR.observer,
 )
 
-const CollectionInfo = ({collection}) =>
+const DTableInfo = ({dTable}) =>
   h(Table, [
     h(TableBody, [
-      h(TableRow, [h(TableCell, 'ID'), h(TableCell, collection.id)]),
-      h(TableRow, [h(TableCell, 'Text'), h(TableCell, collection.text)]),
-      h(TableRow, [
-        h(TableCell, 'Created At'),
-        h(TableCell, collection.createdAt),
-      ]),
+      h(TableRow, [h(TableCell, 'ID'), h(TableCell, dTable.id)]),
+      h(TableRow, [h(TableCell, 'Text'), h(TableCell, dTable.text)]),
+      h(TableRow, [h(TableCell, 'Created At'), h(TableCell, dTable.createdAt)]),
       h(TableRow, [
         h(TableCell, 'Modified At'),
-        h(TableCell, collection.modifiedAt),
+        h(TableCell, dTable.modifiedAt),
       ]),
     ]),
   ])
 
-const CollectionDialog = ({collectionScreenStore: {onDialogClose, current}}) =>
+const DTableDialog = ({dTableScreenStore: {onDialogClose, current}}) =>
   (current
     ? () =>
         h(Dialog, {open: true, onClose: onDialogClose}, [
-          h(DialogTitle, `Collection: ${current.text}`),
-          h(DialogContent, [h(CollectionInfo, {collection: current})]),
+          h(DialogTitle, `DTable: ${current.text}`),
+          h(DialogContent, [h(DTableInfo, {dTable: current})]),
         ])
     : R.always(false))()
 
-const XCollectionDialog = injectObserve(CollectionDialog)
+const XDTableDialog = injectObserve(DTableDialog)
 
 const App = () =>
   h(CssBaseline, [
     h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
-    h(XCollectionDialog),
+    h(XDTableDialog),
   ])
 
 export default injectObserve(App)
