@@ -63,9 +63,6 @@ const CollectionDialog = ({collectionScreenStore: {onDialogClose, current}}) =>
           h(DialogTitle, `Collection: ${current.text}`),
           h(DialogContent, [
             h(Table, [
-              // h(TableHead, [
-              //   h(TableRow, [h(TableCell, 'id'), h(TableCell, 'text')]),
-              // ]),
               h(TableBody, [
                 h(TableRow, [h(TableCell, 'ID'), h(TableCell, current.id)]),
                 h(TableRow, [h(TableCell, 'Text'), h(TableCell, current.text)]),
