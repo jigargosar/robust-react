@@ -52,6 +52,8 @@ decorate(ItemStore, {
 class Column extends DefaultModel {
   name = 'Column X'
   type = 'string'
+  unique = false
+  required = false
   value = ''
 }
 
