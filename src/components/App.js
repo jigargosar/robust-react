@@ -60,7 +60,7 @@ const TableInfo = ({table}) =>
   h(Table, [
     h(TableBody, [
       h(TableRow, [h(TableCell, 'ID'), h(TableCell, table.id)]),
-      h(TableRow, [h(TableCell, 'Text'), h(TableCell, table.text)]),
+      h(TableRow, [h(TableCell, 'Name'), h(TableCell, table.text)]),
       h(TableRow, [h(TableCell, 'Created At'), h(TableCell, table.createdAt)]),
       h(TableRow, [
         h(TableCell, 'Modified At'),
