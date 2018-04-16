@@ -56,27 +56,28 @@ const injectObserve = R.compose(
   MR.observer,
 )
 
+const CollectionInfo = ({collection}) =>
+  h(Table, [
+    h(TableBody, [
+      h(TableRow, [h(TableCell, 'ID'), h(TableCell, collection.id)]),
+      h(TableRow, [h(TableCell, 'Text'), h(TableCell, collection.text)]),
+      h(TableRow, [
+        h(TableCell, 'Created At'),
+        h(TableCell, collection.createdAt),
+      ]),
+      h(TableRow, [
+        h(TableCell, 'Modified At'),
+        h(TableCell, collection.modifiedAt),
+      ]),
+    ]),
+  ])
+
 const CollectionDialog = ({collectionScreenStore: {onDialogClose, current}}) =>
   (current
     ? () =>
         h(Dialog, {open: true, onClose: onDialogClose}, [
           h(DialogTitle, `Collection: ${current.text}`),
-          h(DialogContent, [
-            h(Table, [
-              h(TableBody, [
-                h(TableRow, [h(TableCell, 'ID'), h(TableCell, current.id)]),
-                h(TableRow, [h(TableCell, 'Text'), h(TableCell, current.text)]),
-                h(TableRow, [
-                  h(TableCell, 'Created At'),
-                  h(TableCell, current.createdAt),
-                ]),
-                h(TableRow, [
-                  h(TableCell, 'Modified At'),
-                  h(TableCell, current.modifiedAt),
-                ]),
-              ]),
-            ]),
-          ]),
+          h(DialogContent, [h(CollectionInfo, {collection: current})]),
         ])
     : R.always(false))()
 
