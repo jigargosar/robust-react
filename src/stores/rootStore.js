@@ -57,6 +57,7 @@ class CollectionScreenStore extends Store {
   }
 
   onListItemClick = collection => () => (this.current = collection)
+  onDialogClose = () => (this.current = null)
 }
 
 decorate(CollectionScreenStore, {

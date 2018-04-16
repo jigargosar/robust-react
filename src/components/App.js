@@ -1,7 +1,14 @@
 import {
   AppBar,
   CssBaseline,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
   Toolbar,
   Typography,
   withStyles,
@@ -49,10 +56,39 @@ const injectObserve = R.compose(
   MR.observer,
 )
 
-const App = () => {
-  return h(CssBaseline, [
+const CollectionDialog = ({collectionScreenStore: {onDialogClose, current}}) =>
+  (current
+    ? () =>
+        h(Dialog, {open: true, onClose: onDialogClose}, [
+          h(DialogTitle, `Collection: ${current.text}`),
+          h(DialogContent, [
+            h(Table, [
+              // h(TableHead, [
+              //   h(TableRow, [h(TableCell, 'id'), h(TableCell, 'text')]),
+              // ]),
+              h(TableBody, [
+                h(TableRow, [h(TableCell, 'ID'), h(TableCell, current.id)]),
+                h(TableRow, [h(TableCell, 'Text'), h(TableCell, current.text)]),
+                h(TableRow, [
+                  h(TableCell, 'Created At'),
+                  h(TableCell, current.createdAt),
+                ]),
+                h(TableRow, [
+                  h(TableCell, 'Modified At'),
+                  h(TableCell, current.modifiedAt),
+                ]),
+              ]),
+            ]),
+          ]),
+        ])
+    : R.always(false))()
+
+const XCollectionDialog = injectObserve(CollectionDialog)
+
+const App = () =>
+  h(CssBaseline, [
     h(Layout, [h(Header), h(ModelListContainer), h(Footer)]),
+    h(XCollectionDialog),
   ])
-}
 
 export default injectObserve(App)
