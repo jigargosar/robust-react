@@ -39,13 +39,13 @@ decorate(DefaultModel, {
   modifiedAt: observable,
 })
 
-class DefaultStore extends Store {
+class ItemStore extends Store {
   get set() {
     return this.items.set
   }
 }
 
-decorate(DefaultStore, {
+decorate(ItemStore, {
   set: computed,
 })
 
@@ -61,7 +61,7 @@ decorate(Column, {
   value: observable,
 })
 
-class ColumnStore extends DefaultStore {
+class ColumnStore extends ItemStore {
   items = this.collection({model: Column})
 }
 
@@ -80,7 +80,7 @@ decorate(Table, {
   columnStore: observable,
 })
 
-class TableStore extends DefaultStore {
+class TableStore extends ItemStore {
   constructor(opts) {
     super(opts)
     this.items = this.collection({
@@ -100,7 +100,7 @@ class TableScreenStore extends Store {
   current = null
   get tables() {
     const {tables} = this.rootStore.tableStore
-    return tables.slice()
+    return tables
   }
 
   onListItemClick = table => () => (this.current = table)
