@@ -2,7 +2,16 @@
 import {Chance} from 'chance'
 import {createRootStore, Model, Store} from 'libx'
 import {computed, decorate, observable} from 'mobx'
+import nanoIdOriginal from 'nanoid'
 import S from '../sanctuary'
+
+let count = 0
+
+const nanoId = () => {
+  nanoIdOriginal()
+  count += 1
+  return count
+}
 
 const getInitialDTables = () => {
   const chance = Chance(123)
@@ -10,8 +19,8 @@ const getInitialDTables = () => {
     [
       S.range(0),
       S.reverse,
-      S.map(i => ({
-        id: i,
+      S.map(() => ({
+        id: nanoId(),
         text: chance.country({full: true}),
       })),
     ],
@@ -19,35 +28,72 @@ const getInitialDTables = () => {
   )
 }
 
-class DTable extends Model {
+class DefaultModel extends Model {
   id
   text
   createdAt = Date.now()
   modifiedAt = Date.now()
 }
 
-decorate(DTable, {
+decorate(DefaultModel, {
   id: observable,
   text: observable,
   createdAt: observable,
   modifiedAt: observable,
 })
 
-class DTableStore extends Store {
+class DefaultStore extends Store {
+  get set() {
+    return this.items.set
+  }
+}
+
+decorate(DefaultStore, {
+  set: computed,
+})
+
+class Column extends DefaultModel {
+  name = 'Column X'
+  type = 'string'
+  value = ''
+}
+
+decorate(Column, {
+  name: observable,
+  type: observable,
+  value: observable,
+})
+
+class ColumnStore extends DefaultStore {
+  items = this.collection({model: Column})
+}
+
+class DTable extends DefaultModel {
+  constructor(attributes, options) {
+    super(attributes, options)
+    this.columnStore = new ColumnStore({rootStore: options.rootStore})
+  }
+}
+
+decorate(DTable, {
+  columnStore: observable,
+})
+
+class DTableStore extends DefaultStore {
   constructor(opts) {
     super(opts)
-    this.dTables = this.collection({
+    this.items = this.collection({
       model: DTable,
     })
     this.set(getInitialDTables())
   }
 
-  get set() {
-    return this.dTables.set
+  get dTables() {
+    return this.items
   }
 }
 
-decorate(DTableStore, {set: computed})
+decorate(DTableStore, {})
 
 class DTableScreenStore extends Store {
   current = null
@@ -64,12 +110,6 @@ decorate(DTableScreenStore, {
   dTables: computed,
   current: observable,
 })
-
-// class RootStore {
-//   constructor() {
-//     this.dTableStore = new DTableStore({rootStore:this},
-// getInitialDTables()) this.dTableScreenStore =
-// DTableScreenStore({rootStore: this}) } }
 
 const rootStore = createRootStore({
   dTableStore: DTableStore,
