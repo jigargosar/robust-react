@@ -3,8 +3,8 @@ import {map} from 'ramda'
 import {h} from '../../hyper-script'
 import injectObserve from '../injectObserve'
 
-const ModelListItem = ({model: {id, text}, showModel}) =>
-  h(MenuItem, {onClick: () => showModel({id})}, text)
+const ModelListItem = ({model, collectionScreenStore: {onListItemClick}}) =>
+  h(MenuItem, {onClick: onListItemClick(model)}, model.text)
 
 const EModelListItem = injectObserve(ModelListItem)
 

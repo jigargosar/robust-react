@@ -50,14 +50,18 @@ class CollectionStore extends Store {
 decorate(CollectionStore, {set: computed})
 
 class CollectionScreenStore extends Store {
+  current = null
   get collections() {
     const {collections} = this.rootStore.collectionStore
     return collections.slice()
   }
+
+  onListItemClick = collection => () => (this.current = collection)
 }
 
 decorate(CollectionScreenStore, {
   collections: computed,
+  current: observable,
 })
 
 // class RootStore {
