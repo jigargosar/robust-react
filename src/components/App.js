@@ -6,6 +6,7 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  Divider,
   Paper,
   Table,
   TableBody,
@@ -21,6 +22,14 @@ import * as R from 'ramda'
 import {div, h} from '../hyper-script'
 import Header from './Header'
 import ModelList from './model/List'
+
+const injectObserve = R.compose(
+  MR.inject((stores, props) => ({
+    ...stores,
+    ...props,
+  })),
+  MR.observer,
+)
 
 const ModelListContainer = withStyles(theme => ({
   root: {
@@ -51,14 +60,6 @@ const Layout = withStyles({
   },
 })(({children, classes}) => div({className: classes.root}, [children]))
 
-const injectObserve = R.compose(
-  MR.inject((stores, props) => ({
-    ...stores,
-    ...props,
-  })),
-  MR.observer,
-)
-
 const TableInfo = ({table}) =>
   h(Table, [
     h(TableBody, [
@@ -72,6 +73,30 @@ const TableInfo = ({table}) =>
     ]),
   ])
 
+const ColumnsInfo = injectObserve(({columns}) =>
+  R.map(
+    column =>
+      div({key: column.id}, [
+        h(Divider),
+        h(Table, [
+          h(TableBody, [
+            h(TableRow, [h(TableCell, 'ID'), h(TableCell, column.id)]),
+            h(TableRow, [h(TableCell, 'Name'), h(TableCell, column.text)]),
+            h(TableRow, [h(TableCell, 'Type'), h(TableCell, column.type)]),
+            h(TableRow, [
+              h(TableCell, 'Created At'),
+              h(TableCell, column.createdAt),
+            ]),
+            h(TableRow, [
+              h(TableCell, 'Modified At'),
+              h(TableCell, column.modifiedAt),
+            ]),
+          ]),
+        ]),
+      ]),
+    columns.items,
+  ),
+)
 const TableDialog = ({
   tableScreenStore: {onAddColumn, onDialogClose, current},
 }) =>
@@ -79,7 +104,10 @@ const TableDialog = ({
     ? () =>
         h(Dialog, {open: true, onClose: onDialogClose}, [
           h(DialogTitle, `Table: ${current.text}`),
-          h(DialogContent, [h(TableInfo, {table: current})]),
+          h(DialogContent, [
+            h(TableInfo, {table: current}),
+            h(ColumnsInfo, {columns: current.columns}),
+          ]),
           h(DialogActions, [h(Button, {onClick: onAddColumn}, 'add column')]),
         ])
     : R.always(false))()
