@@ -2,6 +2,7 @@
   "name": "robust-react",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "@cerebral/react": "3.2.1",
     "cerebral": "4.2.1",
@@ -29,7 +30,13 @@
     "kcd-scripts": "0.37.0",
     "react-jss": "8.4.0",
     "react-scripts": "1.1.4",
-    "react-testing-library": "2.1.1"
+    "react-testing-library": "2.1.1",
+    "@storybook/react": "^3.4.1",
+    "@storybook/addon-actions": "^3.4.1",
+    "@storybook/addon-links": "^3.4.1",
+    "@storybook/addons": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-runtime": "^6.26.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/kcd-scripts/eslint.js",
@@ -55,6 +62,8 @@
     "setup": "npm install && npm run validate -s",
     "test:react-scripts": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "precommit": "kcd-scripts precommit"
+    "precommit": "kcd-scripts precommit",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   }
 }
