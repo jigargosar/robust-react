@@ -36,6 +36,7 @@
     "jest": "22.4.3",
     "jss-snapshot-serializer": "1.0.0",
     "kcd-scripts": "0.37.0",
+    "metalsmith": "2.3.0",
     "react-jss": "8.4.0",
     "react-scripts": "1.1.4",
     "react-testing-library": "2.1.1",
@@ -49,12 +50,7 @@
       "babel/new-cap": "off"
     }
   },
-  "eslintIgnored": [
-    "node_modules",
-    "coverage",
-    "dist",
-    "build"
-  ],
+  "eslintIgnored": ["node_modules", "coverage", "dist", "build"],
   "scripts": {
     "start": "react-scripts start",
     "lint": "kcd-scripts lint",

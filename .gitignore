@@ -21,3 +21,4 @@ yarn-error.log*
 # > when working with contributors
 package-lock.json
 yarn.lock
+storybook-static/
