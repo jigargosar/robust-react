@@ -4,23 +4,24 @@ import {ListItemText, MenuItem} from 'material-ui'
 import React from 'react'
 import {h} from '../hyper-script'
 
-const createFakeCollectionModel = () => {
+const createFakeCollectionModels = () => {
   const chance = new Chance(11)
-  return {name: chance.country({full: true})}
+  return [{name: chance.country({full: true})}]
 }
 
 const ModelListItem = ({model: {name}}) => (
   <MenuItem>
-    <ListItemText>{name}</ListItemText>
+    {' '}
+    <ListItemText>{name}</ListItemText>{' '}
   </MenuItem>
 )
 
 storiesOf('Collection', module)
   .add('List', () => {
-    const model = createFakeCollectionModel()
+    const model = createFakeCollectionModels()[0]
     return h(ModelListItem, {model})
   })
   .add('ListItem', () => {
-    const model = createFakeCollectionModel()
+    const model = createFakeCollectionModels()[0]
     return h(ModelListItem, {model})
   })
