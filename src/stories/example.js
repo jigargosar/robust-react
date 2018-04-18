@@ -6,11 +6,11 @@ import {storiesOf} from '@storybook/react'
 import {Button, Welcome} from '@storybook/react/demo'
 import React from 'react'
 
-storiesOf('Welcome', module).add('to Storybook', () => (
+storiesOf('Default | Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />
 ))
 
-storiesOf('Button', module)
+storiesOf('Default | Button', module)
   .add('with text', () => (
     <Button onClick={action('clicked')}>Hello Button</Button>
   ))
@@ -18,6 +18,6 @@ storiesOf('Button', module)
     <Button onClick={action('clicked')}>
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
-      </span>
+      </span>{' '}
     </Button>
   ))

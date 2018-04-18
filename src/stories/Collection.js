@@ -11,11 +11,12 @@ const createFakeCollectionModel = () => {
 
 const ModelListItem = ({model: {name}}) => (
   <MenuItem>
-    <ListItemText>{name}</ListItemText>
+    {' '}
+    <ListItemText>{name}</ListItemText>{' '}
   </MenuItem>
 )
 
-storiesOf('Collection', module).add('list item', () => {
+storiesOf('Collection | Model', module).add('ModelListItem', () => {
   const model = createFakeCollectionModel()
   return h(ModelListItem, {model})
 })

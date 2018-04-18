@@ -22,6 +22,13 @@
     "sanctuary": "0.14.1"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.1",
+    "@storybook/addon-links": "^3.4.1",
+    "@storybook/addon-options": "3.4.2",
+    "@storybook/addons": "^3.4.1",
+    "@storybook/react": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "chance": "1.0.13",
     "enzyme": "3.3.0",
     "foreman": "2.0.0",
@@ -30,13 +37,7 @@
     "kcd-scripts": "0.37.0",
     "react-jss": "8.4.0",
     "react-scripts": "1.1.4",
-    "react-testing-library": "2.1.1",
-    "@storybook/react": "^3.4.1",
-    "@storybook/addon-actions": "^3.4.1",
-    "@storybook/addon-links": "^3.4.1",
-    "@storybook/addons": "^3.4.1",
-    "babel-core": "^6.26.0",
-    "babel-runtime": "^6.26.0"
+    "react-testing-library": "2.1.1"
   },
   "eslintConfig": {
     "extends": "./node_modules/kcd-scripts/eslint.js",
