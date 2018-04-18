@@ -1,2 +1,2 @@
-import './Collection'
+import './Collection/index'
 import './example'
