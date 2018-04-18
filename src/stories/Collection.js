@@ -11,12 +11,16 @@ const createFakeCollectionModel = () => {
 
 const ModelListItem = ({model: {name}}) => (
   <MenuItem>
-    {' '}
-    <ListItemText>{name}</ListItemText>{' '}
+    <ListItemText>{name}</ListItemText>
   </MenuItem>
 )
 
-storiesOf('Collection | Model', module).add('ModelListItem', () => {
-  const model = createFakeCollectionModel()
-  return h(ModelListItem, {model})
-})
+storiesOf('Collection', module)
+  .add('List', () => {
+    const model = createFakeCollectionModel()
+    return h(ModelListItem, {model})
+  })
+  .add('ListItem', () => {
+    const model = createFakeCollectionModel()
+    return h(ModelListItem, {model})
+  })
