@@ -4,15 +4,15 @@ import * as R from 'ramda'
 import {h} from '../../hyper-script'
 import ModelList, {ModelListItem} from '../components/ModelListItem'
 
-const createFakeCollectionModels = () => {
+const createFakeModels = () => {
   const chance = new Chance(11)
   return R.times(() => ({name: chance.country({full: true})}), 10)
 }
 
-const models = createFakeCollectionModels()
+const models = createFakeModels()
 const model = R.head(models)
 
-storiesOf('Collection.Model', module)
+storiesOf('Models', module)
   .add('ListItem', () => {
     return h(ModelListItem, {model})
   })
