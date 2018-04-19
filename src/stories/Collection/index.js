@@ -7,7 +7,7 @@ import ModelList, {ModelListItem} from '../components/ModelListItem'
 
 const createFakeModels = () => {
   const chance = new Chance(11)
-  return R.times(() => ({name: chance.country({full: true})}), 15)
+  return R.times(() => ({name: chance.country({full: true})}), 3)
 }
 
 const models = createFakeModels()
@@ -24,14 +24,17 @@ storiesOf('Models', module)
     return div(
       {
         style: {
-          textAlign: 'center',
           padding: '16px 0',
           backgroundColor: '#ddd',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: 300,
         },
       },
       [
-        h(Paper, {style: {margin: 'auto', maxWidth: 450}}, [
-          h(ModelList, {models}),
+        div({style: {flex: 1, maxWidth: 450}}, [
+          h(Paper, [h(ModelList, {models})]),
         ]),
       ],
     )
