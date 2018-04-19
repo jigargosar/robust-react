@@ -21,9 +21,18 @@ storiesOf('Models', module)
     return h(ModelList, {models})
   })
   .add('PaperList', () => {
-    return div({style: {textAlign: 'center', backgroundColor: '#ddd'}}, [
-      h(Paper, {style: {margin: 'auto', maxWidth: 450}}, [
-        h(ModelList, {models}),
-      ]),
-    ])
+    return div(
+      {
+        style: {
+          textAlign: 'center',
+          padding: '16px 0',
+          backgroundColor: '#ddd',
+        },
+      },
+      [
+        h(Paper, {style: {margin: 'auto', maxWidth: 450}}, [
+          h(ModelList, {models}),
+        ]),
+      ],
+    )
   })
