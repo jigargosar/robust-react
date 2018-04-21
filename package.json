@@ -1,7 +1,7 @@
 {
   "name": "robust-react",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0-development",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "@cerebral/react": "3.2.1",
@@ -13,6 +13,7 @@
     "material-ui": "1.0.0-beta.41",
     "mobx": "4.1.1",
     "mobx-react": "5.0.0",
+    "mobx-state-tree": "2.0.4",
     "nanoid": "1.0.2",
     "ramda": "0.25.0",
     "react": "16.3.1",
@@ -59,17 +60,21 @@
     "build"
   ],
   "scripts": {
-    "start": "react-scripts start",
-    "lint": "kcd-scripts lint",
     "build": "kcd-scripts build",
-    "build:react": "react-scripts build",
+    "lint": "kcd-scripts lint",
     "test": "kcd-scripts test",
+    "start": "react-scripts start",
     "validate": "kcd-scripts validate",
     "setup": "npm install && npm run validate -s",
+    "precommit": "kcd-scripts precommit",
+    "build:react": "react-scripts build",
     "test:react-scripts": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "precommit": "kcd-scripts precommit",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jigargosar/robust-react.git"
   }
 }
