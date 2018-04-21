@@ -65,14 +65,6 @@
       "import/no-duplicates": "error"
     }
   },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist",
-    "build",
-    "flow-typed",
-    "storybook-static"
-  ],
   "scripts": {
     "build": "kcd-scripts build",
     "lint": "kcd-scripts lint",

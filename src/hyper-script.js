@@ -1,5 +1,6 @@
-import reactHyperscript from 'react-hyperscript'
 import hh from 'hyperscript-helpers'
+// @flow
+import reactHyperscript from 'react-hyperscript'
 
 export const {div} = hh(reactHyperscript)
 

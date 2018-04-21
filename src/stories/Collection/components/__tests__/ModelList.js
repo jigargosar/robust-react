@@ -14,7 +14,7 @@ describe('ModelList', () => {
   })
   describe('Item', () => {
     it('should render without crashing', () => {
-      const props: ModelListItemProps = {model: {name: 'Foo bar'}}
+      const props: ModelListItemProps = {model: {id: '0', name: 'Foo bar'}}
       const {container} = render(h(ModelListItem, props))
       expect(container.firstChild).toMatchSnapshot()
     })

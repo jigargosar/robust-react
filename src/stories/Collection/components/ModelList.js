@@ -3,7 +3,10 @@
 import {List, ListItemText, MenuItem} from 'material-ui'
 import {h} from '../../../hyper-script'
 
-type Model = {name: string}
+export type Model = {
+  id: string | number,
+  name: string,
+}
 
 export type ModelListItemProps = {
   model: Model,

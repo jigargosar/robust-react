@@ -1,16 +1,21 @@
+// @flow
 import {storiesOf} from '@storybook/react'
 import Chance from 'chance'
 import {Paper} from 'material-ui'
 import * as R from 'ramda'
 import {div, h} from '../../hyper-script'
+import type {Model} from './components/ModelList'
 import {ModelList, ModelListItem} from './components/ModelList'
 
-const createFakeModels = () => {
-  const chance = new Chance(11)
-  return R.times(idx => ({id: idx, name: chance.country({full: true})}), 3)
+const createFakeModels = (): Array<Model> => {
+  const chance = Chance(11)
+  return R.times(
+    (idx: number): Model => ({id: idx, name: chance.country({full: true})}),
+    3,
+  )
 }
 
-const models = createFakeModels()
+const models: Array<Model> = createFakeModels()
 const model = R.head(models)
 
 storiesOf('Models', module)
@@ -30,4 +35,3 @@ storiesOf('Models', module)
   )
   .add('ListItem', () => h(ModelListItem, {model}))
   .add('List', () => h(ModelList, {models}))
-// .add('PaperList', () => h(Paper, [h(ModelList, {models})]))
