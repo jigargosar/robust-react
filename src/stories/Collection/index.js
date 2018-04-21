@@ -3,7 +3,7 @@ import Chance from 'chance'
 import {Paper} from 'material-ui'
 import * as R from 'ramda'
 import {div, h} from '../../hyper-script'
-import ModelList, {ModelListItem} from './components/ModelListItem'
+import {ModelList, ModelListItem} from './components/ModelList'
 
 const createFakeModels = () => {
   const chance = new Chance(11)
