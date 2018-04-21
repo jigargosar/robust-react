@@ -1,5 +1,5 @@
 import {List, ListItemText, MenuItem} from 'material-ui'
-import {h} from '../../hyper-script'
+import {h} from '../../../hyper-script'
 
 export const ModelListItem = ({model: {name}}) => {
   return h(MenuItem, [h(ListItemText, name)])
