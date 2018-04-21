@@ -14,14 +14,8 @@ const models = createFakeModels()
 const model = R.head(models)
 
 storiesOf('Models', module)
-  .add('ListItem', () => {
-    return h(ModelListItem, {model})
-  })
-  .add('List', () => {
-    return h(ModelList, {models})
-  })
-  .add('PaperList', () => {
-    return div(
+  .addDecorator(story =>
+    div(
       {
         style: {
           padding: '16px 0',
@@ -29,13 +23,11 @@ storiesOf('Models', module)
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          minHeight: 300,
         },
       },
-      [
-        div({style: {flex: 1, maxWidth: 450}}, [
-          h(Paper, [h(ModelList, {models})]),
-        ]),
-      ],
-    )
-  })
+      [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
+    ),
+  )
+  .add('ListItem', () => h(ModelListItem, {model}))
+  .add('List', () => h(ModelList, {models}))
+// .add('PaperList', () => h(Paper, [h(ModelList, {models})]))
