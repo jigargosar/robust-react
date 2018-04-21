@@ -7,7 +7,7 @@ import ModelList, {ModelListItem} from '../components/ModelListItem'
 
 const createFakeModels = () => {
   const chance = new Chance(11)
-  return R.times(() => ({name: chance.country({full: true})}), 3)
+  return R.times(idx => ({id: idx, name: chance.country({full: true})}), 3)
 }
 
 const models = createFakeModels()
