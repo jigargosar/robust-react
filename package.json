@@ -30,10 +30,13 @@
     "@storybook/addons": "^3.4.1",
     "@storybook/react": "^3.4.1",
     "babel-core": "^6.26.0",
+    "babel-plugin-flow-runtime": "0.17.0",
     "babel-runtime": "^6.26.0",
     "chance": "1.0.13",
     "dom-testing-library": "1.9.0",
     "enzyme": "3.3.0",
+    "flow-bin": "0.70.0",
+    "flow-runtime": "0.17.0",
     "foreman": "2.0.0",
     "jest": "22.4.3",
     "jss-snapshot-serializer": "1.0.0",
@@ -48,18 +51,27 @@
     "storybook-addon-specifications": "2.1.1"
   },
   "eslintConfig": {
-    "extends": "./node_modules/kcd-scripts/eslint.js",
+    "extends": [
+      "./node_modules/kcd-scripts/eslint.js",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
     "rules": {
       "react/prop-types": "on",
       "import/no-unassigned-import": "on",
-      "babel/new-cap": "off"
+      "babel/new-cap": "off",
+      "no-duplicate-imports": "off",
+      "import/prefer-default-export": "off",
+      "import/no-duplicates": "error"
     }
   },
-  "eslintIgnored": [
+  "eslintIgnore": [
     "node_modules",
     "coverage",
     "dist",
-    "build"
+    "build",
+    "flow-typed",
+    "storybook-static"
   ],
   "scripts": {
     "build": "kcd-scripts build",
@@ -69,6 +81,7 @@
     "validate": "kcd-scripts validate",
     "setup": "npm install && npm run validate -s",
     "precommit": "kcd-scripts precommit",
+    "flow": "flow",
     "build:react": "react-scripts build",
     "test:react-scripts": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

@@ -1,25 +1,27 @@
+// @flow
+
 import {List, ListItemText, MenuItem} from 'material-ui'
-import Props from 'prop-types'
 import {h} from '../../../hyper-script'
 
-export const ModelListItem = ({model: {name}}) => {
-  return h(MenuItem, [h(ListItemText, name)])
+type Model = {name: string}
+
+export type ModelListItemProps = {
+  model: Model,
 }
 
-const modelShape = {
-  name: Props.string.isRequired,
+const ModelListItem = (props: ModelListItemProps) => {
+  return h(MenuItem, [h(ListItemText, props.model.name)])
 }
-ModelListItem.propTypes = modelShape
 
-const ModelList = ({models}) => {
+export type ModelListProps = {
+  models: Array<Model>,
+}
+
+const ModelList = ({models}: ModelListProps) => {
   return h(
     List,
     models.map((model, idx) => h(ModelListItem, {key: idx, model})),
   )
 }
 
-ModelList.propTypes = {
-  models: Props.arrayOf(Props.shape(modelShape)).isRequired,
-}
-
-export {ModelList}
+export {ModelList, ModelListItem}
