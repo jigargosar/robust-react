@@ -2,60 +2,60 @@
 
 exports[`Model List should match snapshot 1`] = `
 <ul
-  class="MuiList-root-1 MuiList-padding-2"
+  class="MuiList-root MuiList-padding"
 >
   <li
-    class="MuiButtonBase-root-17 MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-14 MuiListItem-button-15 MuiMenuItem-root-5"
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
     role="menuitem"
     tabindex="-1"
   >
     <div
-      class="MuiListItemText-root-20"
+      class="MuiListItemText-root"
     >
       <h3
-        class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
         Ceuta & Melilla
       </h3>
     </div>
     <span
-      class="MuiTouchRipple-root-50"
+      class="MuiTouchRipple-root"
     />
   </li>
   <li
-    class="MuiButtonBase-root-17 MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-14 MuiListItem-button-15 MuiMenuItem-root-5"
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
     role="menuitem"
     tabindex="-1"
   >
     <div
-      class="MuiListItemText-root-20"
+      class="MuiListItemText-root"
     >
       <h3
-        class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
         Bahamas
       </h3>
     </div>
     <span
-      class="MuiTouchRipple-root-50"
+      class="MuiTouchRipple-root"
     />
   </li>
   <li
-    class="MuiButtonBase-root-17 MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-14 MuiListItem-button-15 MuiMenuItem-root-5"
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
     role="menuitem"
     tabindex="-1"
   >
     <div
-      class="MuiListItemText-root-20"
+      class="MuiListItemText-root"
     >
       <h3
-        class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
         American Samoa
       </h3>
     </div>
     <span
-      class="MuiTouchRipple-root-50"
+      class="MuiTouchRipple-root"
     />
   </li>
 </ul>
@@ -63,21 +63,21 @@ exports[`Model List should match snapshot 1`] = `
 
 exports[`Model ListItem should match snapshot 1`] = `
 <li
-  class="MuiButtonBase-root-17 MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-14 MuiListItem-button-15 MuiMenuItem-root-5"
+  class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
   role="menuitem"
   tabindex="-1"
 >
   <div
-    class="MuiListItemText-root-20"
+    class="MuiListItemText-root"
   >
     <h3
-      class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
+      class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
     >
       Foo bar
     </h3>
   </div>
   <span
-    class="MuiTouchRipple-root-50"
+    class="MuiTouchRipple-root"
   />
 </li>
 `;

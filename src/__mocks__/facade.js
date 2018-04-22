@@ -1,4 +1,5 @@
-import {render} from 'react-testing-library'
+// import {render} from 'react-testing-library'
+import noCrashSnapshot from '../components/__tests__/helpers/noCrashSnapshot'
 
 const currentEnv = jasmine.currentEnv_
 
@@ -17,12 +18,12 @@ export const action = () => {}
 export const linkTo = () => {}
 export const specs = spec => spec()
 
-export const snapshot = (name, story) => {
-  it(name, () => {
-    const {container} = render(story)
-    expect(container.firstChild).toMatchSnapshot()
-  })
-}
+// export const snapshot = (name, story) => {
+//   it(name, () => {
+//     const {container} = render(story)
+//     expect(container.firstChild).toMatchSnapshot()
+//   })
+// }
 
 export const storiesOf = kind => ({
   add(name, func) {
@@ -33,8 +34,9 @@ export const storiesOf = kind => ({
         })
 
         it('should match snapshot', () => {
-          const {container} = render(func())
-          expect(container.firstChild).toMatchSnapshot()
+          // const {container} = render(func())
+          // expect(container.firstChild).toMatchSnapshot()
+          noCrashSnapshot(func)
         })
       })
     })
