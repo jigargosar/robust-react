@@ -1,1 +1,1 @@
-import './components/__tests__/ModelListStories'
+import './components/__tests__/ModelList.test'
