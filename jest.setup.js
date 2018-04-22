@@ -1,1 +1,1 @@
-jest.mock('./.storybook/facade')
+jest.mock('./src/facade')

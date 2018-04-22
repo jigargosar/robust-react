@@ -3,13 +3,7 @@ import Chance from 'chance'
 import {Paper} from 'material-ui'
 import * as R from 'ramda'
 import {render} from 'react-testing-library'
-import {
-  describe,
-  expect,
-  it,
-  specs,
-  storiesOf,
-} from '../../../../../.storybook/facade'
+import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {div, h} from '../../../../hyper-script'
 import type {Model, ModelListItemProps, ModelListProps} from '../ModelList'
 import {ModelList, ModelListItem} from '../ModelList'
