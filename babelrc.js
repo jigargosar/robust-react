@@ -1,4 +1,9 @@
+/* eslint-disable no-console,no-process-exit */
+
 const config = require('kcd-scripts/dist/config/babelrc')
+
+console.log('using custom babel config')
+process.exit(1)
 
 config.plugins.push([
   'flow-runtime',
@@ -7,5 +12,7 @@ config.plugins.push([
     annotate: true,
   },
 ])
+
+config.plugins.push('espower')
 
 module.exports = config

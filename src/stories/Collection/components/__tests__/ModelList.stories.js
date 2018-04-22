@@ -34,30 +34,19 @@ storiesOf('Model', module)
       [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
     ),
   )
-  .add('ListItem', () => {
-    const props: ModelListItemProps = {model: {id: '0', name: 'Foo bar'}}
-    const story = h(ModelListItem, props)
-    // specs(() =>
-    //   describe('ListItem', () =>
-    //     it('should render without crashing', () => {
-    //       const {container} = render(story)
-    //       expect(container.firstChild).toMatchSnapshot()
-    //     })),
-    // )
-    return story
-  })
   .add('List', () => {
     const props: ModelListProps = {models}
-    const story = h(ModelList, props)
-    // specs(() =>
-    //   describe('List', () => {
-    //     it('should render without crashing', () => {
-    //       const {container} = render(story)
-    //       expect(container.firstChild).toMatchSnapshot()
-    //     })
-    //   }),
-    // )
-    return story
+    return h(ModelList, props)
+  })
+  .add('ListItem', () => {
+    const props: ModelListItemProps = {model: {id: 0, name: 'Foo bar'}}
+    return h(ModelListItem, props)
   })
 
-// describe()
+// specs(() =>
+//   describe('ListItem', () =>
+//     it('should render without crashing', () => {
+//       const {container} = render(story)
+//       expect(container.firstChild).toMatchSnapshot()
+//     })),
+// )

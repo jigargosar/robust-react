@@ -21,10 +21,7 @@ export type ModelListProps = {
 }
 
 const ModelList = ({models}: ModelListProps) => {
-  return h(
-    List,
-    models.map((model, idx) => h(ModelListItem, {key: idx, model})),
-  )
+  return h(List, models.map(model => h(ModelListItem, {key: model.id, model})))
 }
 
 export {ModelList, ModelListItem}
