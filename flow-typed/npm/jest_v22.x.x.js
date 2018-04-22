@@ -261,8 +261,8 @@ type JestExpectType = {
    */
   toHaveBeenCalledWith(...args: Array<any>): void,
   /**
-   * Use .toHaveBeenLastCalledWith to ensure that a mock function was last called
-   * with specific arguments.
+   * Use .toHaveBeenLastCalledWith to ensure that a mock function was last
+   * called with specific arguments.
    */
   toHaveBeenLastCalledWith(...args: Array<any>): void,
   /**
@@ -279,7 +279,8 @@ type JestExpectType = {
    */
   toMatch(regexpOrString: RegExp | string): void,
   /**
-   * Use .toMatchObject to check that a javascript object matches a subset of the properties of an object.
+   * Use .toMatchObject to check that a javascript object matches a subset of
+   * the properties of an object.
    */
   toMatchObject(object: Object | Array<Object>): void,
   /**
@@ -456,8 +457,9 @@ type JestObjectType = {
    */
   spyOn(object: Object, methodName: string): JestMockFn<any, any>,
   /**
-   * Set the default timeout interval for tests and before/after hooks in milliseconds.
-   * Note: The default timeout interval is 5 seconds if this method is not called.
+   * Set the default timeout interval for tests and before/after hooks in
+   * milliseconds. Note: The default timeout interval is 5 seconds if this
+   * method is not called.
    */
   setTimeout(timeout: number): JestObjectType,
 }
@@ -490,7 +492,8 @@ declare function beforeAll(
 /** A context for grouping tests together */
 declare var describe: {
   /**
-   * Creates a block that groups together several related tests in one "test suite"
+   * Creates a block that groups together several related tests in one "test
+   * suite"
    */
   (name: JestTestName, fn: () => void): void,
 
@@ -654,6 +657,7 @@ declare var jest: JestObjectType
  * using features inside here could break in later versions of Jest.
  */
 declare var jasmine: {
+  currentEnv_: any,
   DEFAULT_TIMEOUT_INTERVAL: number,
   any(value: mixed): JestAsymmetricEqualityType,
   anything(): any,
