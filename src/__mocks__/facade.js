@@ -27,8 +27,18 @@ export const snapshot = (name, story) => {
 export const storiesOf = kind => ({
   add(name, func) {
     describe(kind, () => {
-      snapshot(name, func())
+      describe(name, () => {
+        it('should render without crashing', () => {
+          func()
+        })
+
+        it('should match snapshot', () => {
+          const {container} = render(func())
+          expect(container.firstChild).toMatchSnapshot()
+        })
+      })
     })
+
     return this
   },
   addDecorator() {

@@ -2,8 +2,9 @@ import Chance from 'chance'
 // import 'dom-testing-library/extend-expect'
 import {Paper} from 'material-ui'
 import * as R from 'ramda'
-import {render} from 'react-testing-library'
-import {describe, expect, it, specs, storiesOf} from '../../../../facade'
+import {storiesOf} from '../../../../facade'
+// import {render} from 'react-testing-library'
+// import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {div, h} from '../../../../hyper-script'
 import type {Model, ModelListItemProps, ModelListProps} from '../ModelList'
 import {ModelList, ModelListItem} from '../ModelList'
@@ -36,26 +37,26 @@ storiesOf('Model', module)
   .add('ListItem', () => {
     const props: ModelListItemProps = {model: {id: '0', name: 'Foo bar'}}
     const story = h(ModelListItem, props)
-    specs(() =>
-      describe('ListItem', () =>
-        it('should render without crashing', () => {
-          const {container} = render(story)
-          expect(container.firstChild).toMatchSnapshot()
-        })),
-    )
+    // specs(() =>
+    //   describe('ListItem', () =>
+    //     it('should render without crashing', () => {
+    //       const {container} = render(story)
+    //       expect(container.firstChild).toMatchSnapshot()
+    //     })),
+    // )
     return story
   })
   .add('List', () => {
     const props: ModelListProps = {models}
     const story = h(ModelList, props)
-    specs(() =>
-      describe('List', () => {
-        it('should render without crashing', () => {
-          const {container} = render(story)
-          expect(container.firstChild).toMatchSnapshot()
-        })
-      }),
-    )
+    // specs(() =>
+    //   describe('List', () => {
+    //     it('should render without crashing', () => {
+    //       const {container} = render(story)
+    //       expect(container.firstChild).toMatchSnapshot()
+    //     })
+    //   }),
+    // )
     return story
   })
 
