@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Model List 1`] = `
+<ul
+  class="MuiList-root-53 MuiList-padding-54"
+>
+  <li
+    class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-16"
+    >
+      <h3
+        class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+      >
+        Ceuta & Melilla
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-46"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-16"
+    >
+      <h3
+        class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+      >
+        Bahamas
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-46"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-16"
+    >
+      <h3
+        class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+      >
+        American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-46"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Model List should render without crashing 1`] = `
+<ul
+  class="MuiList-root-53 MuiList-padding-54"
+>
+  <li
+    class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-16"
+    >
+      <h3
+        class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+      >
+        Ceuta & Melilla
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-46"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-16"
+    >
+      <h3
+        class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+      >
+        Bahamas
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-46"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-16"
+    >
+      <h3
+        class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+      >
+        American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-46"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Model ListItem 1`] = `
+<li
+  class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <div
+    class="MuiListItemText-root-16"
+  >
+    <h3
+      class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+    >
+      Foo bar
+    </h3>
+  </div>
+  <span
+    class="MuiTouchRipple-root-46"
+  />
+</li>
+`;
+
+exports[`Model ListItem should render without crashing 1`] = `
+<li
+  class="MuiButtonBase-root-13 MuiListItem-root-3 MuiListItem-default-6 MuiListItem-gutters-10 MuiListItem-button-11 MuiMenuItem-root-1"
+  role="menuitem"
+  tabindex="-1"
+>
+  <div
+    class="MuiListItemText-root-16"
+  >
+    <h3
+      class="MuiTypography-root-22 MuiTypography-subheading-29 MuiListItemText-primary-19"
+    >
+      Foo bar
+    </h3>
+  </div>
+  <span
+    class="MuiTouchRipple-root-46"
+  />
+</li>
+`;
