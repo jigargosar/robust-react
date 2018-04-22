@@ -2,6 +2,8 @@
 
 const config = require('kcd-scripts/dist/config/babelrc')
 
+// verifying: this file is never required by kcd-scripts
+
 console.log('using custom babel config')
 process.exit(1)
 
