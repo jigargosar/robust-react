@@ -86,8 +86,10 @@ setOptions({
   enableShortcuts: true, // true by default
 })
 
+const req = require.context('../src', true, /\.stories\.js$/)
 function loadStories() {
-  require('../src/stories')
+  // require('../src/stories')
+  req.keys().forEach(req)
 }
 
 configure(loadStories, module)
