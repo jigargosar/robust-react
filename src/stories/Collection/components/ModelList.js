@@ -2,18 +2,19 @@
 
 import {List, ListItemText, MenuItem} from 'material-ui'
 import {div, h} from '../../../hyper-script'
-import type {Model} from '../types'
+import type {CollectionOrModel} from '../types'
+import {displayName} from '../types'
 
 type ModelListItemProps = {
-  model: Model,
+  model: CollectionOrModel,
 }
 
 const ModelListItem = (props: ModelListItemProps) => {
-  return h(MenuItem, [h(ListItemText, props.model.name)])
+  return h(MenuItem, [h(ListItemText, displayName(props.model))])
 }
 
 type ModelListProps = {
-  models: Array<Model>,
+  models: Array<CollectionOrModel>,
 }
 
 const ModelList = ({models}: ModelListProps) => {

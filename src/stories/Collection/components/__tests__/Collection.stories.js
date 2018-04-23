@@ -8,7 +8,7 @@ import {storiesOf} from '../../../../facade'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {div, h} from '../../../../hyper-script'
-import type {Collection, Model} from '../../types'
+import type {Collection, CollectionOrModel} from '../../types'
 import type {
   ModelDetailProps,
   ModelListItemProps,
@@ -16,10 +16,10 @@ import type {
 } from '../ModelList'
 import {ModelDetail, ModelList, ModelListItem} from '../ModelList'
 
-const createFakeModels = (): Array<Collection> => {
+const createFakeCollections = (): Array<CollectionOrModel> => {
   const chance = Chance(11)
   return R.times(
-    (idx: number): Model => ({
+    (idx: number): Collection => ({
       id: idx,
       name: chance.country({full: true}),
       items: [],
@@ -28,7 +28,7 @@ const createFakeModels = (): Array<Collection> => {
   )
 }
 
-const models: Array<Model> = createFakeModels()
+const models = createFakeCollections()
 
 storiesOf('Collection', module)
   .addDecorator(story =>

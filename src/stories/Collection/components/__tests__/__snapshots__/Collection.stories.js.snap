@@ -26,7 +26,7 @@ exports[`Collection List should match snapshot 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
-        Ceuta & Melilla
+        Ceuta & Melilla (0)
       </h3>
     </div>
     <span
@@ -44,7 +44,7 @@ exports[`Collection List should match snapshot 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
-        Bahamas
+        Bahamas (0)
       </h3>
     </div>
     <span
@@ -62,7 +62,7 @@ exports[`Collection List should match snapshot 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
-        American Samoa
+        American Samoa (0)
       </h3>
     </div>
     <span
