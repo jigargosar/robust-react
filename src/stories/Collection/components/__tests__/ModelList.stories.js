@@ -6,8 +6,13 @@ import {storiesOf} from '../../../../facade'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {div, h} from '../../../../hyper-script'
-import type {Model, ModelListItemProps, ModelListProps} from '../ModelList'
-import {ModelList, ModelListItem} from '../ModelList'
+import type {
+  Model,
+  ModelDetailProps,
+  ModelListItemProps,
+  ModelListProps,
+} from '../ModelList'
+import {ModelDetail, ModelList, ModelListItem} from '../ModelList'
 
 const createFakeModels = (): Array<Model> => {
   const chance = Chance(11)
@@ -41,6 +46,10 @@ storiesOf('Model', module)
   .add('ListItem', () => {
     const props: ModelListItemProps = {model: {id: 0, name: 'Foo bar'}}
     return h(ModelListItem, props)
+  })
+  .add('Detail', () => {
+    const props: ModelDetailProps = {model: {id: 0, name: 'Foo bar'}}
+    return h(ModelDetail, props)
   })
 
 // specs(() =>

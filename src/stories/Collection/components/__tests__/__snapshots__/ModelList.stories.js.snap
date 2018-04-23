@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Model Detail should match snapshot 1`] = `
+<div>
+  <div>
+    0
+  </div>
+  <div>
+    Foo bar
+  </div>
+</div>
+`;
+
 exports[`Model List should match snapshot 1`] = `
 <ul
   class="MuiList-root MuiList-padding"

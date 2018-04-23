@@ -1,7 +1,7 @@
 // @flow
 
 import {List, ListItemText, MenuItem} from 'material-ui'
-import {h} from '../../../hyper-script'
+import {div, h} from '../../../hyper-script'
 
 export type Model = {
   id: string | number,
@@ -24,4 +24,10 @@ const ModelList = ({models}: ModelListProps) => {
   return h(List, models.map(model => h(ModelListItem, {key: model.id, model})))
 }
 
-export {ModelList, ModelListItem}
+export type ModelDetailProps = ModelListItemProps
+
+const ModelDetail = ({model}: ModelDetailProps) => {
+  return div([div(model.id), div(model.name)])
+}
+
+export {ModelList, ModelListItem, ModelDetail}
