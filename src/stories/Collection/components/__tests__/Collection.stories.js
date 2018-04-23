@@ -8,18 +8,18 @@ import {storiesOf} from '../../../../facade'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {div, h} from '../../../../hyper-script'
-import type {Collection, CollectionOrModel} from '../../types'
-import type {
-  ModelDetailProps,
-  ModelListItemProps,
-  ModelListProps,
-} from '../ModelList'
+// import type {Collection, CollectionOrModel} from '../../types'
+// import type {
+//   ModelDetailProps,
+//   ModelListItemProps,
+//   ModelListProps,
+// } from '../ModelList'
 import {ModelDetail, ModelList, ModelListItem} from '../ModelList'
 
-const createFakeCollections = (): Array<CollectionOrModel> => {
+const createFakeCollections = () => {
   const chance = Chance(11)
   return R.times(
-    (idx: number): Collection => ({
+    (idx: number) => ({
       id: idx,
       name: chance.country({full: true}),
       items: [],
@@ -29,6 +29,7 @@ const createFakeCollections = (): Array<CollectionOrModel> => {
 }
 
 const models = createFakeCollections()
+const model = {id: 0, name: 'Foo bar', items: []}
 
 storiesOf('Collection', module)
   .addDecorator(story =>
@@ -46,16 +47,13 @@ storiesOf('Collection', module)
     ),
   )
   .add('ListItem', () => {
-    const props: ModelListItemProps = {model: {id: 0, name: 'Foo bar'}}
-    return h(ModelListItem, props)
+    return h(ModelListItem, {model})
   })
   .add('List', () => {
-    const props: ModelListProps = {models}
-    return h(ModelList, props)
+    return h(ModelList, {models})
   })
   .add('Detail', () => {
-    const props: ModelDetailProps = {model: {id: 0, name: 'Foo bar'}}
-    return h(ModelDetail, props)
+    return h(ModelDetail, {model})
   })
 
 // specs(() =>

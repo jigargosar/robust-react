@@ -24,7 +24,7 @@ const ModelList = ({models}: ModelListProps) => {
 type ModelDetailProps = ModelListItemProps
 
 const ModelDetail = ({model}: ModelDetailProps) => {
-  return div([div(model.id), div(model.name)])
+  return div([div(model.id), div(displayName(model))])
 }
 
 export type {ModelListItemProps, ModelDetailProps, ModelListProps}

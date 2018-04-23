@@ -6,7 +6,7 @@ exports[`Collection Detail should match snapshot 1`] = `
     0
   </div>
   <div>
-    Foo bar
+    Foo bar (0)
   </div>
 </div>
 `;
@@ -84,7 +84,7 @@ exports[`Collection ListItem should match snapshot 1`] = `
     <h3
       class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
     >
-      Foo bar
+      Foo bar (0)
     </h3>
   </div>
   <span
