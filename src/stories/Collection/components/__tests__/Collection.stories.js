@@ -24,7 +24,7 @@ const createFakeModels = (): Array<Model> => {
 
 const models: Array<Model> = createFakeModels()
 
-storiesOf('Model', module)
+storiesOf('Collection', module)
   .addDecorator(story =>
     div(
       {

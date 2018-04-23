@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collection Detail should match snapshot 1`] = `
+<div>
+  <div>
+    0
+  </div>
+  <div>
+    Foo bar
+  </div>
+</div>
+`;
+
+exports[`Collection List should match snapshot 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Ceuta & Melilla
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Bahamas
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Collection ListItem should match snapshot 1`] = `
+<li
+  class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+  role="menuitem"
+  tabindex="-1"
+>
+  <div
+    class="MuiListItemText-root"
+  >
+    <h3
+      class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+    >
+      Foo bar
+    </h3>
+  </div>
+  <span
+    class="MuiTouchRipple-root"
+  />
+</li>
+`;
