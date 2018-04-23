@@ -4,7 +4,7 @@ type Model = {
 }
 
 type Collection = {
-  items: Model,
+  items: Array<Model>,
 } & Model
 
 export {Model, Collection}

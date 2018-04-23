@@ -39,13 +39,13 @@ storiesOf('Model', module)
       [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
     ),
   )
-  .add('List', () => {
-    const props: ModelListProps = {models}
-    return h(ModelList, props)
-  })
   .add('ListItem', () => {
     const props: ModelListItemProps = {model: {id: 0, name: 'Foo bar'}}
     return h(ModelListItem, props)
+  })
+  .add('List', () => {
+    const props: ModelListProps = {models}
+    return h(ModelList, props)
   })
   .add('Detail', () => {
     const props: ModelDetailProps = {model: {id: 0, name: 'Foo bar'}}

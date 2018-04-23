@@ -1,3 +1,5 @@
+// @flow
+
 import Chance from 'chance'
 // import 'dom-testing-library/extend-expect'
 import {Paper} from 'material-ui'
@@ -6,7 +8,7 @@ import {storiesOf} from '../../../../facade'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {div, h} from '../../../../hyper-script'
-import type {Model} from '../../types'
+import type {Collection, Model} from '../../types'
 import type {
   ModelDetailProps,
   ModelListItemProps,
@@ -14,10 +16,14 @@ import type {
 } from '../ModelList'
 import {ModelDetail, ModelList, ModelListItem} from '../ModelList'
 
-const createFakeModels = (): Array<Model> => {
+const createFakeModels = (): Array<Collection> => {
   const chance = Chance(11)
   return R.times(
-    (idx: number): Model => ({id: idx, name: chance.country({full: true})}),
+    (idx: number): Model => ({
+      id: idx,
+      name: chance.country({full: true}),
+      items: [],
+    }),
     3,
   )
 }
@@ -39,13 +45,13 @@ storiesOf('Collection', module)
       [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
     ),
   )
-  .add('List', () => {
-    const props: ModelListProps = {models}
-    return h(ModelList, props)
-  })
   .add('ListItem', () => {
     const props: ModelListItemProps = {model: {id: 0, name: 'Foo bar'}}
     return h(ModelListItem, props)
+  })
+  .add('List', () => {
+    const props: ModelListProps = {models}
+    return h(ModelList, props)
   })
   .add('Detail', () => {
     const props: ModelDetailProps = {model: {id: 0, name: 'Foo bar'}}
