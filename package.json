@@ -46,6 +46,7 @@
     "metalsmith": "2.3.0",
     "mocha": "5.1.1",
     "nightmare": "3.0.1",
+    "nodemon": "1.17.3",
     "power-assert": "1.5.0",
     "prop-types": "15.6.1",
     "react-jss": "8.4.0",
@@ -80,7 +81,7 @@
     "build:react": "react-scripts build",
     "test:react-scripts": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p $PORT$ -s public",
     "build-storybook": "build-storybook -s public"
   },
   "repository": {
