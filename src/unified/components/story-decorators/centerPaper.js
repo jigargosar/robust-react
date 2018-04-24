@@ -1,6 +1,6 @@
 import {Paper} from 'material-ui'
-import {storiesOf} from '../../facade'
-import {div, h} from '../../hyper-script'
+import {storiesOf} from '../../../facade'
+import {div, h} from '../../../hyper-script'
 
 const centerPaper = story =>
   div(

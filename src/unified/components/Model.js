@@ -1,6 +1,6 @@
 import {ListItemText, MenuItem} from 'material-ui'
-import {storiesOf} from '../facade'
-import {h} from '../hyper-script'
+import {storiesOf} from '../../facade'
+import {h} from '../../hyper-script'
 import {centerPaper} from './story-decorators/centerPaper'
 // import 'dom-testing-library/extend-expect'
 // import {render} from 'react-testing-library'
