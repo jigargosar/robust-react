@@ -21,7 +21,7 @@ const createFakes = () => {
 
 const story = storiesOf('Unified | Page', module).addDecorator(centerPaper)
 
-const Collection = ({models, onClick}) =>
+const Collection = ({models = createFakes(), onClick}) =>
   h(ModelList, {
     models,
     primary: c => `${c.name} (${c.itemCount})`,
@@ -30,7 +30,6 @@ const Collection = ({models, onClick}) =>
 
 story.add('Collection', () =>
   h(Collection, {
-    models: createFakes(),
     onClick: collection => e =>
       action('collectionClicked')(collection.name, e.type),
   }),
@@ -43,12 +42,7 @@ describe('Collection', () => {
       expect(collection.name).toEqual('Kenya')
       expect(event.type).toEqual('click')
     })
-    const {getByText} = render(
-      h(Collection, {
-        models: createFakes(),
-        onClick,
-      }),
-    )
+    const {getByText} = render(h(Collection, {onClick}))
 
     const collectionNode = getByText('Kenya (4)')
     expect(collectionNode).toBeDefined()
