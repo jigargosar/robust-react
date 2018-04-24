@@ -1,6 +1,6 @@
 import {Chance} from 'chance'
 import {List, ListItemText, MenuItem} from 'material-ui'
-import {head, map, times} from 'ramda'
+import {head, map, propOr, times} from 'ramda'
 import {storiesOf} from '../../facade'
 import {h} from '../../hyper-script'
 import {centerPaper} from './story-decorators/centerPaper'
@@ -15,13 +15,15 @@ const createFakes = () => {
   return times(idx => ({id: idx, name: chance.country({full: true})}), 3)
 }
 
-const ModelListItem = ({model, primary}) =>
-  h(MenuItem, [h(ListItemText, primary ? primary(model) : model.name)])
+const ModelListItem = ({
+  model,
+  primary = propOr('<primary or name not found>', 'name'),
+}) => h(MenuItem, [h(ListItemText, primary(model))])
 
 story.add('ListItem', () => h(ModelListItem, {model: head(createFakes())}))
 
-const ModelList = ({models, primary}) =>
-  h(List, map(model => h(ModelListItem, {model, primary}), models))
+const ModelList = ({models, ...other}) =>
+  h(List, map(model => h(ModelListItem, {model, ...other}), models))
 
 story.add('List', () => h(ModelList, {models: createFakes()}))
 

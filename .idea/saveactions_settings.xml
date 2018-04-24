@@ -3,9 +3,9 @@
   <component name="SaveActionSettings">
     <option name="actions">
       <set>
+        <option value="activate" />
         <option value="noActionIfCompileErrors" />
         <option value="organizeImports" />
-        <option value="reformat" />
       </set>
     </option>
     <option name="configurationPath" value="" />
