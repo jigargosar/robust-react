@@ -29,5 +29,5 @@ const createFakes = () => {
 storiesOf('Unified | Page', module)
   .addDecorator(centerPaper)
   .add('Collection', () => {
-    return h(ModelList, {models: createFakes()})
+    return h(ModelList, {models: createFakes(), primary: c => c.name})
   })

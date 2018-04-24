@@ -15,12 +15,13 @@ const createFakes = () => {
   return times(idx => ({id: idx, name: chance.country({full: true})}), 3)
 }
 
-const ModelListItem = ({model}) => h(MenuItem, [h(ListItemText, model.name)])
+const ModelListItem = ({model, primary}) =>
+  h(MenuItem, [h(ListItemText, primary ? primary(model) : model.name)])
 
 story.add('ListItem', () => h(ModelListItem, {model: head(createFakes())}))
 
-const ModelList = ({models}) =>
-  h(List, map(model => h(ModelListItem, {model}), models))
+const ModelList = ({models, primary}) =>
+  h(List, map(model => h(ModelListItem, {model, primary}), models))
 
 story.add('List', () => h(ModelList, {models: createFakes()}))
 
