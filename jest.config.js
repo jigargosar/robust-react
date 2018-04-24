@@ -8,6 +8,50 @@ module.exports = mergeDeepRight(config, {
   notifyMode: 'change',
   coverageThreshold: null,
   testMatch: [...config.testMatch, '**/unified/**/*\\.js'],
+  // projects: [
+  //   {
+  //     displayName: 'test',
+  //   },
+  //   {
+  //     displayName: 'lint',
+  //     runner: 'jest-runner-eslint',
+  //     testMatch: ['<rootDir>/**/*.js'],
+  //   },
+  //   {
+  //     displayName: 'flowtype',
+  //     runner: 'jest-runner-flowtype',
+  //   },
+  //   {
+  //     displayName: 'prettier',
+  //     runner: 'jest-runner-prettier',
+  //     moduleFileExtensions: [
+  //       'js',
+  //       'jsx',
+  //       'json',
+  //       'ts',
+  //       'tsx',
+  //       'css',
+  //       'less',
+  //       'scss',
+  //       'graphql',
+  //       'md',
+  //       'markdown',
+  //     ],
+  //     testMatch: [
+  //       '**/*.js',
+  //       '**/*.jsx',
+  //       '**/*.json',
+  //       '**/*.ts',
+  //       '**/*.tsx',
+  //       '**/*.css',
+  //       '**/*.less',
+  //       '**/*.scss',
+  //       '**/*.graphql',
+  //       '**/*.md',
+  //       '**/*.markdown',
+  //     ],
+  //   },
+  // ],
 })
 
 // console.log(config.testMatch)

@@ -42,6 +42,9 @@
     "foreman": "2.0.0",
     "jest": "22.4.3",
     "jest-mock": "22.4.3",
+    "jest-runner-eslint": "0.4.0",
+    "jest-runner-flowtype": "0.0.3",
+    "jest-runner-prettier": "0.2.2",
     "jss-snapshot-serializer": "1.0.0",
     "kcd-scripts": "0.37.0",
     "metalsmith": "2.3.0",
@@ -68,6 +71,12 @@
       "no-duplicate-imports": "off",
       "import/prefer-default-export": "off",
       "import/no-duplicates": "error"
+    }
+  },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "fix": true,
+      "format": "codeframe"
     }
   },
   "scripts": {
