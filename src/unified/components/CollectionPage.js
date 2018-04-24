@@ -8,9 +8,22 @@ import {centerPaper} from './story-decorators/centerPaper'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 
+const chance = Chance(11)
+
+const createModel = collectionId => id => ({
+  id,
+  collectionId,
+  name: chance.city(),
+})
+
+const createCollection = id => ({
+  id,
+  name: chance.country({full: true}),
+  items: times(createModel(id), chance.integer({min: 0, max: 10})),
+})
+
 const createFakes = () => {
-  const chance = Chance(11)
-  return times(idx => ({id: idx, name: chance.country({full: true})}), 3)
+  return times(createCollection, 3)
 }
 
 storiesOf('Unified | Page', module)

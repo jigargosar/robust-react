@@ -97,7 +97,7 @@ exports[`Unified | Page Collection should match snapshot 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
-        Ceuta & Melilla
+        Guadeloupe
       </h3>
     </div>
     <span
@@ -115,7 +115,7 @@ exports[`Unified | Page Collection should match snapshot 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
-        Bahamas
+        Caribbean Netherlands
       </h3>
     </div>
     <span
@@ -133,7 +133,7 @@ exports[`Unified | Page Collection should match snapshot 1`] = `
       <h3
         class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
       >
-        American Samoa
+        Guatemala
       </h3>
     </div>
     <span
