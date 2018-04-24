@@ -1,10 +1,10 @@
-// import 'dom-testing-library/extend-expect'
 import {ListItemText, MenuItem} from 'material-ui'
-// import {render} from 'react-testing-library'
-// import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {storiesOf} from '../facade'
 import {h} from '../hyper-script'
 import {centerPaper} from './story-decorators/centerPaper'
+// import 'dom-testing-library/extend-expect'
+// import {render} from 'react-testing-library'
+// import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 
 const ModelListItem = ({model}) => {
   return h(MenuItem, [h(ListItemText, model.name)])
