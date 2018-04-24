@@ -11,7 +11,7 @@ import {centerPaper} from './story-decorators/centerPaper'
 const story = storiesOf('Unified | Model', module).addDecorator(centerPaper)
 
 const createFakes = () => {
-  const chance = Chance(11)
+  const chance = new Chance(11)
   return times(idx => ({id: idx, name: chance.country({full: true})}), 3)
 }
 

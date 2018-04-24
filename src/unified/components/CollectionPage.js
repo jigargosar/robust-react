@@ -8,7 +8,7 @@ import {centerPaper} from './story-decorators/centerPaper'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 
-const chance = Chance(11)
+const chance = new Chance(11)
 
 const createCollection = id => ({
   id,
@@ -20,13 +20,19 @@ const createFakes = () => {
   return times(createCollection, 3)
 }
 
-storiesOf('Unified | Page', module)
-  .addDecorator(centerPaper)
-  .add('Collection', () => {
-    return h(ModelList, {
-      models: createFakes(),
-      primary: c => `${c.name} (${c.itemCount})`,
-      onClick: collection => e =>
-        action('collectionClicked')(collection.name, e.type),
-    })
+const story = storiesOf('Unified | Page', module).addDecorator(centerPaper)
+
+const Collection = ({models, onClick}) =>
+  h(ModelList, {
+    models,
+    primary: c => `${c.name} (${c.itemCount})`,
+    onClick,
   })
+
+story.add('Collection', () =>
+  h(Collection, {
+    models: createFakes(),
+    onClick: collection => e =>
+      action('collectionClicked')(collection.name, e.type),
+  }),
+)
