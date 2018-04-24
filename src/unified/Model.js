@@ -1,9 +1,10 @@
 // import 'dom-testing-library/extend-expect'
-import {ListItemText, MenuItem, Paper} from 'material-ui'
+import {ListItemText, MenuItem} from 'material-ui'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 import {storiesOf} from '../facade'
-import {div, h} from '../hyper-script'
+import {h} from '../hyper-script'
+import {centerPaper} from './story-decorators/centerPaper'
 
 const ModelListItem = ({model}) => {
   return h(MenuItem, [h(ListItemText, model.name)])
@@ -18,20 +19,7 @@ const ModelListItem = ({model}) => {
 // }
 
 storiesOf('Unified | Model', module)
-  .addDecorator(story =>
-    div(
-      {
-        style: {
-          padding: '16px 0',
-          backgroundColor: '#ddd',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        },
-      },
-      [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
-    ),
-  )
+  .addDecorator(centerPaper)
   .add('ListItem', () => {
     return h(ModelListItem, {model: {id: 0, name: 'Foo bar'}})
   })
