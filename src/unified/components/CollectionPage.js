@@ -19,7 +19,7 @@ const createModel = collectionId => id => ({
 const createCollection = id => ({
   id,
   name: chance.country({full: true}),
-  items: times(createModel(id), chance.integer({min: 0, max: 10})),
+  items: times(createModel(id), chance.integer({min: 3, max: 10})),
 })
 
 const createFakes = () => {
@@ -29,5 +29,8 @@ const createFakes = () => {
 storiesOf('Unified | Page', module)
   .addDecorator(centerPaper)
   .add('Collection', () => {
-    return h(ModelList, {models: createFakes(), primary: c => c.name})
+    return h(ModelList, {
+      models: createFakes(),
+      primary: c => `${c.name} (${c.items.length})`,
+    })
   })
