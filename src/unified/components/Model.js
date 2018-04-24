@@ -1,4 +1,4 @@
-import {Chance} from 'chance'
+import Chance from 'chance'
 import {List, ListItemText, MenuItem} from 'material-ui'
 import {head, map, propOr, times} from 'ramda'
 import {storiesOf} from '../../facade'
@@ -18,7 +18,8 @@ const createFakes = () => {
 const ModelListItem = ({
   model,
   primary = propOr('<primary or name not found>', 'name'),
-}) => h(MenuItem, [h(ListItemText, primary(model))])
+  onClick = () => () => {},
+}) => h(MenuItem, {onClick: onClick(model)}, [h(ListItemText, primary(model))])
 
 story.add('ListItem', () => h(ModelListItem, {model: head(createFakes())}))
 

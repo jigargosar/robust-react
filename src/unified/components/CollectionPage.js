@@ -1,6 +1,6 @@
-import {Chance} from 'chance'
+import Chance from 'chance'
 import {times} from 'ramda'
-import {storiesOf} from '../../facade'
+import {action, storiesOf} from '../../facade'
 import {h} from '../../hyper-script'
 import {ModelList} from './Model'
 import {centerPaper} from './story-decorators/centerPaper'
@@ -10,16 +10,10 @@ import {centerPaper} from './story-decorators/centerPaper'
 
 const chance = Chance(11)
 
-const createModel = collectionId => id => ({
-  id,
-  collectionId,
-  name: chance.city(),
-})
-
 const createCollection = id => ({
   id,
   name: chance.country({full: true}),
-  items: times(createModel(id), chance.integer({min: 3, max: 10})),
+  itemCount: chance.integer({min: 3, max: 10}),
 })
 
 const createFakes = () => {
@@ -31,6 +25,7 @@ storiesOf('Unified | Page', module)
   .add('Collection', () => {
     return h(ModelList, {
       models: createFakes(),
-      primary: c => `${c.name} (${c.items.length})`,
+      primary: c => `${c.name} (${c.itemCount})`,
+      onClick: collection => () => action('collectionClicked')(collection),
     })
   })
