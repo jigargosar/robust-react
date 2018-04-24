@@ -40,3 +40,4 @@ x.extend({
 })
 
 export const expect = x
+export {default as jest} from 'jest-mock'

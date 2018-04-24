@@ -41,6 +41,7 @@
     "flow-runtime": "0.17.0",
     "foreman": "2.0.0",
     "jest": "22.4.3",
+    "jest-mock": "22.4.3",
     "jss-snapshot-serializer": "1.0.0",
     "kcd-scripts": "0.37.0",
     "metalsmith": "2.3.0",

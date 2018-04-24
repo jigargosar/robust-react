@@ -1,12 +1,12 @@
 import Chance from 'chance'
 import {times} from 'ramda'
-// import 'dom-testing-library/extend-expect'
 import {render, Simulate} from 'react-testing-library'
-import {action, describe, expect, it, storiesOf} from '../../facade'
+import {action, describe, expect, it, jest, storiesOf} from '../../facade'
 import {h} from '../../hyper-script'
 import {ModelList} from './Model'
 import {centerPaper} from './story-decorators/centerPaper'
-// import {describe, expect, it, specs, storiesOf} from '../../../../facade'
+
+// import 'dom-testing-library/extend-expect'
 
 const createCollection = chance => id => ({
   id,

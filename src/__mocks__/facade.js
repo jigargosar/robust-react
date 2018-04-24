@@ -3,6 +3,7 @@ import noCrashSnapshot from '../components/__tests__/helpers/noCrashSnapshot'
 
 const currentEnv = jasmine.currentEnv_
 
+export {jest}
 export const describe = currentEnv.describe
 export const it = currentEnv.it
 export const beforeEach = currentEnv.beforeEach
