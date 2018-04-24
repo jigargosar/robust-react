@@ -26,6 +26,7 @@ storiesOf('Unified | Page', module)
     return h(ModelList, {
       models: createFakes(),
       primary: c => `${c.name} (${c.itemCount})`,
-      onClick: collection => () => action('collectionClicked')(collection),
+      onClick: collection => e =>
+        action('collectionClicked')(collection.name, e.type),
     })
   })
