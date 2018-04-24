@@ -14,5 +14,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/jest" level="application" />
     <orderEntry type="library" name="@types/sanctuary" level="application" />
+    <orderEntry type="library" name="@types/expect" level="application" />
   </component>
 </module>
