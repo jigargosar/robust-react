@@ -1,6 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Unified | Page Collection should match snapshot 1`] = `
+exports[`Unified | Model List should match snapshot 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Ceuta & Melilla
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Bahamas
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Unified | Model ListItem should match snapshot 1`] = `
 <li
   class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
   role="menuitem"
@@ -12,13 +73,74 @@ exports[`Unified | Page Collection should match snapshot 1`] = `
     <h3
       class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
     >
-      Foo bar
+      Ceuta & Melilla
     </h3>
   </div>
   <span
     class="MuiTouchRipple-root"
   />
 </li>
+`;
+
+exports[`Unified | Page Collection should match snapshot 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Ceuta & Melilla
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Bahamas
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+</ul>
 `;
 
 exports[`Unified | StoryDecorators centerPaper should match snapshot 1`] = `

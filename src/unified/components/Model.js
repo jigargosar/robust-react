@@ -12,10 +12,7 @@ const story = storiesOf('Unified | Model', module).addDecorator(centerPaper)
 
 const createFakes = () => {
   const chance = Chance(11)
-  return times(
-    (idx: number) => ({id: idx, name: chance.country({full: true})}),
-    3,
-  )
+  return times(idx => ({id: idx, name: chance.country({full: true})}), 3)
 }
 
 const ModelListItem = ({model}) => h(MenuItem, [h(ListItemText, model.name)])
@@ -26,3 +23,5 @@ const ModelList = ({models}) =>
   h(List, map(model => h(ModelListItem, {model}), models))
 
 story.add('List', () => h(ModelList, {models: createFakes()}))
+
+export {ModelList}
