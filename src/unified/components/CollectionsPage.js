@@ -1,7 +1,15 @@
 import Chance from 'chance'
 import {times} from 'ramda'
 import {render, Simulate} from 'react-testing-library'
-import {action, describe, expect, it, jest, storiesOf} from '../../facade'
+import {
+  action,
+  describe,
+  expect,
+  it,
+  jest,
+  linkTo,
+  storiesOf,
+} from '../../facade'
 import {h} from '../../hyper-script'
 import {ModelList} from './Model'
 import {centerPaper} from './story-decorators/centerPaper'
@@ -29,8 +37,9 @@ const CollectionsPage = ({models = createFakeCollections(), onClick}) =>
 
 story.add('Collections', () =>
   h(CollectionsPage, {
-    onClick: collection => e =>
-      action('collectionClicked')(collection.name, e.type),
+    onClick: () => () =>
+      // action('collectionClicked')(collection.name, e.type),
+      linkTo('Unified | Pages', 'Collection')(),
   }),
 )
 
