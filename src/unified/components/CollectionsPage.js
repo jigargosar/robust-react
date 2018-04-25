@@ -19,7 +19,7 @@ const createFakes = () => {
   return times(createCollection(chance), 3)
 }
 
-const story = storiesOf('Unified | Page', module).addDecorator(centerPaper)
+const story = storiesOf('Unified | Pages', module).addDecorator(centerPaper)
 
 const Collection = ({models = createFakes(), onClick}) =>
   h(ModelList, {
@@ -28,14 +28,14 @@ const Collection = ({models = createFakes(), onClick}) =>
     onClick,
   })
 
-story.add('Collection', () =>
+story.add('Collections', () =>
   h(Collection, {
     onClick: collection => e =>
       action('collectionClicked')(collection.name, e.type),
   }),
 )
 
-describe('Collection', () => {
+describe('Collections', () => {
   it('should call onClick with model and event', () => {
     expect.assertions(4)
     const onClick = jest.fn(collection => event => {

@@ -82,7 +82,7 @@ exports[`Unified | Model ListItem should match snapshot 1`] = `
 </li>
 `;
 
-exports[`Unified | Page Collection should match snapshot 1`] = `
+exports[`Unified | Pages Collections should match snapshot 1`] = `
 <ul
   class="MuiList-root MuiList-padding"
 >
