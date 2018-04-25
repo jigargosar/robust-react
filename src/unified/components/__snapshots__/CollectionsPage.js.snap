@@ -82,6 +82,67 @@ exports[`Unified | Model ListItem should match snapshot 1`] = `
 </li>
 `;
 
+exports[`Unified | Pages Collection should match snapshot 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Canasmal
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Buewew
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Wamaviwo
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+</ul>
+`;
+
 exports[`Unified | Pages Collections should match snapshot 1`] = `
 <ul
   class="MuiList-root MuiList-padding"

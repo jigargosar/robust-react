@@ -8,20 +8,19 @@ import {centerPaper} from './story-decorators/centerPaper'
 
 // import 'dom-testing-library/extend-expect'
 
-const createCollection = chance => id => ({
-  id,
-  name: chance.country({full: true}),
-  itemCount: chance.integer({min: 3, max: 10}),
-})
-
-const createFakes = () => {
-  const chance = new Chance(11)
-  return times(createCollection(chance), 3)
-}
-
 const story = storiesOf('Unified | Pages', module).addDecorator(centerPaper)
 
-const CollectionsPage = ({models = createFakes(), onClick}) =>
+const createFakeCollections = () => {
+  const chance = new Chance(11)
+  const createCollection = id => ({
+    id,
+    name: chance.country({full: true}),
+    itemCount: chance.integer({min: 3, max: 10}),
+  })
+  return times(createCollection, 3)
+}
+
+const CollectionsPage = ({models = createFakeCollections(), onClick}) =>
   h(ModelList, {
     models,
     primary: c => `${c.name} (${c.itemCount})`,
@@ -50,3 +49,24 @@ describe('Collections', () => {
     expect(onClick).toHaveBeenCalled()
   })
 })
+
+const createFakeCollection = () => {
+  const chance = new Chance(11)
+  const createFakeItem = id => ({
+    id,
+    name: chance.city({full: true}),
+  })
+  return {id: 0, name: 'Contacts', items: times(createFakeItem, 3)}
+}
+
+const CollectionPage = ({models = createFakeCollection(), onClick}) =>
+  h(ModelList, {
+    models: models.items,
+    onClick,
+  })
+
+story.add('Collection', () =>
+  h(CollectionPage, {
+    onClick: item => e => action('collectionItem')(item.name, e.type),
+  }),
+)
