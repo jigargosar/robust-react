@@ -1,4 +1,6 @@
 import 'dom-testing-library/extend-expect'
+
+import {render, Simulate} from 'react-testing-library'
 import {h} from '../../hyper-script'
 import {getRendered} from '../../test-helpers'
 import {createFakeModels} from '../__fixtures__/Model.fixture'
@@ -14,7 +16,21 @@ describe('Components', () => {
 
     it('should call onClick handler with model and event', () => {
       const models = createFakeModels()
-      expect(getRendered(h(ModelList, {models}))).toMatchSnapshot()
+
+      const modelToClick = models[0]
+
+      const {getByText} = render(
+        h(ModelList, {
+          onClick: m => e => {
+            expect(m).toEqual(modelToClick)
+            expect(e.type).toEqual('click')
+          },
+          models,
+        }),
+      )
+
+      Simulate.click(getByText(modelToClick.name))
+      expect.assertions(2)
     })
   })
 })
