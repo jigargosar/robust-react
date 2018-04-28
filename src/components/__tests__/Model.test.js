@@ -16,16 +16,15 @@ describe('Components', () => {
 
     it('should call onClick handler with model and event', () => {
       const models = createFakeModels()
-
       const modelToClick = models[0]
 
       const {getByText} = render(
         h(ModelList, {
+          models,
           onClick: m => e => {
-            expect(m).toEqual(modelToClick)
+            expect(m).toBe(modelToClick)
             expect(e.type).toEqual('click')
           },
-          models,
         }),
       )
 
