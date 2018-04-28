@@ -11,7 +11,7 @@ export const CollectionList = withStyles({
       margin: '0 2px',
     },
   },
-})(({collections, classes}) =>
+})(({collections, onClick, classes}) =>
   h(ModelList, {
     models: collections,
     primaryRenderer: collection =>
@@ -19,5 +19,6 @@ export const CollectionList = withStyles({
         h(Typography, {variant: 'subheading'}, collection.name),
         h(Typography, {variant: 'caption'}, `(${collection.items.length})`),
       ]),
+    onClick,
   }),
 )
