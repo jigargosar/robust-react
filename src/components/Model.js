@@ -5,10 +5,6 @@ import {head, map, propOr, times} from 'ramda'
 import {centerPaper} from '../centerPaper'
 import {h} from '../hyper-script'
 
-// import 'dom-testing-library/extend-expect'
-// import {render} from 'react-testing-library'
-// import {describe, expect, it, specs, storiesOf} from '../../../../facade'
-
 const story = storiesOf('Unified | Model', module).addDecorator(centerPaper)
 
 const createFakes = () => {

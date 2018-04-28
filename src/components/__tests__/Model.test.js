@@ -1,11 +1,10 @@
 import Chance from 'chance'
+
+import 'dom-testing-library/extend-expect'
 import {times} from 'ramda'
+import {render} from 'react-testing-library'
 import {h} from '../../hyper-script'
 import {ModelList} from '../Model'
-
-// import 'dom-testing-library/extend-expect'
-// import {render} from 'react-testing-library'
-// import {describe, expect, it, specs, storiesOf} from '../../../../facade'
 
 const createFakes = () => {
   const chance = new Chance(11)
@@ -21,7 +20,9 @@ describe('Components', () => {
 
   describe('ModelList', () => {
     it('smoke', () => {
-      h(ModelList, {models: createFakes()})
+      expect(
+        render(h(ModelList, {models: createFakes()})).firstChild,
+      ).toMatchSnapshot()
     })
   })
 })
