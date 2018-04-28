@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components ModelList should render without crashing 1`] = `
+exports[`Components ModelList should render empty list 1`] = `
+<ul
+  class="MuiList-root-1 MuiList-padding-2"
+/>
+`;
+
+exports[`Components ModelList should render multiple items without crashing 1`] = `
 <ul
   class="MuiList-root-1 MuiList-padding-2"
 >
@@ -59,4 +65,12 @@ exports[`Components ModelList should render without crashing 1`] = `
     />
   </li>
 </ul>
+`;
+
+exports[`Components ModelList should render single items without crashing 1`] = `
+<ul
+  class="MuiList-root-1 MuiList-padding-2"
+  id="[object Object]"
+  name="[object Object]"
+/>
 `;

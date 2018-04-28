@@ -1,4 +1,5 @@
 import 'dom-testing-library/extend-expect'
+import {head} from 'ramda'
 
 import {render, Simulate} from 'react-testing-library'
 import {h} from '../../hyper-script'
@@ -8,10 +9,20 @@ import {ModelList} from '../Model'
 
 describe('Components', () => {
   describe('ModelList', () => {
-    it('should render without crashing', () => {
+    it('should render multiple items without crashing', () => {
       expect(
         getRendered(h(ModelList, {models: createFakeModels()})),
       ).toMatchSnapshot()
+    })
+
+    it('should render single items without crashing', () => {
+      expect(
+        getRendered(h(ModelList, {models: head(createFakeModels())})),
+      ).toMatchSnapshot()
+    })
+
+    it('should render empty list', () => {
+      expect(getRendered(h(ModelList, {models: []}))).toMatchSnapshot()
     })
 
     it('should call onClick handler with model and event', () => {
