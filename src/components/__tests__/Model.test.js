@@ -1,9 +1,8 @@
 import Chance from 'chance'
-
 import 'dom-testing-library/extend-expect'
 import {times} from 'ramda'
-import {render} from 'react-testing-library'
 import {h} from '../../hyper-script'
+import {getRendered} from '../../test-helpers'
 import {ModelList} from '../Model'
 
 const createFakes = () => {
@@ -12,16 +11,10 @@ const createFakes = () => {
 }
 
 describe('Components', () => {
-  // describe("ModelListItem", ()=>{
-  //   it("smoke",()=>{
-  //     h(ModelListItem, {model: head(createFakes())})
-  //   })
-  // })
-
   describe('ModelList', () => {
-    it('smoke', () => {
+    it('it should render without crashing', () => {
       expect(
-        render(h(ModelList, {models: createFakes()})).firstChild,
+        getRendered(h(ModelList, {models: createFakes()})),
       ).toMatchSnapshot()
     })
   })
