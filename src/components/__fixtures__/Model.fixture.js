@@ -1,5 +1,4 @@
 import Chance from 'chance'
-import 'dom-testing-library/extend-expect'
 import {times} from 'ramda'
 
 export const createFakeModels = () => {

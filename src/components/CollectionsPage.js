@@ -25,7 +25,7 @@ const createFakeCollections = () => {
 const CollectionsPage = ({models = createFakeCollections(), onClick}) =>
   h(ModelList, {
     models,
-    primary: c => `${c.name} (${c.itemCount})`,
+    primaryRenderer: c => `${c.name} (${c.itemCount})`,
     onClick,
   })
 

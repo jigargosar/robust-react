@@ -86,7 +86,7 @@ setOptions({
   enableShortcuts: true, // true by default
 })
 
-const req = require.context('../src', true, /\.stories\.js$/)
+const req = require.context('../src', true, /__stories__/)
 // const req2 = require.context('../src/unified', true, /\.js$/)
 function loadStories() {
   // require('../src/stories')
