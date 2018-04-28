@@ -12,7 +12,11 @@ const centerPaper = story =>
         alignItems: 'center',
       },
     },
-    [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
+    [
+      div({style: {flex: '1 1 auto', minWidth: 0, maxWidth: 300}}, [
+        h(Paper, [story()]),
+      ]),
+    ],
   )
 
 export {centerPaper}
