@@ -11,6 +11,6 @@ const story = storiesOf('Components | CollectionList', module).addDecorator(
 story.add('with item count', () =>
   h(CollectionList, {
     collections: createFakeCollections(),
-    onClick: c => e => linkTo('Components | Collection', 'tabular')(c, e),
+    onClick: () => linkTo('Components | Collection', 'with item list'),
   }),
 )
