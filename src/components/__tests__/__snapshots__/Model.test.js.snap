@@ -21,24 +21,6 @@ exports[`Components ModelList should render multiple items without crashing 1`] 
       <h3
         class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
       >
-        Ceuta & Melilla
-      </h3>
-    </div>
-    <span
-      class="MuiTouchRipple-root-50"
-    />
-  </li>
-  <li
-    class="MuiButtonBase-root-17 MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-14 MuiListItem-button-15 MuiMenuItem-root-5"
-    role="menuitem"
-    tabindex="-1"
-  >
-    <div
-      class="MuiListItemText-root-20"
-    >
-      <h3
-        class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
-      >
         Bahamas
       </h3>
     </div>
@@ -58,6 +40,24 @@ exports[`Components ModelList should render multiple items without crashing 1`] 
         class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
       >
         American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root-50"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root-17 MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-14 MuiListItem-button-15 MuiMenuItem-root-5"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root-20"
+    >
+      <h3
+        class="MuiTypography-root-26 MuiTypography-subheading-33 MuiListItemText-primary-23"
+      >
+        Oman
       </h3>
     </div>
     <span
