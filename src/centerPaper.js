@@ -1,4 +1,3 @@
-import {storiesOf} from '@storybook/react'
 import {Paper} from 'material-ui'
 import {div, h} from './hyper-script'
 
@@ -15,9 +14,5 @@ const centerPaper = story =>
     },
     [div({style: {flex: 1, maxWidth: 300}}, [h(Paper, [story()])])],
   )
-
-storiesOf('Unified | StoryDecorators', module).add('centerPaper', () => {
-  return centerPaper(() => div('Story'))
-})
 
 export {centerPaper}
