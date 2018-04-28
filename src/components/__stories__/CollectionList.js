@@ -8,9 +8,9 @@ const story = storiesOf('Components | CollectionList', module).addDecorator(
   centerPaper,
 )
 
-story.add('basic', () =>
+story.add('with item count', () =>
   h(CollectionList, {
     collections: createFakeCollections(),
-    onClick: c => e => linkTo('Components | Collection', 'basic')(c, e),
+    onClick: c => e => linkTo('Components | Collection', 'tabular')(c, e),
   }),
 )
