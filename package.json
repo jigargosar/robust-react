@@ -89,6 +89,7 @@
     "validate": "kcd-scripts validate",
     "setup": "npm install && npm run validate -s",
     "precommit": "kcd-scripts precommit",
+    "postcommit": "git reset --mixed",
     "flow": "flow",
     "build:react": "react-scripts build",
     "test:react-scripts": "react-scripts test --env=jsdom",
