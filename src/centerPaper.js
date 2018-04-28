@@ -1,6 +1,6 @@
+import {storiesOf} from '@storybook/react'
 import {Paper} from 'material-ui'
-import {storiesOf} from '../../../facade'
-import {div, h} from '../../../hyper-script'
+import {div, h} from './hyper-script'
 
 const centerPaper = story =>
   div(

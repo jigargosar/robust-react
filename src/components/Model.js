@@ -1,9 +1,10 @@
+import {storiesOf} from '@storybook/react'
 import Chance from 'chance'
 import {List, ListItemText, MenuItem} from 'material-ui'
 import {head, map, propOr, times} from 'ramda'
-import {storiesOf} from '../../facade'
-import {h} from '../../hyper-script'
-import {centerPaper} from './story-decorators/centerPaper'
+import {centerPaper} from '../centerPaper'
+import {h} from '../hyper-script'
+
 // import 'dom-testing-library/extend-expect'
 // import {render} from 'react-testing-library'
 // import {describe, expect, it, specs, storiesOf} from '../../../../facade'

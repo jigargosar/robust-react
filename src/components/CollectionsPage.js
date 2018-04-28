@@ -1,18 +1,12 @@
+import {action} from '@storybook/addon-actions'
+import {linkTo} from '@storybook/addon-links'
+import {storiesOf} from '@storybook/react'
 import Chance from 'chance'
 import {times} from 'ramda'
 import {render, Simulate} from 'react-testing-library'
-import {
-  action,
-  describe,
-  expect,
-  it,
-  jest,
-  linkTo,
-  storiesOf,
-} from '../../facade'
-import {h} from '../../hyper-script'
+import {centerPaper} from '../centerPaper'
+import {h} from '../hyper-script'
 import {ModelList} from './Model'
-import {centerPaper} from './story-decorators/centerPaper'
 
 // import 'dom-testing-library/extend-expect'
 

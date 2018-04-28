@@ -87,10 +87,10 @@ setOptions({
 })
 
 const req = require.context('../src', true, /\.stories\.js$/)
-const req2 = require.context('../src/unified', true, /\.js$/)
+// const req2 = require.context('../src/unified', true, /\.js$/)
 function loadStories() {
   // require('../src/stories')
-  req2.keys().forEach(req2)
+  // req2.keys().forEach(req2)
   req.keys().forEach(req)
 }
 

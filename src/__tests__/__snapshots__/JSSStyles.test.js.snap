@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render with styles: foo 1`] = `
+<div
+  class="Component-root-1"
+>
+  OK
+</div>
+`;
