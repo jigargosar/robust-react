@@ -8,7 +8,7 @@ const ModelListItem = ({
   onClick = () => () => {},
 }) =>
   h(MenuItem, {onClick: onClick(model)}, [
-    h(ListItemText, primaryRenderer(model)),
+    h(ListItemText, {primary: primaryRenderer(model)}),
   ])
 
 const ModelList = ({models, ...other}) =>
