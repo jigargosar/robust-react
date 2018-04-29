@@ -4,20 +4,18 @@ import {IdGenerator} from './Id'
 
 const idGen = IdGenerator('Collection', 1)
 
-const FT_STRING = 'string'
-const FT_BOOL = 'boolean'
+export const FT_STRING = 'string'
+export const FT_BOOL = 'boolean'
 
 const FieldTypes = [FT_STRING, FT_BOOL]
 
-const Field = curry((typeId, {name, initialValue}) => {
+export const Field = curry(({id, typeId, name, initialValue}) => {
+  assert(!isNil(id))
   assert(!isNil(name))
   assert(!isNil(initialValue))
   assert(contains(typeId)(FieldTypes))
-  return {typeId, name, initialValue}
+  return {id, typeId, name, initialValue}
 })
-
-export const StringField = Field(FT_STRING)
-export const BooleanField = Field(FT_BOOL)
 
 export const Collection = ({id, name, fields = [], items} = {}) => {
   const finalId = when(isNil, idGen.nextId)(id)
