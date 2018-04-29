@@ -1,3 +1,16 @@
-import {render} from 'react-testing-library'
+import {create as createJSS} from 'jss'
+import {createGenerateClassName, jssPreset} from 'material-ui/styles'
 
-export const getRendered = component => render(component).container.firstChild
+import JssProvider from 'react-jss/lib/JssProvider'
+import {render} from 'react-testing-library'
+import {h} from './hyper-script'
+
+const generateClassName = createGenerateClassName({
+  dangerouslyUseGlobalCSS: true,
+})
+
+const jss = createJSS(jssPreset())
+
+export const getRendered = component =>
+  render(h(JssProvider, {jss, generateClassName}, [component])).container
+    .firstChild

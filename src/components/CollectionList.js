@@ -1,6 +1,6 @@
 import {Typography, withStyles} from 'material-ui'
 import {div, h} from '../hyper-script'
-import {ModelList} from './Model'
+import {ModelList} from './ModelList'
 
 export const CollectionList = withStyles({
   primary: {

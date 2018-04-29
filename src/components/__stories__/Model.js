@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react'
 import {centerPaper} from '../../centerPaper'
 import {h} from '../../hyper-script'
 import {createFakeModels} from '../__fixtures__/Model.fixture'
-import {ModelList} from '../Model'
+import {ModelList} from '../ModelList'
 
 const story = storiesOf('Components | ModelList', module).addDecorator(
   centerPaper,

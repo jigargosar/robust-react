@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components ModelList should render empty list 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+/>
+`;
+
+exports[`Components ModelList should render multiple items without crashing 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Bahamas
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        American Samoa
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+  <li
+    class="MuiButtonBase-root MuiListItem-root MuiListItem-default MuiListItem-gutters MuiListItem-button MuiMenuItem-root"
+    role="menuitem"
+    tabindex="-1"
+  >
+    <div
+      class="MuiListItemText-root"
+    >
+      <h3
+        class="MuiTypography-root MuiTypography-subheading MuiListItemText-primary"
+      >
+        Oman
+      </h3>
+    </div>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </li>
+</ul>
+`;
+
+exports[`Components ModelList should render single items without crashing 1`] = `
+<ul
+  class="MuiList-root MuiList-padding"
+  id="[object Object]"
+  name="[object Object]"
+/>
+`;

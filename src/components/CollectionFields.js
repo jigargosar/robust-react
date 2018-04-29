@@ -1,6 +1,6 @@
 import {Table, TableBody, TableCell, TableRow} from 'material-ui'
 import {h} from '../hyper-script'
-import {ModelList} from './Model'
+import {ModelList} from './ModelList'
 
 export const CollectionFields = ({collection}) =>
   h(ModelList, {

@@ -5,7 +5,7 @@ import {render, Simulate} from 'react-testing-library'
 import {h} from '../../hyper-script'
 import {getRendered} from '../../test-helpers'
 import {createFakeModels} from '../__fixtures__/Model.fixture'
-import {ModelList} from '../Model'
+import {ModelList} from '../ModelList'
 
 describe('Components', () => {
   describe('ModelList', () => {
