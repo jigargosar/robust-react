@@ -17,7 +17,7 @@ describe('Components', () => {
 
     it('should render single items without crashing', () => {
       expect(
-        getRendered(h(ModelList, {models: head(createFakeModels())})),
+        getRendered(h(ModelList, {models: [head(createFakeModels())]})),
       ).toMatchSnapshot()
     })
 

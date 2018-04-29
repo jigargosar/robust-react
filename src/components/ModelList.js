@@ -1,6 +1,7 @@
 import {List, ListItemText, MenuItem} from 'material-ui'
-import {map, propOr} from 'ramda'
+import {propOr} from 'ramda'
 import {h} from '../hyper-script'
+import {KeyedModels} from './KeyedModels'
 
 const ModelListItem = ({
   model,
@@ -11,7 +12,8 @@ const ModelListItem = ({
     h(ListItemText, {primary: primaryRenderer(model)}),
   ])
 
-const ModelList = ({models, ...other}) =>
-  h(List, map(model => h(ModelListItem, {model, ...other}), models))
+const ModelList = props => {
+  return h(List, [h(KeyedModels, {ModelComponent: ModelListItem, ...props})])
+}
 
 export {ModelList}
