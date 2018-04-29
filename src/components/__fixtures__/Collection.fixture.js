@@ -10,7 +10,7 @@ export const createFakeCollections = () => {
       Collection({
         id: idx,
         name: chance.country({full: true}),
-        fields: [StringField('Tags', 'no-tag')],
+        fields: [StringField({name: 'Tags', initialValue: 'no-tag'})],
         items: createFakeModels(chance),
       }),
     3,

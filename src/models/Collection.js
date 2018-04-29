@@ -9,10 +9,11 @@ const FT_BOOL = 'boolean'
 
 const FieldTypes = [FT_STRING, FT_BOOL]
 
-const Field = curry((typeId, name) => {
+const Field = curry((typeId, {name, initialValue}) => {
   assert(!isNil(name))
+  assert(!isNil(initialValue))
   assert(contains(typeId)(FieldTypes))
-  return {name, typeId}
+  return {typeId, name, initialValue}
 })
 export const StringField = Field(FT_STRING)
 export const BooleanField = Field(FT_BOOL)

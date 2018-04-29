@@ -13,7 +13,7 @@ const centerPaper = story =>
       },
     },
     [
-      div({style: {flex: '1 1 auto', minWidth: 0, maxWidth: 300}}, [
+      div({style: {flex: '1 1 auto', minWidth: 0, maxWidth: 400}}, [
         h(Paper, [story()]),
       ]),
     ],
