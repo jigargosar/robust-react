@@ -5,5 +5,11 @@ module.exports = (config, env) => {
   config.plugins = config.plugins.filter(
     plugin => !(plugin instanceof webpack['ProgressPlugin']),
   )
+
+  config.module.rules.push({
+    test: /__stories__\/.+\.js$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  })
   return config
 }

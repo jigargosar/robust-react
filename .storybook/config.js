@@ -1,6 +1,6 @@
 import {setConsoleOptions, withConsole} from '@storybook/addon-console'
 import {setOptions} from '@storybook/addon-options'
-import {addDecorator, configure} from '@storybook/react'
+import {addDecorator, configure, setAddon} from '@storybook/react'
 
 setConsoleOptions({
   panelExclude: [],

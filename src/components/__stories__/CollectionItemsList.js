@@ -3,14 +3,14 @@ import {centerPaper} from '../../centerPaper'
 import {h} from '../../hyper-script'
 import {storiesOf} from '../../storybook-helpers'
 import {createFakeCollections} from '../__fixtures__/Collection.fixture'
-import {Collection} from '../Collection'
+import {CollectionItemList} from '../CollectionItemList'
 
-const story = storiesOf('Components | Collection', module).addDecorator(
+const story = storiesOf('Components | CollectionItemList', module).addDecorator(
   centerPaper,
 )
 
-story.add('with rows as list', () =>
-  h(Collection, {
+story.add('with items as list', () =>
+  h(CollectionItemList, {
     collection: head(createFakeCollections()),
   }),
 )

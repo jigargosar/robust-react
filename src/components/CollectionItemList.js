@@ -2,7 +2,7 @@ import {Table, TableBody, TableCell, TableRow} from 'material-ui'
 import {h} from '../hyper-script'
 import {ModelList} from './Model'
 
-export const Collection = ({collection}) =>
+export const CollectionItemList = ({collection}) =>
   h(ModelList, {
     models: collection.items,
     primaryRenderer: item =>
