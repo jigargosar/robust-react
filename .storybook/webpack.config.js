@@ -8,7 +8,23 @@ module.exports = (config, env) => {
 
   config.module.rules.push({
     test: /__stories__\/.+\.js$/,
-    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    loaders: [
+      {
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: {
+          prettierConfig: {
+            printWidth: 80,
+            tabWidth: 2,
+            useTabs: false,
+            semi: false,
+            singleQuote: true,
+            trailingComma: 'all',
+            bracketSpacing: false,
+            jsxBracketSameLine: false,
+          },
+        },
+      },
+    ],
     enforce: 'pre',
   })
   return config
