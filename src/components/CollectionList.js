@@ -14,7 +14,7 @@ export const CollectionList = withStyles({
 })(({collections, onClick, classes}) =>
   h(ModelExpansionPanelList, {
     models: collections,
-    primaryRenderer: collection =>
+    summaryRenderer: collection =>
       div({className: classes.primary}, [
         h(Typography, {variant: 'subheading'}, collection.name),
         h(Typography, {variant: 'caption'}, `(${collection.items.length})`),

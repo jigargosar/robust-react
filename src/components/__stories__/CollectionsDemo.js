@@ -14,12 +14,12 @@ const story = storiesOf('Demo|Collections', module).addDecorator(
 )
 
 const names = [
-  'todos',
-  'notes',
-  'ideas',
-  'journal',
-  'bookmarks',
-  'browserSessions',
+  'Todos',
+  'Notes',
+  'Ideas',
+  'Journal',
+  'Bookmarks',
+  'Browser Sessions',
 ]
 
 const createCollectionsFromNames = map(name => Collection({name}))

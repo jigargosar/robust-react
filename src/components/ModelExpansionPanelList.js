@@ -5,22 +5,19 @@ import {
   ExpansionPanelSummary,
 } from 'material-ui'
 import {propOr} from 'ramda'
-import {h} from '../hyper-script'
+import {h, pre} from '../hyper-script'
 import {KeyedModels} from './KeyedModels'
 
 const ExpansionPanelListItem = ({
   model,
-  primaryRenderer = propOr('<primaryRenderer or name not found>', 'name'),
-  onClick = () => () => {},
+  summaryRenderer = propOr('<summaryRenderer and name not found>', 'name'),
+  detailsRenderer = info => pre(JSON.stringify(info, null, 2)),
 }) =>
-  // h(MenuItem, {onClick: onClick(model)}, [
-  //   h(ListItemText, {primary: primaryRenderer(model)}),
-  // ])
   h(ExpansionPanel, [
     h(ExpansionPanelSummary, {expandIcon: h(ExpandMoreIcon)}, [
-      primaryRenderer(model),
+      summaryRenderer(model),
     ]),
-    h(ExpansionPanelDetails, {onClick}, [primaryRenderer(model)]),
+    h(ExpansionPanelDetails, [detailsRenderer(model)]),
   ])
 
 const ModelExpansionPanelList = props => {
