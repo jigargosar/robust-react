@@ -1,6 +1,6 @@
 import {Typography, withStyles} from 'material-ui'
 import {div, h} from '../hyper-script'
-import {ModelList} from './ModelList'
+import {ModelExpansionPanelList} from './ModelExpansionPanelList'
 
 export const CollectionList = withStyles({
   primary: {
@@ -12,7 +12,7 @@ export const CollectionList = withStyles({
     },
   },
 })(({collections, onClick, classes}) =>
-  h(ModelList, {
+  h(ModelExpansionPanelList, {
     models: collections,
     primaryRenderer: collection =>
       div({className: classes.primary}, [

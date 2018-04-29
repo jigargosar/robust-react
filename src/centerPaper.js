@@ -1,5 +1,4 @@
-import {Paper} from 'material-ui'
-import {div, h} from './hyper-script'
+import {div} from './hyper-script'
 
 const centerPaper = story =>
   div(
@@ -14,7 +13,8 @@ const centerPaper = story =>
     },
     [
       div({style: {flex: '1 1 auto', minWidth: 0, maxWidth: '80%'}}, [
-        h(Paper, [story()]),
+        // h(Paper, [story()]),
+        story(),
       ]),
     ],
   )
