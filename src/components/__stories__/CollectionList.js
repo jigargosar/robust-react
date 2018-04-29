@@ -17,7 +17,14 @@ story.add('with item count', () =>
   }),
 )
 
-const names = ['todos', 'notes', 'bookmarks', 'browserSessions']
+const names = [
+  'todos',
+  'notes',
+  'ideas',
+  'journal',
+  'bookmarks',
+  'browserSessions',
+]
 
 // const createCollectionsFromNames = addIndex(map)((name, id) => ({
 //   id,
