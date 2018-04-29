@@ -1,7 +1,7 @@
 import {head} from 'ramda'
 import {centerPaper} from '../../centerPaper'
 import {h} from '../../hyper-script'
-import {storiesOf} from '../../test-helpers'
+import {storiesOf} from '../../storybook-helpers'
 import {createFakeCollections} from '../__fixtures__/Collection.fixture'
 import {Collection} from '../Collection'
 
