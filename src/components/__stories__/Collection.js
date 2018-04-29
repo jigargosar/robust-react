@@ -9,7 +9,7 @@ const story = storiesOf('Components | Collection', module).addDecorator(
   centerPaper,
 )
 
-story.add('with item list', () =>
+story.add('with rows as list', () =>
   h(Collection, {
     collection: head(createFakeCollections()),
   }),

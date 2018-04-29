@@ -13,7 +13,7 @@ const story = storiesOf('Components | CollectionList', module).addDecorator(
 story.add('with item count', () =>
   h(CollectionList, {
     collections: createFakeCollections(),
-    onClick: () => linkTo('Components | Collection', 'with item list'),
+    onClick: () => linkTo('Components | Collection', 'with rows as list'),
   }),
 )
 
