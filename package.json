@@ -29,6 +29,7 @@
     "@storybook/addon-jest": "3.4.2",
     "@storybook/addon-links": "^3.4.1",
     "@storybook/addon-options": "3.4.2",
+    "@storybook/addon-storysource": "3.4.3",
     "@storybook/addons": "^3.4.1",
     "@storybook/react": "^3.4.1",
     "babel-core": "^6.26.0",
