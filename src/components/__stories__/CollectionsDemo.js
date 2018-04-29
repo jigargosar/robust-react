@@ -1,11 +1,17 @@
 import {map} from 'ramda'
-import {centerPaper} from '../../centerPaper'
 import {h} from '../../hyper-script'
 import {Collection} from '../../models/Collection'
-import {linkTo, LinkTo, storiesOf} from '../../storybook-helpers'
+import {
+  centerDecorator,
+  linkTo,
+  LinkTo,
+  storiesOf,
+} from '../../storybook-helpers'
 import {CollectionList} from '../CollectionList'
 
-const story = storiesOf('Demo|Collections', module).addDecorator(centerPaper)
+const story = storiesOf('Demo|Collections', module).addDecorator(
+  centerDecorator,
+)
 
 const names = [
   'todos',
