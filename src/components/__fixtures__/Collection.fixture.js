@@ -1,6 +1,6 @@
 import Chance from 'chance'
 import {times} from 'ramda'
-import {Collection, StringField} from '../../models/Collection'
+import {BooleanField, Collection, StringField} from '../../models/Collection'
 import {createFakeModels} from './Model.fixture'
 
 export const createFakeCollections = () => {
@@ -10,7 +10,10 @@ export const createFakeCollections = () => {
       Collection({
         id: idx,
         name: chance.country({full: true}),
-        fields: [StringField({name: 'Tags', initialValue: 'no-tag'})],
+        fields: [
+          StringField({name: 'tags', initialValue: 'no-tag'}),
+          BooleanField({name: 'archived', initialValue: 'false'}),
+        ],
         items: createFakeModels(chance),
       }),
     3,

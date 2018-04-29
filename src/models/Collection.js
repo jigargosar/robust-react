@@ -15,6 +15,7 @@ const Field = curry((typeId, {name, initialValue}) => {
   assert(contains(typeId)(FieldTypes))
   return {typeId, name, initialValue}
 })
+
 export const StringField = Field(FT_STRING)
 export const BooleanField = Field(FT_BOOL)
 
