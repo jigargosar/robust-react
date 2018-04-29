@@ -5,7 +5,7 @@ import {h} from '../../hyper-script'
 import {createFakeModels} from '../__fixtures__/Model.fixture'
 import {ModelList} from '../ModelList'
 
-const story = storiesOf('Components | ModelList', module).addDecorator(
+const story = storiesOf('Components|Model.List', module).addDecorator(
   centerPaper,
 )
 

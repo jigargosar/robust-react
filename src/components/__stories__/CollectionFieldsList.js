@@ -5,7 +5,7 @@ import {storiesOf} from '../../storybook-helpers'
 import {createFakeCollections} from '../__fixtures__/Collection.fixture'
 import {CollectionFields} from '../CollectionFields'
 
-const story = storiesOf('Components | CollectionFields', module).addDecorator(
+const story = storiesOf('Components|CollectionFields', module).addDecorator(
   centerPaper,
 )
 
