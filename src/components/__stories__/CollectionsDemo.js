@@ -25,8 +25,7 @@ story.add('index', () =>
   }),
 )
 
-const createStoryFromNames = map(name => {
-  story.add(name, () => h(LinkTo, {story: 'index'}, 'Back'))
-})
+const linkToIndex = h(LinkTo, {story: 'index'}, 'Back')
 
-createStoryFromNames(names)
+story.add('todos', () => linkToIndex)
+story.add('notes', () => linkToIndex)
