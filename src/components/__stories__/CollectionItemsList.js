@@ -1,12 +1,11 @@
 import {head} from 'ramda'
-import {centerPaper} from '../../centerPaper'
+import {centerDecorator, storiesOf} from '../../storybook-helpers'
 import {h} from '../../hyper-script'
-import {storiesOf} from '../../storybook-helpers'
 import {createFakeCollections} from '../__fixtures__/Collection.fixture'
 import {CollectionItemList} from '../CollectionItemList'
 
 const story = storiesOf('Components|CollectionItemList', module).addDecorator(
-  centerPaper,
+  centerDecorator,
 )
 
 story.add('with items as list', () =>
