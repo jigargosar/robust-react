@@ -1,7 +1,1 @@
-node_modules
-coverage
-dist
-build
-flow-typed
-storybook-static
-
+.ignore

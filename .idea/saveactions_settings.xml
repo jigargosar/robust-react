@@ -5,12 +5,13 @@
       <set>
         <option value="activate" />
         <option value="noActionIfCompileErrors" />
-        <option value="reformat" />
+        <option value="organizeImports" />
       </set>
     </option>
     <option name="configurationPath" value="" />
     <option name="inclusions">
       <set>
+        <option value="scripts/.*" />
         <option value="src/.*" />
       </set>
     </option>

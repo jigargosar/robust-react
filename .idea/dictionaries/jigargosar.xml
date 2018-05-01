@@ -2,9 +2,11 @@
   <dictionary name="jigargosar">
     <words>
       <w>addon</w>
+      <w>automock</w>
       <w>babelrc</w>
       <w>espower</w>
       <w>nano</w>
+      <w>precommit</w>
       <w>procfile</w>
       <w>storysource</w>
     </words>

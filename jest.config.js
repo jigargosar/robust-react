@@ -1,22 +1,9 @@
-const {mergeDeepRight} = require('ramda')
-const config = require('kcd-scripts/dist/config/jest.config')
-
-module.exports = mergeDeepRight(config, {
-  setupFiles: ['./jest.setup.js'],
-  automock: false,
+module.exports = {
   notify: true,
   notifyMode: 'change',
-  coverageThreshold: null,
-  testMatch: [...config.testMatch],
   projects: [
-    {
-      displayName: 'test',
-    },
-    {
-      displayName: 'lint',
-      runner: 'jest-runner-eslint',
-      testMatch: ['<rootDir>/**/*.js'],
-    },
+    // './scripts/jest/jest-lint.config.js',
+    './scripts/jest/jest-tests.config.js',
     // {
     //   displayName: 'flowtype',
     //   runner: 'jest-runner-flowtype',
@@ -52,8 +39,4 @@ module.exports = mergeDeepRight(config, {
     //   ],
     // },
   ],
-})
-
-// console.log(config.testMatch)
-// console.log(module.exports)
-// exit(1)
+}
