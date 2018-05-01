@@ -1,8 +1,17 @@
 import assert from 'assert'
-import {contains, curry, defaultTo, isNil, when} from 'ramda'
+import {
+  append,
+  contains,
+  curry,
+  defaultTo,
+  isNil,
+  lensProp,
+  over,
+  when,
+} from 'ramda'
 import {IdGenerator} from './Id'
 
-const idGen = IdGenerator('Collection', 1)
+const collectionIdGen = IdGenerator('Collection', 1)
 
 export const FT_STRING = 'string'
 export const FT_BOOL = 'boolean'
@@ -18,11 +27,22 @@ export const Field = curry(({id, typeId, name, initialValue}) => {
 })
 
 export const Collection = ({id, name, fields = [], items} = {}) => {
-  const finalId = when(isNil, idGen.nextId)(id)
+  const finalId = when(isNil, collectionIdGen.nextId)(id)
   return {
     id: finalId,
     fields,
     name: defaultTo(finalId)(name),
     items: defaultTo([])(items),
+    itemIdGen: IdGenerator(itemId => `collection(${id}):item:(${itemId})`, 1),
   }
+}
+
+const generateNextItemId = collection => collection.itemIdGen.nextId()
+
+Collection.addItem = ({id, ...others}, collection) => {
+  assert(isNil(id))
+
+  const item = {id: generateNextItemId(collection), ...others}
+
+  return over(lensProp('items'), append(item))(collection)
 }

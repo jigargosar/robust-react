@@ -1,4 +1,5 @@
-import {map} from 'ramda'
+import {compose, identity, map, reduce, times} from 'ramda'
+import Chance from 'chance'
 import {h} from '../../hyper-script'
 import {Collection, Field, FT_BOOL, FT_STRING} from '../../models/Collection'
 import {
@@ -8,6 +9,13 @@ import {
   storiesOf,
 } from '../../storybook-helpers'
 import {CollectionList} from '../CollectionList'
+
+const chanceReduce = (chance, reducer, initialAcc) =>
+  reduce(
+    reducer,
+    initialAcc,
+    times(identity, chance.natural({min: 3, max: 10})),
+  )
 
 const story = storiesOf('Demo|Collections', module).addDecorator(
   centerDecorator,
@@ -37,11 +45,27 @@ const fields = [
   }),
 ]
 
-const createCollectionsFromNames = map(name => Collection({name, fields}))
+const addCollectionItem = chance => collection =>
+  Collection.addItem(
+    {
+      done: chance.bool(),
+      title: chance.sentence(),
+    },
+    collection,
+  )
+
+const addCollectionItems = chance => collection =>
+  chanceReduce(chance, addCollectionItem(chance), collection)
+
+const createCollectionFromName = chance => name =>
+  compose(addCollectionItems(chance), Collection)({
+    name,
+    fields,
+  })
 
 story.add('index', () =>
   h(CollectionList, {
-    collections: createCollectionsFromNames(names),
+    collections: map(createCollectionFromName(new Chance(11)))(names),
     onClick: collection => linkTo('Demo|Collections', collection.name),
   }),
 )
