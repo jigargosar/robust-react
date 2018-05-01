@@ -1,6 +1,6 @@
 import {map} from 'ramda'
 import {h} from '../../hyper-script'
-import {Collection} from '../../models/Collection'
+import {Collection, Field, FT_BOOL} from '../../models/Collection'
 import {
   centerDecorator,
   linkTo,
@@ -22,7 +22,16 @@ const names = [
   'Browser Sessions',
 ]
 
-const createCollectionsFromNames = map(name => Collection({name}))
+const fields = [
+  Field({
+    id: 0,
+    typeId: FT_BOOL,
+    name: 'done',
+    initialValue: 'false',
+  }),
+]
+
+const createCollectionsFromNames = map(name => Collection({name, fields}))
 
 story.add('index', () =>
   h(CollectionList, {
