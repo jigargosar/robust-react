@@ -1,6 +1,6 @@
 import {map} from 'ramda'
 import {h} from '../../hyper-script'
-import {Collection, Field, FT_BOOL} from '../../models/Collection'
+import {Collection, Field, FT_BOOL, FT_STRING} from '../../models/Collection'
 import {
   centerDecorator,
   linkTo,
@@ -23,12 +23,20 @@ const names = [
 ]
 
 const fields = [
-  Field({
-    id: 0,
-    typeId: FT_BOOL,
-    name: 'done',
-    initialValue: 'false',
-  }),
+  Field(
+    {
+      id: 0,
+      typeId: FT_BOOL,
+      name: 'done',
+      initialValue: 'false',
+    },
+    {
+      id: 1,
+      typeId: FT_STRING,
+      name: 'title',
+      initialValue: 'What to do?',
+    },
+  ),
 ]
 
 const createCollectionsFromNames = map(name => Collection({name, fields}))
