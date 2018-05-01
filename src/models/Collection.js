@@ -4,9 +4,11 @@ import {
   contains,
   curry,
   defaultTo,
+  flip,
   isNil,
   lensProp,
   over,
+  reduce,
   when,
 } from 'ramda'
 import {IdGenerator} from './Id'
@@ -46,3 +48,7 @@ Collection.addItem = ({id, ...others}, collection) => {
 
   return over(lensProp('items'), append(item))(collection)
 }
+
+Collection.addItems = curry((items, collection) =>
+  reduce(flip(Collection.addItem), collection)(items),
+)
