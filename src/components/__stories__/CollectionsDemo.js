@@ -1,4 +1,14 @@
-import {identity, map, reduce, times} from 'ramda'
+import {
+  compose,
+  cond,
+  identity,
+  map,
+  mergeAll,
+  objOf,
+  propEq,
+  reduce,
+  times,
+} from 'ramda'
 import Chance from 'chance'
 import {h} from '../../hyper-script'
 import {Collection, Field, FT_BOOL, FT_STRING} from '../../models/Collection'
@@ -48,13 +58,26 @@ const fields = [
   }),
 ]
 
-const createCollectionItem = chance => () => ({
-  done: chance.bool(),
-  title: chance.sentence(),
-})
+const isFieldTypeId = typeId => propEq('typeId', typeId)
+
+const generateFakeItemDataForFields = chance =>
+  compose(
+    mergeAll,
+    map(field =>
+      compose(
+        objOf(field.name),
+        cond([
+          [isFieldTypeId(FT_BOOL), () => chance.bool()],
+          [isFieldTypeId(FT_STRING), () => chance.sentence()],
+        ]),
+      )(field),
+    ),
+  )
 
 const createCollectionItems = chance => collection =>
-  chanceTimes(chance, () => createCollectionItem(chance)(collection.fields))
+  chanceTimes(chance, () =>
+    generateFakeItemDataForFields(chance)(collection.fields),
+  )
 
 const createCollectionFromName = chance => name => {
   const collection = Collection({name, fields})
