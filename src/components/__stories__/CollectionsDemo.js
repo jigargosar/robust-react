@@ -48,13 +48,13 @@ const fields = [
   }),
 ]
 
-const createCollectionItem = chance => ({
+const createCollectionItem = chance => () => ({
   done: chance.bool(),
   title: chance.sentence(),
 })
 
 const createCollectionItems = chance => collection =>
-  chanceTimes(chance, () => createCollectionItem(chance, collection.fields))
+  chanceTimes(chance, () => createCollectionItem(chance)(collection.fields))
 
 const createCollectionFromName = chance => name => {
   const collection = Collection({name, fields})
