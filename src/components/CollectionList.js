@@ -3,21 +3,29 @@ import {div, h} from '../hyper-script'
 import {ModelExpansionPanelList} from './ModelExpansionPanelList'
 
 export const CollectionList = withStyles({
-  primary: {
+  container: {
     display: 'flex',
-    alignItems: 'top',
     margin: '0 -2px',
-    '& > *': {
+    '&>$item': {
       margin: '0 2px',
     },
   },
+  item: {},
 })(({collections, onClick, classes}) =>
   h(ModelExpansionPanelList, {
     models: collections,
     summaryRenderer: collection =>
-      div({className: classes.primary}, [
-        h(Typography, {variant: 'subheading'}, collection.name),
-        h(Typography, {variant: 'caption'}, `(${collection.items.length})`),
+      div({className: classes.container}, [
+        h(
+          Typography,
+          {className: classes.item, variant: 'subheading'},
+          collection.name,
+        ),
+        h(
+          Typography,
+          {className: classes.item, variant: 'caption'},
+          `(${collection.items.length})`,
+        ),
       ]),
     onClick,
   }),
