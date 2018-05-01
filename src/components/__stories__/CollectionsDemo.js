@@ -23,20 +23,18 @@ const names = [
 ]
 
 const fields = [
-  Field(
-    {
-      id: 0,
-      typeId: FT_BOOL,
-      name: 'done',
-      initialValue: 'false',
-    },
-    {
-      id: 1,
-      typeId: FT_STRING,
-      name: 'title',
-      initialValue: 'What to do?',
-    },
-  ),
+  Field({
+    id: 0,
+    typeId: FT_BOOL,
+    name: 'done',
+    initialValue: 'false',
+  }),
+  Field({
+    id: 1,
+    typeId: FT_STRING,
+    name: 'title',
+    initialValue: 'What to do?',
+  }),
 ]
 
 const createCollectionsFromNames = map(name => Collection({name, fields}))
