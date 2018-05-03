@@ -94,11 +94,12 @@ story.add('index', () =>
 
 const linkToIndex = h(LinkTo, {story: 'index'}, 'Back')
 
-story.add('todos', () => linkToIndex)
-story.add('notes', () => linkToIndex)
+story.add('Todos', () => linkToIndex)
+story.add('Notes', () => linkToIndex)
 
 story.add('collection detail', () =>
   h(CollectionDetail, {
-    collection: createCollectionFromName(new Chance(11))('todos'),
+    collection: createCollectionFromName(new Chance(11))('Todos'),
+    onClick: collection => linkTo('Demo|Collections', collection.name),
   }),
 )

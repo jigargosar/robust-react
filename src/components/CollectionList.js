@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import {
+  Button,
   Card,
   ExpansionPanel,
   ExpansionPanelDetails,
@@ -21,22 +22,28 @@ export const CollectionDetail = compose(
     },
   }),
   setDisplayName('CollectionDetail'),
-)(({collection, classes}) =>
-  h(Card, {className: classes.root}, [
+)(({collection, onClick = () => () => {}, classes}) => {
+  // // eslint-disable-next-line no-debugger
+  // debugger
+  return h(Card, {className: classes.root}, [
+    h(Button, {onClick: onClick(collection)}, 'view'),
     pre(JSON.stringify(collection, null, 2)),
-  ]),
-)
+  ])
+})
 
-const CollectionExpansionPanel = withStyles({
-  container: {
-    display: 'flex',
-    margin: '0 -2px',
-    '&>$item': {
-      margin: '0 2px',
+const CollectionExpansionPanel = compose(
+  withStyles({
+    container: {
+      display: 'flex',
+      margin: '0 -2px',
+      '&>$item': {
+        margin: '0 2px',
+      },
     },
-  },
-  item: {},
-})(({model: collection, classes}) =>
+    item: {},
+  }),
+  setDisplayName('CollectionDetail'),
+)(({model: collection, onClick, classes}) =>
   h(ExpansionPanel, [
     h(ExpansionPanelSummary, {expandIcon: h(ExpandMoreIcon)}, [
       div({className: classes.container}, [
@@ -52,14 +59,15 @@ const CollectionExpansionPanel = withStyles({
         ),
       ]),
     ]),
-    h(ExpansionPanelDetails, [h(CollectionDetail, {collection})]),
+    h(ExpansionPanelDetails, [h(CollectionDetail, {collection, onClick})]),
   ]),
 )
 
-export const CollectionList = ({collections}) =>
+export const CollectionList = ({collections, onClick}) =>
   h('div', [
     h(KeyedModels, {
       ModelComponent: CollectionExpansionPanel,
       models: collections,
+      onClick,
     }),
   ])
