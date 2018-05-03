@@ -18,7 +18,7 @@ import {
   LinkTo,
   storiesOf,
 } from '../../storybook-helpers'
-import {CollectionList} from '../CollectionList'
+import {CollectionDetail, CollectionList} from '../CollectionList'
 
 export const chanceReduce = (chance, reducer, initialAcc) =>
   reduce(
@@ -96,3 +96,9 @@ const linkToIndex = h(LinkTo, {story: 'index'}, 'Back')
 
 story.add('todos', () => linkToIndex)
 story.add('notes', () => linkToIndex)
+
+story.add('collection detail', () =>
+  h(CollectionDetail, {
+    collection: createCollectionFromName(new Chance(11))('todos'),
+  }),
+)

@@ -12,7 +12,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {div, h, pre} from '../hyper-script'
 import {KeyedModels} from './KeyedModels'
 
-const CollectionDetail = ({collection}) =>
+export const CollectionDetail = ({collection}) =>
   h(Card, [pre(JSON.stringify(collection, null, 2))])
 
 const CollectionExpansionPanel = withStyles({
