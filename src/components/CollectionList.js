@@ -9,11 +9,23 @@ import {
   withStyles,
 } from 'material-ui'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import {compose} from 'ramda'
+import {setDisplayName} from 'recompose'
 import {div, h, pre} from '../hyper-script'
 import {KeyedModels} from './KeyedModels'
 
-export const CollectionDetail = ({collection}) =>
-  h(Card, [pre(JSON.stringify(collection, null, 2))])
+export const CollectionDetail = compose(
+  withStyles({
+    root: {
+      overflow: 'auto',
+    },
+  }),
+  setDisplayName('CollectionDetail'),
+)(({collection, classes}) =>
+  h(Card, {className: classes.root}, [
+    pre(JSON.stringify(collection, null, 2)),
+  ]),
+)
 
 const CollectionExpansionPanel = withStyles({
   container: {
