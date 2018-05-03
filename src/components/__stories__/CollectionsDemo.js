@@ -85,21 +85,23 @@ const createCollectionFromName = chance => name => {
   return Collection.addItems(collectionItems, collection)
 }
 
+const linkToCollection = collection =>
+  linkTo('Demo|Collections', collection.name)
+
 story.add('index', () =>
   h(CollectionList, {
     collections: map(createCollectionFromName(new Chance(11)))(names),
-    onClick: collection => linkTo('Demo|Collections', collection.name),
+    onClick: linkToCollection,
   }),
 )
 
 const linkToIndex = h(LinkTo, {story: 'index'}, 'Back')
-
 story.add('Todos', () => linkToIndex)
 story.add('Notes', () => linkToIndex)
 
 story.add('collection detail', () =>
   h(CollectionDetail, {
     collection: createCollectionFromName(new Chance(11))('Todos'),
-    onClick: collection => linkTo('Demo|Collections', collection.name),
+    onClick: linkToCollection,
   }),
 )
