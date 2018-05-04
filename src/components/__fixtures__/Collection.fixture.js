@@ -1,13 +1,18 @@
 import Chance from 'chance'
 import {times} from 'ramda'
-import {Collection, Field, FT_BOOL, FT_STRING} from '../../models/Collection'
+import {
+  CollectionModel,
+  Field,
+  FT_BOOL,
+  FT_STRING,
+} from '../../models/CollectionModel'
 import {createFakeModels} from './Model.fixture'
 
 export const createFakeCollections = () => {
   const chance = new Chance(11)
   return times(
     idx =>
-      Collection({
+      CollectionModel({
         id: idx,
         name: chance.country({full: true}),
         fields: [

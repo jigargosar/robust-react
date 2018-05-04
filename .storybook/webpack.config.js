@@ -27,5 +27,8 @@ module.exports = (config, env) => {
     ],
     enforce: 'pre',
   })
+
+  config.devtool = 'source-map'
+
   return config
 }

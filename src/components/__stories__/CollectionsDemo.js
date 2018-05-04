@@ -11,14 +11,15 @@ import {
 } from 'ramda'
 import Chance from 'chance'
 import {h} from '../../hyper-script'
-import {Collection, Field, FT_BOOL, FT_STRING} from '../../models/Collection'
 import {
-  centerDecorator,
-  linkTo,
-  LinkTo,
-  storiesOf,
-} from '../../storybook-helpers'
+  CollectionModel,
+  Field,
+  FT_BOOL,
+  FT_STRING,
+} from '../../models/CollectionModel'
+import {centerDecorator, linkTo, storiesOf} from '../../storybook-helpers'
 import {CollectionDetail, CollectionList} from '../CollectionList'
+import {Collection} from '../Collection'
 
 export const chanceReduce = (chance, reducer, initialAcc) =>
   reduce(
@@ -80,28 +81,34 @@ const createCollectionItems = chance => collection =>
   )
 
 const createCollectionFromName = chance => name => {
-  const collection = Collection({name, fields})
+  const collection = CollectionModel({name, fields})
   const collectionItems = createCollectionItems(chance)(collection)
-  return Collection.addItems(collectionItems, collection)
+  return CollectionModel.addItems(collectionItems, collection)
 }
 
 const linkToCollection = collection =>
   linkTo('Demo|Collections', collection.name)
 
+const linkToIndex = linkTo('Demo|Collections', 'index')
+
+const collections = map(createCollectionFromName(new Chance(11)))(names)
 story.add('index', () =>
   h(CollectionList, {
-    collections: map(createCollectionFromName(new Chance(11)))(names),
+    collections,
     onClick: linkToCollection,
   }),
 )
 
-const linkToIndex = h(LinkTo, {story: 'index'}, 'Back')
-story.add('Todos', () => linkToIndex)
-story.add('Notes', () => linkToIndex)
+story.add('Todos', () =>
+  h(Collection, {collection: collections[0], onGoBack: linkToIndex}),
+)
+story.add('Notes', () =>
+  h(Collection, {collection: collections[1], onGoBack: linkToIndex}),
+)
 
 story.add('collection detail', () =>
   h(CollectionDetail, {
-    collection: createCollectionFromName(new Chance(11))('Todos'),
+    collection: collections[0],
     onClick: linkToCollection,
   }),
 )

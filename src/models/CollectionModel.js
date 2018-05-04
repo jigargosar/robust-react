@@ -28,7 +28,7 @@ export const Field = curry(({id, typeId, name, initialValue}) => {
   return {id, typeId, name, initialValue}
 })
 
-export const Collection = ({id, name, fields = [], items} = {}) => {
+export const CollectionModel = ({id, name, fields = [], items} = {}) => {
   assert(isNil(id))
 
   const finalId = when(isNil, collectionIdGen.nextId)(id)
@@ -43,13 +43,13 @@ export const Collection = ({id, name, fields = [], items} = {}) => {
 
 const generateNextItemId = collection => collection.itemIdGen.nextId()
 
-Collection.addItem = curry(({id, ...others}, collection) => {
+CollectionModel.addItem = curry(({id, ...others}, collection) => {
   assert(isNil(id))
 
   const item = {id: generateNextItemId(collection), ...others}
   return over(lensProp('items'), append(item))(collection)
 })
 
-Collection.addItems = curry((items, collection) =>
-  reduce(flip(Collection.addItem), collection)(items),
+CollectionModel.addItems = curry((items, collection) =>
+  reduce(flip(CollectionModel.addItem), collection)(items),
 )
