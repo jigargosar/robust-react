@@ -28,7 +28,7 @@ module.exports = (config, env) => {
     enforce: 'pre',
   })
 
-  config.devtool = 'source-map'
+  config.devtool = 'cheap-module-eval-source-map'
 
   return config
 }

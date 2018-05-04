@@ -88,6 +88,7 @@
     }
   },
   "scripts": {
+    "watch": "nodemon -w Procfile -x nf start",
     "build": "kcd-scripts build",
     "lint": "kcd-scripts lint",
     "test": "kcd-scripts test",
