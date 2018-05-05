@@ -11,6 +11,9 @@ import {
 } from 'ramda'
 import Chance from 'chance'
 import {h} from '@jigargosar/utils'
+import {AppBar, IconButton, Toolbar, Typography} from 'material-ui'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
+import {Fragment} from 'react'
 import {
   CollectionModel,
   Field,
@@ -99,11 +102,33 @@ story.add('index', () =>
   }),
 )
 
+const renderWithBackButtonAndTitle = (onClickBack, title, st) => {
+  return h(Fragment, [
+    h(AppBar, {position: 'static'}, [
+      h(Toolbar, [
+        h(IconButton, {onClick: onClickBack, color: 'inherit'}, [
+          h(ArrowBackIcon),
+        ]),
+        h(Typography, {variant: 'title', color: 'inherit'}, [title]),
+      ]),
+    ]),
+    st,
+  ])
+}
+
 story.add('Todos', () =>
-  h(Collection, {collection: collections[0], onGoBack: linkToIndex}),
+  renderWithBackButtonAndTitle(
+    linkToIndex,
+    'Todos',
+    h(Collection, {collection: collections[0]}),
+  ),
 )
 story.add('Notes', () =>
-  h(Collection, {collection: collections[1], onGoBack: linkToIndex}),
+  renderWithBackButtonAndTitle(
+    linkToIndex,
+    'Notes',
+    h(Collection, {collection: collections[1]}),
+  ),
 )
 
 story.add('collection detail', () =>
