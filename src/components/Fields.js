@@ -16,6 +16,7 @@ const enhance = compose(
 const Fields = enhance(({collection, className, classes}) =>
   h(ConfigurableTable, {
     className: cn(classes.root, className),
+    tableCellProps: {padding: 'dense'},
     rows: collection.fields,
     columns: map(([label, rowKey]) => ({label, rowKey}))([
       ['Id', 'id'],

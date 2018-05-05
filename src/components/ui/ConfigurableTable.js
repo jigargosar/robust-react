@@ -20,32 +20,36 @@ const enhance = compose(
   setDisplayName('ConfigurableTable'),
 )
 
-const Row = ({row, columns}) =>
+const renderTableCell = (key, tableCellProps, val) =>
+  h(TableCell, {key, ...tableCellProps}, `${val}`)
+
+const Row = ({row, columns, tableCellProps}) =>
   h(TableRow, [
     compose(
-      map(rowKey => h(TableCell, {key: rowKey}, `${row[rowKey]}`)),
+      map(rowKey => renderTableCell(rowKey, tableCellProps, row[rowKey])),
       pluck('rowKey'),
     )(columns),
   ])
 
-const ConfigurableTable = enhance(({rows, columns, className, classes}) =>
-  h(Table, {className: cn(classes.root, className)}, [
-    h(TableHead, [
-      h(TableRow, [
-        compose(
-          map(label => h(TableCell, {key: label}, label)),
-          pluck('label'),
-        )(columns),
+const ConfigurableTable = enhance(
+  ({rows, columns, className, tableCellProps, classes}) =>
+    h(Table, {className: cn(classes.root, className)}, [
+      h(TableHead, [
+        h(TableRow, [
+          compose(
+            map(label => renderTableCell(label, tableCellProps, label)),
+            pluck('label'),
+          )(columns),
+        ]),
+      ]),
+      h(TableBody, [
+        h(KeyedModels, {
+          ModelComponent: Row,
+          models: rows,
+          getProps: ({model}) => ({row: model, columns, tableCellProps}),
+        }),
       ]),
     ]),
-    h(TableBody, [
-      h(KeyedModels, {
-        ModelComponent: Row,
-        models: rows,
-        getProps: ({model}) => ({row: model, columns}),
-      }),
-    ]),
-  ]),
 )
 
 ConfigurableTable.propTypes = {
