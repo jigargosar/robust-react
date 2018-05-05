@@ -3,7 +3,7 @@ import {createGenerateClassName, jssPreset} from 'material-ui/styles'
 
 import JssProvider from 'react-jss/lib/JssProvider'
 import {render} from 'react-testing-library'
-import {h} from 'utils/src/hyper-script-utils'
+import {h} from '@jigargosar/utils'
 
 const generateClassName = createGenerateClassName({
   dangerouslyUseGlobalCSS: true,

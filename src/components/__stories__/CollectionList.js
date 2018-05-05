@@ -1,4 +1,4 @@
-import {h} from 'utils/src/hyper-script-utils'
+import {h} from '@jigargosar/utils'
 import {centerDecorator, linkTo, storiesOf} from '../../storybook-helpers'
 import {createFakeCollections} from '../__fixtures__/Collection.fixture'
 import {CollectionList} from '../CollectionList'

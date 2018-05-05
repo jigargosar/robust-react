@@ -3,7 +3,7 @@ import Props from 'prop-types'
 import {setDisplayName} from 'recompose'
 import {withStyles} from 'material-ui'
 import cn from 'classnames'
-import {h} from 'utils/src/hyper-script-utils'
+import {h} from '@jigargosar/utils'
 
 const enhance = compose(
   withStyles(() => ({

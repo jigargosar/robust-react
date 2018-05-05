@@ -7,7 +7,7 @@ import {
   TableRow,
 } from 'material-ui'
 import {map, propOr} from 'ramda'
-import {h} from 'utils/src/hyper-script-utils'
+import {h} from '@jigargosar/utils'
 
 const ModelRow = ({
   model,

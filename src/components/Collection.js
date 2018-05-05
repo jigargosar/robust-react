@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import {Button, Typography} from 'material-ui'
-import {h} from 'utils/src/hyper-script-utils'
+import {h} from '@jigargosar/utils'
 
 export const Collection = ({collection, onGoBack}) =>
   h('div', [

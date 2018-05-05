@@ -3,7 +3,7 @@ import {linkTo} from '@storybook/addon-links'
 import LinkTo from '@storybook/addon-links/react'
 import {storiesOf} from '@storybook/react'
 
-import {div} from 'utils/src/hyper-script-utils'
+import {div} from '@jigargosar/utils'
 
 export {action, storiesOf, linkTo, LinkTo}
 

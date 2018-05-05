@@ -1,1 +1,1 @@
-export * from './src/hyper-script-utils'
+export {h, div, pre, code} from './src/hyper-script-utils'

@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@cerebral/react": "3.2.1",
+    "@jigargosar/utils": "file:packages/utils",
     "@material-ui/icons": "1.0.0-beta.43",
     "cerebral": "4.2.1",
     "classnames": "2.2.5",
@@ -21,8 +22,7 @@
     "react-dom": "16.3.1",
     "recompose": "0.27.0",
     "roboto-fontface": "0.9.0",
-    "sanctuary": "0.14.1",
-    "utils": "file:packages/utils"
+    "sanctuary": "0.14.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.1",
