@@ -10,6 +10,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {compose} from 'ramda'
 import {setDisplayName} from 'recompose'
 import {h, pre} from '@jigargosar/utils'
+import {duration} from 'material-ui/styles/transitions'
 import {KeyedModels} from './ui/KeyedModels'
 import {FlexRow} from './ui/FlexRow'
 
@@ -34,15 +35,19 @@ const CollectionExpansionPanel = compose(
   }),
   setDisplayName('CollectionDetail'),
 )(({model: collection, onClick, classes}) =>
-  h(ExpansionPanel, {className: classes.root}, [
-    h(ExpansionPanelSummary, {expandIcon: h(ExpandMoreIcon)}, [
-      h(FlexRow, [
-        h(Typography, {variant: 'subheading'}, collection.name),
-        h(Typography, {variant: 'caption'}, `(${collection.items.length})`),
+  h(
+    ExpansionPanel,
+    {className: classes.root, CollapseProps: {timeout: duration.standard}},
+    [
+      h(ExpansionPanelSummary, {expandIcon: h(ExpandMoreIcon)}, [
+        h(FlexRow, [
+          h(Typography, {variant: 'subheading'}, collection.name),
+          h(Typography, {variant: 'caption'}, `(${collection.items.length})`),
+        ]),
       ]),
-    ]),
-    h(ExpansionPanelDetails, [h(CollectionDetail, {collection, onClick})]),
-  ]),
+      h(ExpansionPanelDetails, [h(CollectionDetail, {collection, onClick})]),
+    ],
+  ),
 )
 
 export const CollectionList = ({collections, onClick}) =>
