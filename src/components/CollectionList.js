@@ -30,30 +30,15 @@ export const CollectionDetail = compose(
 
 const CollectionExpansionPanel = compose(
   withStyles({
-    container: {
-      display: 'flex',
-      margin: '0 -2px',
-      '&>$item': {
-        margin: '0 2px',
-      },
-    },
-    item: {},
+    root: {},
   }),
   setDisplayName('CollectionDetail'),
 )(({model: collection, onClick, classes}) =>
-  h(ExpansionPanel, [
+  h(ExpansionPanel, {className: classes.root}, [
     h(ExpansionPanelSummary, {expandIcon: h(ExpandMoreIcon)}, [
       h(FlexRow, [
-        h(
-          Typography,
-          {className: classes.item, variant: 'subheading'},
-          collection.name,
-        ),
-        h(
-          Typography,
-          {className: classes.item, variant: 'caption'},
-          `(${collection.items.length})`,
-        ),
+        h(Typography, {variant: 'subheading'}, collection.name),
+        h(Typography, {variant: 'caption'}, `(${collection.items.length})`),
       ]),
     ]),
     h(ExpansionPanelDetails, [h(CollectionDetail, {collection, onClick})]),
