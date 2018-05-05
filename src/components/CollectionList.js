@@ -1,6 +1,5 @@
 import {
   Button,
-  Card,
   ExpansionPanel,
   ExpansionPanelDetails,
   ExpansionPanelSummary,
@@ -16,15 +15,16 @@ import {FlexRow} from './ui/FlexRow'
 
 export const CollectionDetail = compose(
   withStyles({
-    root: {
+    root: {},
+    code: {
       overflow: 'auto',
     },
   }),
   setDisplayName('CollectionDetail'),
 )(({collection, onClick = () => () => {}, classes}) =>
-  h(Card, {className: classes.root}, [
+  h('div', {className: classes.root}, [
     h(Button, {onClick: onClick(collection)}, 'view'),
-    pre(JSON.stringify(collection, null, 2)),
+    pre({className: classes.code}, JSON.stringify(collection, null, 2)),
   ]),
 )
 
