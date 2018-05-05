@@ -38,7 +38,7 @@ const CollapsibleFields = enhance(
     h(Fragment, [
       h(FlexRow, [
         h(Typography, {className: classes.fieldsHeader, variant: 'title'}, [
-          'Fields',
+          'Columns',
         ]),
         h(IconButton, {onClick: toggle}, [
           h(ifToggleOn(KeyboardArrowUp, KeyboardArrowDown)),
