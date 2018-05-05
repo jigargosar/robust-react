@@ -10,18 +10,23 @@ const enhance = compose(
     root: {
       display: 'flex',
       flexDirection: 'row',
-      alignItems: 'baseline',
+      alignItems: 'center',
+      margin: '0 -4px',
+      '&>*': {
+        margin: '0 4px',
+      },
     },
   })),
   setDisplayName('FlexRow'),
 )
 
-const FlexRow = enhance(({className, classes}) =>
-  h('div', {className: cn(classes.root, className)}, 'FlexRow'),
+const FlexRow = enhance(({className, children, classes}) =>
+  h('div', {className: cn(classes.root, className)}, children),
 )
 
 FlexRow.propTypes = {
   className: Props.string,
+  children: Props.node.isRequired,
 }
 
 export {FlexRow}

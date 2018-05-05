@@ -10,8 +10,9 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {compose} from 'ramda'
 import {setDisplayName} from 'recompose'
-import {div, h, pre} from '@jigargosar/utils'
+import {h, pre} from '@jigargosar/utils'
 import {KeyedModels} from './KeyedModels'
+import {FlexRow} from './ui/FlexRow'
 
 export const CollectionDetail = compose(
   withStyles({
@@ -42,7 +43,7 @@ const CollectionExpansionPanel = compose(
 )(({model: collection, onClick, classes}) =>
   h(ExpansionPanel, [
     h(ExpansionPanelSummary, {expandIcon: h(ExpandMoreIcon)}, [
-      div({className: classes.container}, [
+      h(FlexRow, [
         h(
           Typography,
           {className: classes.item, variant: 'subheading'},
