@@ -12,7 +12,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {compose} from 'ramda'
 import {setDisplayName} from 'recompose'
-import {div, h, pre} from '../hyper-script-utils'
+import {div, h, pre} from 'utils/src/hyper-script-utils'
 import {KeyedModels} from './KeyedModels'
 
 export const CollectionDetail = compose(

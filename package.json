@@ -9,8 +9,6 @@
     "cerebral": "4.2.1",
     "classnames": "2.2.5",
     "firebaseui": "2.7.0",
-    "hyperscript": "2.0.2",
-    "hyperscript-helpers": "3.0.3",
     "jss": "9.8.1",
     "libx": "1.0.0-alpha.0",
     "material-ui": "1.0.0-beta.41",
@@ -21,10 +19,10 @@
     "ramda": "0.25.0",
     "react": "16.3.1",
     "react-dom": "16.3.1",
-    "react-hyperscript": "3.2.0",
     "recompose": "0.27.0",
     "roboto-fontface": "0.9.0",
-    "sanctuary": "0.14.1"
+    "sanctuary": "0.14.1",
+    "utils": "file:packages/utils"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.1",

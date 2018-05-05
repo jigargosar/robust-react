@@ -5,7 +5,7 @@ import {
   ExpansionPanelSummary,
 } from 'material-ui'
 import {propOr} from 'ramda'
-import {h, pre} from '../hyper-script-utils'
+import {h, pre} from 'utils/src/hyper-script-utils'
 import {KeyedModels} from './KeyedModels'
 
 const ExpansionPanelListItem = ({

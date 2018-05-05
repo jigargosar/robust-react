@@ -1,6 +1,6 @@
 import Props from 'prop-types'
 import {identity, map, prop} from 'ramda'
-import {h} from '../hyper-script-utils'
+import {h} from 'utils/src/hyper-script-utils'
 
 const KeyedModels = ({ModelComponent, getKey, getProps, models, ...other}) =>
   map(model =>
