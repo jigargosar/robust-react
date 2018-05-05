@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import {
   Button,
   Card,
@@ -22,14 +20,12 @@ export const CollectionDetail = compose(
     },
   }),
   setDisplayName('CollectionDetail'),
-)(({collection, onClick = () => () => {}, classes}) => {
-  // // eslint-disable-next-line no-debugger
-  // debugger
-  return h(Card, {className: classes.root}, [
+)(({collection, onClick = () => () => {}, classes}) =>
+  h(Card, {className: classes.root}, [
     h(Button, {onClick: onClick(collection)}, 'view'),
     pre(JSON.stringify(collection, null, 2)),
-  ])
-})
+  ]),
+)
 
 const CollectionExpansionPanel = compose(
   withStyles({
