@@ -4,7 +4,7 @@ import {setDisplayName} from 'recompose'
 import {withStyles} from 'material-ui'
 import cn from 'classnames'
 import {h} from '@jigargosar/utils'
-import {ConfigurableTable} from './ConfigurableTable'
+import {ConfigurableTable} from './ui/ConfigurableTable'
 
 const enhance = compose(
   withStyles(() => ({

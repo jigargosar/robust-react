@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {compose} from 'ramda'
 import {setDisplayName} from 'recompose'
 import {h, pre} from '@jigargosar/utils'
-import {KeyedModels} from './KeyedModels'
+import {KeyedModels} from './ui/KeyedModels'
 import {FlexRow} from './ui/FlexRow'
 
 export const CollectionDetail = compose(

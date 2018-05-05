@@ -1,6 +1,6 @@
 import Props from 'prop-types'
 import {identity, map, prop} from 'ramda'
-import {h} from '@jigargosar/utils'
+import {h} from '../../../packages/utils/index'
 
 const KeyedModels = ({ModelComponent, getKey, getProps, models, ...other}) =>
   map(model =>

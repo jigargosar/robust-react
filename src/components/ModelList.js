@@ -1,7 +1,7 @@
 import {List, ListItemText, MenuItem} from 'material-ui'
 import {propOr} from 'ramda'
 import {h} from '@jigargosar/utils'
-import {KeyedModels} from './KeyedModels'
+import {KeyedModels} from './ui/KeyedModels'
 
 const ModelListItem = ({
   model,

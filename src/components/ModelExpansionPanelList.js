@@ -6,7 +6,7 @@ import {
 } from 'material-ui'
 import {propOr} from 'ramda'
 import {h, pre} from '@jigargosar/utils'
-import {KeyedModels} from './KeyedModels'
+import {KeyedModels} from './ui/KeyedModels'
 
 const ExpansionPanelListItem = ({
   model,

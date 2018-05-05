@@ -10,7 +10,7 @@ import {
   withStyles,
 } from 'material-ui'
 import cn from 'classnames'
-import {h} from '@jigargosar/utils'
+import {h} from '../../../packages/utils/index'
 import {KeyedModels} from './KeyedModels'
 
 const enhance = compose(
