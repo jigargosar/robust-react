@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
 
-import {Button} from 'material-ui'
-import {h} from '../hyper-script'
+import {Button, Typography} from 'material-ui'
+import {h} from '../hyper-script-utils'
 
 export const Collection = ({collection, onGoBack}) =>
-  h('div', [collection.name, h(Button, {onClick: onGoBack}, 'Back')])
+  h('div', [
+    h(Typography, {variant: 'title'}, [collection.name]),
+    h(Button, {onClick: onGoBack}, 'Back'),
+  ])

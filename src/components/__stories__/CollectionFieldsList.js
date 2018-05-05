@@ -1,6 +1,6 @@
 import {head} from 'ramda'
 import {centerDecorator, storiesOf} from '../../storybook-helpers'
-import {h} from '../../hyper-script'
+import {h} from '../../hyper-script-utils'
 import {createFakeCollections} from '../__fixtures__/Collection.fixture'
 import {CollectionFields} from '../CollectionFields'
 

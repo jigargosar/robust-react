@@ -2,7 +2,7 @@ import 'dom-testing-library/extend-expect'
 import {head} from 'ramda'
 
 import {render, Simulate} from 'react-testing-library'
-import {h} from '../../hyper-script'
+import {h} from '../../hyper-script-utils'
 import {getRendered} from '../../test-helpers'
 import {createFakeModels} from '../__fixtures__/Model.fixture'
 import {ModelList} from '../ModelList'

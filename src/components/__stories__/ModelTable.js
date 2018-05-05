@@ -1,7 +1,7 @@
 import {action} from '@storybook/addon-actions'
 import {storiesOf} from '@storybook/react'
 import {centerDecorator} from '../../storybook-helpers'
-import {h} from '../../hyper-script'
+import {h} from '../../hyper-script-utils'
 import {createFakeModels} from '../__fixtures__/Model.fixture'
 import {ModelTable} from '../ModelTable'
 

@@ -1,4 +1,3 @@
-// @flow
 import hyperscriptHelpers from 'hyperscript-helpers'
 import reactHyperscript from 'react-hyperscript'
 

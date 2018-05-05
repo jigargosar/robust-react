@@ -1,6 +1,6 @@
 import {List, ListItemText, MenuItem} from 'material-ui'
 import {propOr} from 'ramda'
-import {h} from '../hyper-script'
+import {h} from '../hyper-script-utils'
 import {KeyedModels} from './KeyedModels'
 
 const ModelListItem = ({

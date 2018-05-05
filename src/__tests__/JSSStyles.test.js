@@ -2,7 +2,7 @@
 import {withStyles} from 'material-ui'
 import {compose} from 'ramda'
 import {render} from 'react-testing-library'
-import {div, h} from '../hyper-script'
+import {div, h} from '../hyper-script-utils'
 
 // const sheets = new SheetsRegistry()
 

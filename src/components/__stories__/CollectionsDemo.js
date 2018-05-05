@@ -10,7 +10,7 @@ import {
   times,
 } from 'ramda'
 import Chance from 'chance'
-import {h} from '../../hyper-script'
+import {h} from '../../hyper-script-utils'
 import {
   CollectionModel,
   Field,
