@@ -7,7 +7,11 @@ import {h} from '@jigargosar/utils'
 
 const enhance = compose(
   withStyles(() => ({
-    root: {},
+    root: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'baseline',
+    },
   })),
   setDisplayName('FlexRow'),
 )
